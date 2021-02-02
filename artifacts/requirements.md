@@ -11,8 +11,7 @@ The priority of each requirement should be either Necessary, Important, or Desir
 |            002 |           001 | Options Menu| Displays Options    |	  2    | Necessary | Unverified |
 |				 |				 | Button	   | button				 | 		   |		   |			|
 |----------------|---------------|-------------|---------------------|---------|-----------|------------|
-|            003 |           001 | New Game    | Displays New Game   |	  2	   | Necessary | Unverified |
-|				 |				 | Button	   | Button				 |		   | 		   |			|
+|            003 |           001 | New Game Button	   | Displays New Game Button   |	  2	   | Necessary | Unverified |
 |----------------|---------------|-------------|---------------------|---------|-----------|------------|
 |            004 |           002 | Quits Game  | Game Quits when	 |	  1	   | Necessary | Unverified |
 |----------------|---------------|-------------|---------------------|---------|-----------|------------|
