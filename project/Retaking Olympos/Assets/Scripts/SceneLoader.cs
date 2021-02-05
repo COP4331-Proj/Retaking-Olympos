@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    void QuitGame() 
+    public void QuitGame() 
     {
         Application.Quit();
     }
