@@ -1,11 +1,11 @@
-/Temp
-/Library
-/Obj
-/UnityGenerated
-/Build
-/Builds
+/project/Retaking Olympos/Temp
+/project/Retaking Olympos/Library
+/project/Retaking Olympos/Obj
+/project/Retaking Olympos/UnityGenerated
+/project/Retaking Olympos/Build
+/project/Retaking Olympos/Builds
+/project/Retaking Olympos/Assembly-CSharp.csproj
 /*.sln
-/Assembly-CSharp.csproj
 *.suo
 *.user
 *.userprefs
