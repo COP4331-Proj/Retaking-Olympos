@@ -49,7 +49,7 @@ In the center, you are given slot onto which you can drag appropitems to equip t
 
 Buy Gladiators:
 This screen lets you cycle through a pool of new gladiators for sale and buy ones to add them to your collection
-<img src="Pictures/UI/PurchaseGladiator.png">
+<img src="Pictures/UI/Purchase-Gladiator.png">
 
 Shop:
 This screen lets you buy and sell items to and from a general shop
