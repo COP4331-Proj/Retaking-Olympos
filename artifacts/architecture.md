@@ -76,6 +76,9 @@ Navigation Map:
 This diagram shows how the user is able to navigate between scenes. The previous scene is kept track of, and the back button common to many scenes takes the user to that scene
 <img src="Pictures/UI/Navigation Map.PNG">
 
+User story chart:
+This chart shows which user stories are related to which screens
+<img src="Pictures/UI/User story link chart.PNG">
 # Resource Management
 
 Resource management will primarily be handled by Unity. The game will likely be single-threaded, but regardless this is all handled by Unity.
