@@ -21,10 +21,60 @@ See Code Complete, Chapter 3
 There are no specific business rules that apply to our project.
 
 # User Interface Design
+# Start Screen:
+Allows the user to start a new game, go to the options screen, or Quit.
+If the user has a save file, they will be able to load it aswell.
+<img src="Pictures/UI/StartMenu.PNG">
 
-You should have one or more user interface screens in this section. Each screen should be accompanied by an explaination of the screens purpose and how the user will interact with it. You should relate each screen to one another as the user transitions through the states of your application. You should also have a table that relates each window or component to the support using stories.
+# Options menu:
+Allows the user to tweak options of the game including resolution, volume, and difficulty
+<img src="Pictures/UI/Options.PNG">
 
-See Code Complete, Chapter 3
+# Main menu:
+Contains links to View gladiators, Buy Gladiators, and Shop
+Links to up to three different fights to choose from.
+<img src="Pictures/UI/Main-Scene.PNG">
+
+# Pre-Battle:
+This screen shows you stats about the gladiator you choose to fight this battle with and the opponent gladiator. It also shows who is favored to win with a ballence of power bar. The reward for the fight is increased if you are the underdog. The user can choose to change the gladiator for this fight before accepting the duel or backing out.
+<img src="Pictures/UI/Pre-Battle.PNG">
+
+# View gladiators:
+This screen links to the Skills and Shop screens.
+This screen lets you view details about your gladiators. The arrows cycle through list of your gladiators.
+On the left, you are shown basic statistics about your gladiators, and in parenthesis see what stats are coming from items.
+On the right, you are shown the players inventory, orginized by tabs of item types.
+In the center, you are given slot onto which you can drag appropitems to equip them. 
+<img src="Pictures/UI/View-Gladiator.PNG">
+
+# Buy Gladiators:
+This screen lets you cycle through a pool of new gladiators for sale and buy ones to add them to your collection
+<img src="Pictures/UI/PurchaseGladiator.PNG">
+
+# Shop:
+This screen lets you buy and sell items to and from a general shop
+Player items are on the right and the shops items are on the left.
+Dragging an item from the shop to your inventory subtracts its price from your gold and adds it to your inventory,
+Dragging an item from the your inventory to the shop adds its price to your gold and removes it from your inventory,
+<img src="Pictures/UI/Shop.PNG">
+
+# Skills:
+The arrows allow you to cycle through the skills menu for each of your owned gladiators
+The skills menu has two trees of skills, one general for all gladiators, and a second unlocked when selecting a class
+When clicking on a skill tree node, the box in the center is filled with its description and the user can purchase it if they have a skill point to spend. Highlighted nodes are already bought.
+<img src="Pictures/UI/Skills.PNG">
+
+# Battle:
+The user is shown their health in the middle left of the screen and their stamina, which is used to execute abilities, in the middle right of the screen. 4 circles on the bottom middle show the gladiators unlocked activated abilities keyed to 1 ,2 ,3 , and 4 respectivly;
+<img src="Pictures/UI/In-Battle.PNG">
+
+# Pause Menu
+The user has access to a pause menu at any time. This allows them to pause the game, save and load, adjust options, and quit the game.
+<img src="Pictures/UI/Pause-Menu.PNG">
+
+# Navigation map
+This diagram shows how the user is able to navigate between scenes. The previous scene is kept track of, and the back button common to many scenes takes the user to that scene
+<img src="Pictures/UI/Navigation Map.PNG">
 
 # Resource Management
 
