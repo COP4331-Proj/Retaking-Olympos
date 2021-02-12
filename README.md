@@ -15,10 +15,10 @@ For all video game enthusiasts who wish for a painstaking gladiatorial combat an
 [Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
 
 ### Burndown Chart
-<img src="artifacts/Burndown Chart Sprint 1.PNG">
+<img src="artifacts/Pictures/Burndown Chart Sprint 1.PNG">
 
 ### Velocity Chart
-<img src="artifacts/Velocity Chart Sprint 1.PNG">
+<img src="artifacts/Pictures/Velocity Chart Sprint 1.PNG">
 
 ## Sprint 2
 To be filled in...
