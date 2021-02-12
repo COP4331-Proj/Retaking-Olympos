@@ -68,11 +68,11 @@ Battle:
 The user is shown their health in the middle left of the screen and their stamina, which is used to execute abilities, in the middle right of the screen. 4 circles on the bottom middle show the gladiators unlocked activated abilities keyed to 1 ,2 ,3 , and 4 respectivly;
 <img src="Pictures/UI/In-Battle.png">
 
-Pause Menu
+Pause Menu:
 The user has access to a pause menu at any time. This allows them to pause the game, save and load, adjust options, and quit the game.
 <img src="Pictures/UI/Pause-Menu.png">
 
-Navigation map
+Navigation Map:
 This diagram shows how the user is able to navigate between scenes. The previous scene is kept track of, and the back button common to many scenes takes the user to that scene
 <img src="Pictures/UI/Navigation Map.PNG">
 
