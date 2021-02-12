@@ -28,7 +28,7 @@ See Code Complete, Chapter 3
 
 # Resource Management
 
-See Code Complete, Chapter 3
+Resource management will primarily be handled by Unity. The game will likely be single-threaded, but regardless this is all handled by Unity.
 
 # Security
 
