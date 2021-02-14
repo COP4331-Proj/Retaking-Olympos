@@ -21,7 +21,7 @@ For all video game enthusiasts who wish for a painstaking gladiatorial combat an
 <img src="artifacts/Pictures/Charts/Velocity Chart Sprint 1.PNG">
 
 ## Sprint 2
-To be filled in...
+[Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
 
 ### Burndown Chart
 <img src="artifacts/Pictures/Charts/Burndown Chart Sprint 2.PNG">
