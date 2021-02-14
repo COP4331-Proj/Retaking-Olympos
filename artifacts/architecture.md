@@ -50,9 +50,7 @@ The SceneLoader class is there to switch between scenes.
 
 # Data Design
 
-If you are using a database, you should have a basic Entity Relationship Diagram (ERD) in this section. This diagram should describe the tables in your database and their relationship to one another (especially primary/foreign keys), including the columns within each table.
-
-See Code Complete, Chapter 3
+We will not need to create a specialized database to store our game data. Usage of assets including scripts and linking them to game objects will all be handled by the Unity game engine.
 
 # Business Rules
 
