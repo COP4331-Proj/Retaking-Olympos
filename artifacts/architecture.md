@@ -4,11 +4,49 @@ You should have your context, container, and component (c4model.com) diagrams in
 
 See Code Complete, Chapter 3 and https://c4model.com/
 
+### System Diagram:
+In this diagram, the player of the game will interact with the Unity engine to play the game. THe Unity engine will be able to access game scripts and assets from the audio, graphics, and game systems. The game system will have access to both the audio and graphics systems if any assets need to be modified. 
+<img src="Pictures/High-Level Architecture/System Diagram (3).png">
+
+### Container Diagram:
+The game system will be run under a client-side desktop application, comprised of C# code.
+<img src="Pictures/High-Level Architecture/Conatiner Diagram.png">
+
+### Component Diagram:
+The game component will be able to use every other component to allow it to keep track of the current game state. The management component will be able to use the item and playable character components in order to create a functional market for the player. The battle system will utilize the playable character and non-playable character components to generate battles for the player to fight in. The playable character component will have access to the item component to allow the player to equip items to customize their gladiators.
+<img src="Pictures/High-Level Architecture/Component Diagram.png">
+
+### User Story Table:
+| Component | User Story ID(s) |
+|----------------|---------------|
+| Game Component | 007, 008, 024, 027 |
+| Management Component | 011, 012, 016 |
+| Battle Component | 019, 020, 021, 026, 029, 030, 031, 032 |
+| Playable Character Component | 015, 017, 018 |
+| Non-Playable Character Component | 022 |
+| Item Component | 013 |
+
 # Code Design
 
 You should have your UML Class diagram and any other useful UML diagrams in this section. Each diagram should be accompanied by a brief description explaining what the elements are and why they are in the diagram. For your class diagram, you must also include a table that relates each class to one or more user stories.
 
 See Code Complete, Chapter 3 and https://c4model.com/
+
+We need the GladiatorCharacter class to manage each gladiator. This class contains the gladiators' health, stamina, class, etc...
+A ton of variables from the GladiatorCharacter class will be used in the DamageControl class to calculate how much damage the gladiator will deal/will be dealt.
+The movement class is needed to control the movement of the characters. The amount of sprint energy a character has will be determined by its stamina.
+The PauseControl class is simply there to pause the game.
+OptionsMenu will manage everything in the options menu. This includes but is not limited to: adjusting the difficulty, resolution, and volume of the game.
+ManagementStats will keep track of everything during the management phase. The includes but is not limited to: currency and skillpoints.
+The skill class will manage the gladiators' abilities. 
+The weapon class is there to create weapon objects. The class will control the name, damage type, damage, and cost of the weapon.
+The SceneLoader class is there to switch between scenes.
+
+<img src="Pictures/Class-Diagram/ClassDiagram.png">
+
+<img src="Pictures/Class-Diagram/UserStoryTable.png">
+
+
 
 # Data Design
 
