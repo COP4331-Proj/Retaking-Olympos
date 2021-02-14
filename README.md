@@ -22,7 +22,7 @@ For all video game enthusiasts who wish for a painstaking gladiatorial combat an
 
 ## Sprint 2
 [Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
-
+[Demo Video](https://youtu.be/_SIcgVDCXFo)
 ### Burndown Chart
 <img src="artifacts/Pictures/Charts/Burndown Chart Sprint 2.PNG">
 
