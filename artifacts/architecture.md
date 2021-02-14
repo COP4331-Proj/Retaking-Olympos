@@ -41,6 +41,7 @@ ManagementStats will keep track of everything during the management phase. The i
 The skill class will manage the gladiators' abilities. 
 The weapon class is there to create weapon objects. The class will control the name, damage type, damage, and cost of the weapon
 The SceneLoader class is there to switch between scenes.
+
 <img src="Pictures/Class-Diagram/ClassDiagram.png">
 
 <img src="Pictures/Class-Diagram/UserStoryTable.png">
