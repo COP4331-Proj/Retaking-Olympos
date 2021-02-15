@@ -24,8 +24,15 @@ For all video game enthusiasts who wish for a painstaking gladiatorial combat an
 [Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
 
 [Demo Video](https://youtu.be/_SIcgVDCXFo)
+
+[System Architecture](https://github.com/COP4331-Proj/Retaking-Olympos/blob/main/artifacts/architecture.md)
 ### Burndown Chart
 <img src="artifacts/Pictures/Charts/Burndown Chart Sprint 2.PNG">
 
 ### Velocity Chart
 <img src="artifacts/Pictures/Charts/Velocity Chart Sprint 2.PNG">
+
+### Task Allocation
+
+
+
