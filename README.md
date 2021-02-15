@@ -34,5 +34,12 @@ For all video game enthusiasts who wish for a painstaking gladiatorial combat an
 
 ### Task Allocation
 
+Joshua: Created Options screen and linked it to the main screen
 
+Timothy: Created class diagrams
 
+Tyler: Created the architecture document outside High level C4, classes, and UI
+
+Nathan: Created UI diagrams and refactered user stories 
+
+Xavier: Created High level C4 Architecture diagrams
