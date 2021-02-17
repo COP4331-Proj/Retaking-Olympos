@@ -3227,7 +3227,7 @@ GameObject:
   - component: {fileID: 1590074703}
   - component: {fileID: 1590074704}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: VolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3409,7 +3409,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Title Screen
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1598326404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3907,6 +3907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 7f279003cbb5e8942b58013be910ddc2, type: 2}
+  volumeSlider: {fileID: 1590074704}
 --- !u!4 &1944405392
 Transform:
   m_ObjectHideFlags: 0
@@ -4514,3 +4515,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 7f279003cbb5e8942b58013be910ddc2, type: 2}
+  volumeSlider: {fileID: 1590074704}
