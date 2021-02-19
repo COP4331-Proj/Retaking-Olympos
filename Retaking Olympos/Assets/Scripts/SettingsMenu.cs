@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -8,6 +9,7 @@ public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Slider volumeSlider;
+    public Toggle toggle;
     static float currentVolume;
     public Dropdown resolutionDropdown;
     Resolution[] resolutions;
@@ -54,16 +56,33 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    public void SetFullscreen(bool isFullscreen)
+    {
+        if (isFullscreen)
+        {
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        }
+        else
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+        }
+    }
+
     public void LoadSettings()
     {
         if (PlayerPrefs.HasKey("VolumePreference"))
         {
             volumeSlider.value = PlayerPrefs.GetFloat("VolumePreference");
+        } 
+        else if (PlayerPrefs.HasKey("FullscreenPreference"))
+        {
+            toggle.enabled = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         }
     }
 
     public void SaveSettings()
     {
         PlayerPrefs.SetFloat("VolumePreference", currentVolume);
+        PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreenMode));
     }
 }
