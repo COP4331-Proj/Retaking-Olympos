@@ -78,11 +78,16 @@ public class SettingsMenu : MonoBehaviour
         {
             toggle.enabled = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         }
+        else if (PlayerPrefs.HasKey("ResolutionPreference"))
+        {
+            resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
+        }
     }
 
     public void SaveSettings()
     {
         PlayerPrefs.SetFloat("VolumePreference", currentVolume);
         PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreenMode));
+        PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
     }
 }
