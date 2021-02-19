@@ -32,12 +32,10 @@ public class SettingsMenu : MonoBehaviour
         {
             volumeSlider.value = PlayerPrefs.GetFloat("VolumePreference");
         }
-		
     }
 
     public void SaveSettings()
     {
         PlayerPrefs.SetFloat("VolumePreference", currentVolume);
-
     }
 }
