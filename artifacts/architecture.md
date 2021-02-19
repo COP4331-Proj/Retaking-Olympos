@@ -32,10 +32,14 @@ You should have your UML Class diagram and any other useful UML diagrams in this
 
 See Code Complete, Chapter 3 and https://c4model.com/
 
-We need the GladiatorCharacter class to manage each gladiator. This class contains the gladiators' health, stamina, class, etc...
+We need the Gladiator class to manage each gladiator. This class contains the gladiators' health, stamina, class, etc...
+The Gladiator class will have the types of gladiators (the gladiator's class) as the its subclasses
 A ton of variables from the GladiatorCharacter class will be used in the DamageControl class to calculate how much damage the gladiator will deal/will be dealt.
 The movement class is needed to control the movement of the characters. The amount of sprint energy a character has will be determined by its stamina.
 The PauseControl class is simply there to pause the game.
+The DifficultyControl class will use the Options Menu to control the difficulty of the game.
+The PlayerStaus class will check the player's health and stamina
+The PlayerControl class will control the player's movement
 OptionsMenu will manage everything in the options menu. This includes but is not limited to: adjusting the difficulty, resolution, and volume of the game.
 ManagementStats will keep track of everything during the management phase. The includes but is not limited to: currency and skillpoints.
 The skill class will manage the gladiators' abilities. 
