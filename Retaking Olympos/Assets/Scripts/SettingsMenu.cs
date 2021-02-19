@@ -8,7 +8,7 @@ public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Slider volumeSlider;
-    float currentVolume;
+    static float currentVolume;
 
     public void Awake()
     {
