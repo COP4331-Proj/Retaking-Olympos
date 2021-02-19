@@ -31,6 +31,17 @@ public class SettingsMenu : MonoBehaviour
         currentVolume = volume;
     }
 
+    public void SetResolution(int resolutionIndex)
+    {
+	    Resolution resolution = resolutions[resolutionIndex];
+	    Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
+
     public void LoadResolutions()
     {
         resolutions = Screen.resolutions;
@@ -56,18 +67,6 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
-    public void SetFullscreen(bool isFullscreen)
-    {
-        if (isFullscreen)
-        {
-            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-        }
-        else
-        {
-            Screen.fullScreenMode = FullScreenMode.Windowed;
-        }
-    }
-
     public void LoadSettings()
     {
         if (PlayerPrefs.HasKey("VolumePreference"))
@@ -87,7 +86,7 @@ public class SettingsMenu : MonoBehaviour
     public void SaveSettings()
     {
         PlayerPrefs.SetFloat("VolumePreference", currentVolume);
-        PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreenMode));
+        PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreen));
         PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
     }
 }
