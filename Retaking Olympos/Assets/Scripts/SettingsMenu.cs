@@ -12,7 +12,24 @@ public class SettingsMenu : MonoBehaviour
     public Dropdown resolutionDropdown;
     Resolution[] resolutions;
 
-    void Start()
+    public void Awake()
+    {
+        LoadResolutions();
+        LoadSettings();
+    }
+
+    public void OnDestroy()
+    {
+        SaveSettings();
+    }
+
+    public void setVolume (float volume)
+    {
+        audioMixer.SetFloat("Volume", volume);
+        currentVolume = volume;
+    }
+
+    public void LoadResolutions()
     {
         resolutions = Screen.resolutions;
 
@@ -35,23 +52,6 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
-    }
-
-
-    public void Awake()
-    {
-        LoadSettings();
-    }
-
-    public void OnDestroy()
-    {
-        SaveSettings();
-    }
-
-    public void setVolume (float volume)
-    {
-        audioMixer.SetFloat("Volume", volume);
-        currentVolume = volume;
     }
 
     public void LoadSettings()
