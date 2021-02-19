@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Options Menu.unity
     guid: 4ee88ff52d418164b8a9c7f3aa78c0da
+  - enabled: 1
+    path: Assets/Scenes/Main Scene.unity
+    guid: 4e400e9b59e29234094a560cad6892ef
+  - enabled: 1
+    path: Assets/Scenes/View Gladiator.unity
+    guid: 3ee858905d8adc140b83abeab583cb13
   m_configObjects: {}
