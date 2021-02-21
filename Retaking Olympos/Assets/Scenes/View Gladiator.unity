@@ -1304,55 +1304,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1050469578
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1050469580}
-  - component: {fileID: 1050469579}
-  m_Layer: 0
-  m_Name: GladiatorGameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1050469579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050469578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d8bce53a0ac445448f5b18f155439a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 1934139605}
-  levelText: {fileID: 2000630624}
-  healthText: {fileID: 166964594}
-  staminaText: {fileID: 304481489}
-  powerText: {fileID: 918955062}
-  defenseText: {fileID: 601958435}
---- !u!4 &1050469580
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050469578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1114329942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,3 +2268,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000630622}
   m_CullTransparentMesh: 0
+--- !u!1001 &3803679163428235900
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083318, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: m_Name
+      value: DisplayGladiatorStatControler
+      objectReference: {fileID: 0}
+    - target: {fileID: 3803679163453083319, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 1934139605}
+    - target: {fileID: 3803679163453083319, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 2000630624}
+    - target: {fileID: 3803679163453083319, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: powerText
+      value: 
+      objectReference: {fileID: 918955062}
+    - target: {fileID: 3803679163453083319, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 166964594}
+    - target: {fileID: 3803679163453083319, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: defenseText
+      value: 
+      objectReference: {fileID: 601958435}
+    - target: {fileID: 3803679163453083319, guid: cd1232595ec6a9147b11a2a698b8b501,
+        type: 3}
+      propertyPath: staminaText
+      value: 
+      objectReference: {fileID: 304481489}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd1232595ec6a9147b11a2a698b8b501, type: 3}

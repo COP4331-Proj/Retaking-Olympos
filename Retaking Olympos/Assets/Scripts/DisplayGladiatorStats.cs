@@ -19,7 +19,7 @@ public class DisplayGladiatorStats : MonoBehaviour
     {
         ViewGladiator viewGladiator = new ViewGladiator();
         viewGladiator.createNewGladiator("Caesar", 3, 100, 100, 6, 14);
-        viewGladiator.createNewGladiator("Bob", 3, 100, 100, 6, 14);
+        viewGladiator.createNewGladiator("Bob", 4, 120, 120, 10, 12);
         gladiatorList = viewGladiator.GetGladiatorList();
     }
 
