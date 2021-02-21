@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3803679163453083312}
+  - component: {fileID: 784757018}
   - component: {fileID: 3803679163453083319}
   m_Layer: 0
   m_Name: DisplayGladiatorStatControler
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &784757018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803679163453083318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1460cf87d45c57b4087e9bc6b18e084b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gladiatorIndex: 0
 --- !u!114 &3803679163453083319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8bce53a0ac445448f5b18f155439a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gladiatorIndex: 0
   nameText: {fileID: 0}
   levelText: {fileID: 0}
   healthText: {fileID: 0}

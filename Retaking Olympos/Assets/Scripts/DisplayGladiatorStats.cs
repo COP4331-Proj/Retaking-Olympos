@@ -6,7 +6,7 @@ using TMPro;
 public class DisplayGladiatorStats : MonoBehaviour
 {
     List<Gladiator> gladiatorList;
-    int gladiatorIndex = 0;
+    [SerializeField] int gladiatorIndex = 0;
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI healthText;
@@ -17,17 +17,10 @@ public class DisplayGladiatorStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ViewGladiator viewGladiator = new ViewGladiator();
-        viewGladiator.createNewGladiator("Caesar", 3, 100, 100, 6, 14);
-        viewGladiator.createNewGladiator("Bob", 4, 120, 120, 10, 12);
-        gladiatorList = viewGladiator.GetGladiatorList();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        gladiatorList = GetComponent<ViewGladiator>().GetGladiatorList();
         RefreshStats();
     }
+
 
     public void RefreshStats() 
     {
@@ -37,6 +30,22 @@ public class DisplayGladiatorStats : MonoBehaviour
         staminaText.text = gladiatorList[gladiatorIndex].GetStamina().ToString();
         powerText.text = gladiatorList[gladiatorIndex].GetPower().ToString();
         defenseText.text = gladiatorList[gladiatorIndex].GetDefense().ToString();
+
     }
 
+    public void IncrementGladiatorIndex() 
+    {
+        gladiatorIndex = (gladiatorIndex + 1) % gladiatorList.Count;
+        RefreshStats();
+    }
+
+    public void DecrementGladiatorIndex()
+    {
+        gladiatorIndex = (gladiatorIndex - 1) % gladiatorList.Count;
+        if (gladiatorIndex < 0) 
+        {
+            gladiatorIndex += gladiatorList.Count;
+        }
+        RefreshStats();
+    }
 }
