@@ -65,6 +65,6 @@ Timothy:
 
 Tyler: 
 
-Nathan: Created Gladiator Data Objects and view gladiator scene 
+Nathan: User Stories 14, 15; created gladiator, viewgladiator, displaygladiatorstats scripts, view gladiator tests, and view gladiator scene
 
 Xavier: 
