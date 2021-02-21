@@ -7,6 +7,8 @@ public class DisplayGladiatorStats : MonoBehaviour
 {
     List<Gladiator> gladiatorList;
     [SerializeField] int gladiatorIndex = 0;
+
+    // Text fields for all 6 gladiator attributes 
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI healthText;
@@ -21,7 +23,7 @@ public class DisplayGladiatorStats : MonoBehaviour
         RefreshStats();
     }
 
-
+    // Refreshes text fields with new gladiators stats
     public void RefreshStats() 
     {
         nameText.text = gladiatorList[gladiatorIndex].GetName().ToString();

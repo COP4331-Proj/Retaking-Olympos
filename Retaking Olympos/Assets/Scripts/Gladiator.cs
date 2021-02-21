@@ -11,6 +11,7 @@ public class Gladiator
     private int power;
     private int defense;
 
+    // Gladiator constructor
     public Gladiator(string name, int level, int health, int stamina, int power, int defense) 
     {
         this.gladiatorName = name;
