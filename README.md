@@ -43,3 +43,28 @@ Tyler: Created the architecture document outside High level C4, classes, and UI
 Nathan: Created UI diagrams and refactered user stories 
 
 Xavier: Created High level C4 Architecture diagrams
+
+## Sprint 3
+
+[Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
+
+
+[System Architecture](https://github.com/COP4331-Proj/Retaking-Olympos/blob/main/artifacts/architecture.md)
+
+### Burndown Chart
+
+
+### Velocity Chart
+
+
+### Task Allocation
+
+Joshua: 
+
+Timothy: 
+
+Tyler: 
+
+Nathan: Created Gladiator Data Objects and view gladiator scene 
+
+Xavier: 
