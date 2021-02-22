@@ -48,16 +48,19 @@ Xavier: Created High level C4 Architecture diagrams
 
 [Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
 
-[Demo Video](https://youtu.be/0fwideQcmMA)
-
 [System Architecture](https://github.com/COP4331-Proj/Retaking-Olympos/blob/main/artifacts/architecture.md)
+
+[Source Code](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Scripts)
+
+[Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Tests)
+
+[Demo Video](https://youtu.be/0fwideQcmMA)
 
 ### Burndown Chart
 <img src="artifacts/Pictures/Charts/Burndown Chart Sprint 3.PNG">
 
 ### Velocity Chart
 <img src="artifacts/Pictures/Charts/Velocity Chart Sprint 3.PNG">
-
 
 ### Task Allocation
 
