@@ -23,6 +23,7 @@ public class PlayerGladiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Pressing space will modify size of bars
         if (Input.GetKeyDown(KeyCode.Space))
         {
             takeDamage(10);
@@ -30,6 +31,7 @@ public class PlayerGladiator : MonoBehaviour
         }
     }
 
+    // Method to test health bar change
     void takeDamage(int damage)
     {
         if (currentHealth <= 0)
@@ -40,6 +42,7 @@ public class PlayerGladiator : MonoBehaviour
         healthBar.setHealth(currentHealth);
     }
 
+    // Method to test stamina bar change
     void useSkill(int stamina)
     {
         if (currentStamina <= 0)
