@@ -53,9 +53,10 @@ Xavier: Created High level C4 Architecture diagrams
 [System Architecture](https://github.com/COP4331-Proj/Retaking-Olympos/blob/main/artifacts/architecture.md)
 
 ### Burndown Chart
-
+<img src="artifacts/Pictures/Charts/Burndown Chart Sprint 3.PNG">
 
 ### Velocity Chart
+<img src="artifacts/Pictures/Charts/Velocity Chart Sprint 3.PNG">
 
 
 ### Task Allocation
