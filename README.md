@@ -48,6 +48,7 @@ Xavier: Created High level C4 Architecture diagrams
 
 [Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
 
+[Demo Video](https://youtu.be/0fwideQcmMA)
 
 [System Architecture](https://github.com/COP4331-Proj/Retaking-Olympos/blob/main/artifacts/architecture.md)
 
@@ -59,12 +60,12 @@ Xavier: Created High level C4 Architecture diagrams
 
 ### Task Allocation
 
-Joshua: 
+Joshua: Worked on resolution dropdown and difficulty dropdown
 
-Timothy: 
+Timothy: Implemented movement controls
 
-Tyler: 
+Tyler: Worked on resolution dropdown and fullscreen toggle
 
 Nathan: User Stories 14, 15; created gladiator, viewgladiator, displaygladiatorstats scripts, view gladiator tests, and view gladiator scene
 
-Xavier: 
+Xavier: Created health and stamina bars for user stories 19 and 20
