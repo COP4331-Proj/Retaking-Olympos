@@ -11,8 +11,9 @@ public class SettingsMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider volumeSlider;
     public Toggle toggle;
-    static float currentVolume;
     public Dropdown resolutionDropdown;
+    static float currentVolume;
+    static String previousClass;
     Resolution[] resolutions;
 
     public void Awake()
@@ -24,6 +25,22 @@ public class SettingsMenu : MonoBehaviour
     public void OnDestroy()
     {
         SaveSettings();
+    }
+
+    public void ShowSettingsMenu(string callingClass)
+    {
+        previousClass = callingClass;
+
+        GameObject gameObject = new GameObject();
+        gameObject.AddComponent<SceneLoader>();
+        gameObject.GetComponent<SceneLoader>().GoToScene("Options Menu");
+    }
+
+    public void ReturnToPreviousClass()
+    {
+        GameObject gameObject = new GameObject();
+        gameObject.AddComponent<SceneLoader>();
+        gameObject.GetComponent<SceneLoader>().GoToScene(previousClass);
     }
 
     public void setVolume (float volume)
