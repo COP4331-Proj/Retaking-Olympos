@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/View Gladiator.unity
     guid: 3ee858905d8adc140b83abeab583cb13
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: e203a7b3cbe5e944f9efbbb0a02367f8
   m_configObjects: {}
