@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerGladiator : MonoBehaviour
 {
-    public int currentHealth;
-    public int currentStamina;
+    public static int currentHealth;
+    public static int currentStamina;
     public Gladiator player = new Gladiator("Player", 1, 100, 100, 6, 14);
     
     public HealthBar healthBar;
