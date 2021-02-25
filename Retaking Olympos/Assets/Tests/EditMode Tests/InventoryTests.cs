@@ -9,19 +9,21 @@ namespace Tests
     public class InventoryTests
     {
         
+
         [Test]
         public void CreateInventory()
         {
-            PlayerInventory inventory = new PlayerInventory();
-            Assert.IsNotNull(inventory);
+            HoldPlayerInventory holdPlayerInventory = ScriptableObject.CreateInstance<HoldPlayerInventory>();
+            Assert.IsNotNull(holdPlayerInventory);
         }
 
         [Test]
         public void AddItemToInventory()
         {
-            PlayerInventory inventory = new PlayerInventory();
+            HoldPlayerInventory holdPlayerInventory = ScriptableObject.CreateInstance<HoldPlayerInventory>();
+            PlayerInventory inventory = holdPlayerInventory.playerInventory;
             inventory.AddItem(new Item { itemName = Item.ItemName.Sword, cost = 500});
-            Assert.AreEqual(1, inventory.itemList.Count);
+            Assert.AreEqual(1, inventory.GetItemList().Count);
         }
 
     }

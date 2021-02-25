@@ -19,9 +19,12 @@ public class DisplayGladiatorStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gladiatorIndex = 0;
         gladiatorList = GetComponent<ViewGladiator>().GetGladiatorList();
         RefreshStats();
     }
+
+
 
     // Refreshes text fields with new gladiators stats
     public void RefreshStats() 
@@ -32,7 +35,6 @@ public class DisplayGladiatorStats : MonoBehaviour
         staminaText.text = gladiatorList[gladiatorIndex].GetStamina().ToString();
         powerText.text = gladiatorList[gladiatorIndex].GetPower().ToString();
         defenseText.text = gladiatorList[gladiatorIndex].GetDefense().ToString();
-
     }
 
     public void IncrementGladiatorIndex() 

@@ -8,11 +8,13 @@ using TMPro;
 public class ViewGladiator: MonoBehaviour
 {
     List<Gladiator> gladiatorList = new List<Gladiator>();
-    [SerializeField] int gladiatorIndex = 0;
+
+
 
     // Creates two dummy gladiators to show the system working
     private void Start()
     {
+
         createNewGladiator("Caesar", 3, 100, 100, 6, 14);
         createNewGladiator("Bob", 4, 120, 120, 10, 12);
     }
