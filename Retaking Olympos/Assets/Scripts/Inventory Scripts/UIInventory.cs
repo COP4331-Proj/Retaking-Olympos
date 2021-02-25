@@ -70,12 +70,12 @@ public class UIInventory : MonoBehaviour
 
             itemSlotRectTransform.GetComponent<ItemGameObject>().onRightClick = () =>
             {
-
+                inventory.RemoveItem(item);
             };
 
             itemSlotRectTransform.GetComponent<ItemGameObject>().onLeftClick = () =>
             {
-                inventory.RemoveItem(item);
+                
             };
 
             itemSlotRectTransform.anchoredPosition = new Vector2(xPos * itemSlotSize, yPos * itemSlotSize);

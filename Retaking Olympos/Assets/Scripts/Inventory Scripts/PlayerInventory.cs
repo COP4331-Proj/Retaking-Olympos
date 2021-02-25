@@ -42,6 +42,8 @@ public class PlayerInventory
         AddItem(new Item { itemName = Item.ItemName.Helmet, cost = 500, amount = 1 });
         AddItem(new Item { itemName = Item.ItemName.Chestplate, cost = 500, amount = 1 });
         AddItem(new Item { itemName = Item.ItemName.Pants, cost = 500, amount = 1 });
+
+        AddItem(new Item { itemName = Item.ItemName.Boots, cost = 500, amount = 4 });
     }
 
     public void AddItem(Item item) 

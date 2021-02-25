@@ -20,6 +20,15 @@ public class ItemGameObject : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        onLeftClick();
+        if (eventData.button == 0)
+        {
+            Debug.Log("left");
+            onLeftClick();
+        }
+        else
+        {
+            Debug.Log("right");
+            onRightClick();
+        }
     }
 }
