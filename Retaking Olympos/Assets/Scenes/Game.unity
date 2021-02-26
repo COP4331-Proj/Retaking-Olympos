@@ -863,6 +863,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 92734912238738754, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
         type: 3}
+      propertyPath: staminaBar
+      value: 
+      objectReference: {fileID: 1676407811}
+    - target: {fileID: 92734912238738754, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
+        type: 3}
       propertyPath: walkingSpeed
       value: 0.015
       objectReference: {fileID: 0}
