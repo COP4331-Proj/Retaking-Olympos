@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MuteManager : MonoBehaviour
 {
-    private bool isMuted = false;
+    private static bool isMuted = false;
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class MuteManager : MonoBehaviour
             loadMuteState();
     }
 
-    public void mutePressed()
+    public static void mutePressed()
     {
         isMuted = !isMuted;
         AudioListener.pause = isMuted;
@@ -23,18 +23,24 @@ public class MuteManager : MonoBehaviour
         updateText();
     }
 
-    private void saveMuteState()
+    // This function is here for testing purposes
+    public static bool getMuteState()
+    {
+        return isMuted;
+    }
+
+    private static void saveMuteState()
     {
         PlayerPrefs.SetInt("muted", isMuted ? 1 : 0);
     }
 
-    private void loadMuteState()
+    private static void loadMuteState()
     {
         isMuted = PlayerPrefs.GetInt("muted") == 1;
         updateText();
     }
 
-    private void updateText()
+    private static void updateText()
     {
         Text muteStatus = GameObject.Find("Canvas/Mute/Text").GetComponent<Text>();
         if (isMuted)
