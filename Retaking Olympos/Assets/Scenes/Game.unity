@@ -836,6 +836,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovementTester
       objectReference: {fileID: 0}
+    - target: {fileID: 92734912238738754, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
+        type: 3}
+      propertyPath: walkingSpeed
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 92734912238738754, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
+        type: 3}
+      propertyPath: sprintSpeedMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 92734912238738812, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
         type: 3}
       propertyPath: m_Color.b
