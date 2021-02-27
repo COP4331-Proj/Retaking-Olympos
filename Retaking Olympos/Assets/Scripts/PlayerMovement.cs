@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     private bool isSprinting = false;
     public StaminaBar staminaBar;
 
-    // Update is called once per frame
     void Update()
     {
         // Set the sprinting speed
@@ -19,22 +18,10 @@ public class PlayerMovement : MonoBehaviour
 
         // Checks if the user is sprinting
         if (Input.GetKey(KeyCode.LeftShift) && (PlayerGladiator.currentStamina > 0))
-        {
-            speed = sprintingSpeed;
-            isSprinting = true;
-        }
+            sprint();
         else
-        {
-            speed = walkingSpeed;
-            isSprinting = false;
-        }
+            walk();
 
-        // Check whether or not to drain the stamina energy
-        if (isSprinting)
-        {
-            PlayerGladiator.currentStamina--;
-            staminaBar.setStamina(PlayerGladiator.currentStamina);
-        }
         // Checks for the input then changes the velocity of the character if a key is pressed
         if (Input.GetKey(KeyCode.W))
             transform.position = new Vector2(transform.position.x, (float)(transform.position.y + speed));
@@ -44,5 +31,31 @@ public class PlayerMovement : MonoBehaviour
             transform.position = new Vector2(transform.position.x, (float)(transform.position.y - speed));
         if (Input.GetKey(KeyCode.D))
             transform.position = new Vector2((float)(transform.position.x + speed), transform.position.y);
+
+        if (isSprinting)
+            staminaBar.setStamina(PlayerGladiator.currentStamina);
+    }
+
+    public void sprint()
+    {
+        PlayerGladiator.currentStamina--;
+        speed = sprintingSpeed;
+        isSprinting = true;
+    }
+
+    public void walk()
+    {
+        speed = walkingSpeed;
+        isSprinting = false;
+    }
+
+    // The functions below are here for testing purposes
+    public float getSprintSpeed()
+    {
+        return sprintingSpeed;
+    }
+    public void mockUpdate()
+    {
+        Update();
     }
 }
