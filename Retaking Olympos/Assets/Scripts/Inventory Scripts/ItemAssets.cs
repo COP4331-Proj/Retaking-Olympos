@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script that holds references to all the item sprites, attatched to SpriteAssets game object
 public class ItemAssets : MonoBehaviour
 {
     // Singleton patern to create only one instance of this class
