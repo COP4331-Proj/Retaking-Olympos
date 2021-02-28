@@ -16,8 +16,6 @@ public class Item
 
     public ItemName itemName;
     public int amount;
-    public int plusPower = 0;
-    public int plusDefense = 0;
     // Returns the sprite of the item
     public Sprite GetSprite()
     {

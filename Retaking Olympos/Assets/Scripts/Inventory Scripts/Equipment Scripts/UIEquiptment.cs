@@ -137,6 +137,7 @@ public class UIEquiptment : MonoBehaviour
         }
     }
 
+    // Takes an item and a slot and puts that item in that slot
     private void SetEquipedItem(Item item, UIEquipmentSlots slot)
     {
         Transform itemTransform = Instantiate(itemTemplate, itemContainer);
@@ -152,9 +153,10 @@ public class UIEquiptment : MonoBehaviour
         UIDragAndDropItem uiItem = itemTransform.GetComponent<UIDragAndDropItem>();
 
         uiItem.SetItem(item);
-        itemTransform.gameObject.GetComponent<ItemGameObject>().item = item;
+        itemTransform.gameObject.GetComponent<ItemClickable>().item = item;
     }
 
+    // Update index for showing equipment on a gladiator
     public void IncrementEquipmentIndex(HoldGladiatorList gladiatorList)
     {
         gladiatorIndex = (gladiatorIndex + 1) % gladiatorList.gladiatorList.Count;

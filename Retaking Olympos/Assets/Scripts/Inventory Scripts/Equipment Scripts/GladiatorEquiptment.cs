@@ -10,6 +10,7 @@ public class GladiatorEquiptment : MonoBehaviour
     public event EventHandler onEquipmentChange;
     public UIInventory uIInventory;
     public HoldGladiatorList holdGladiatorList;
+
     public enum SlotName
     {
         Sword,
@@ -17,10 +18,6 @@ public class GladiatorEquiptment : MonoBehaviour
         Chestplate,
         Pants,
         Boots,
-    }
-    private void Awake()
-    {
-
     }
 
     // Getters for item slots
@@ -46,7 +43,7 @@ public class GladiatorEquiptment : MonoBehaviour
         return playerEquipment.individualGladiatorEquipment[equipmentIndex].boots;
     }
 
-    // Setters for item slots
+    // Setters for item slots, called by test equip
     private void SetWeapon(Item weapon, int equipmentIndex)
     {
         if (weapon == null)
@@ -123,7 +120,7 @@ public class GladiatorEquiptment : MonoBehaviour
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
     }
 
-    // Takes an item and equips in in the proper slot
+    // Takes an item and equips it if it was dragged on the proper slot
     public void testEquip(SlotName slotName, Item item, int equipmentIndex) 
     {
         if (slotName == item.GetSlotName()) 

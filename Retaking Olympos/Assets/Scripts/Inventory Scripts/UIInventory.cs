@@ -73,21 +73,21 @@ public class UIInventory : MonoBehaviour
             itemSlotRectTransform.gameObject.SetActive(true);
             
             // On right click
-            itemSlotRectTransform.GetComponent<ItemGameObject>().onRightClick = () =>
+            itemSlotRectTransform.GetComponent<ItemClickable>().onRightClick = () =>
             {
                 
                 inventory.RemoveItem(item);
             };
 
             // On left click
-            itemSlotRectTransform.GetComponent<ItemGameObject>().onLeftClick = () =>
+            itemSlotRectTransform.GetComponent<ItemClickable>().onLeftClick = () =>
             {
             };
 
             // Get position of next item slot by multiplying its number by the size of the slot in pixels
             itemSlotRectTransform.anchoredPosition = new Vector2(xPos * itemSlotSize, yPos * itemSlotSize);
 
-            itemSlotRectTransform.gameObject.GetComponent<ItemGameObject>().item = item;
+            itemSlotRectTransform.gameObject.GetComponent<ItemClickable>().item = item;
 
             // Set sprite to item sprite
             Image spriteImage = itemSlotRectTransform.Find("Image").GetComponent<Image>();

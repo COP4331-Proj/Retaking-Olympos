@@ -31,6 +31,7 @@ public class UIInventoryControler : MonoBehaviour
     }
 
 
+    // Pass along the list of gladiators when modifying index
     public void IncrementEquipmentIndex() 
     {
         uIEquiptment.IncrementEquipmentIndex(gladiatorList);
