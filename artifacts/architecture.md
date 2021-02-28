@@ -56,7 +56,7 @@ The Healthbar and Staminabar classes display the respective bars in the battle s
 
 <img src="Pictures/Class-Diagram/ClassDiagram.png">
 
-The Gladiator Stats picture holds all the classes to do with Gladiator Stats for orginizational clearity
+The Gladiator Stats picture holds all the classes to do with Gladiator Stats for organizational clarity, all of the classes here relate to user stories 13 and 14
 
 The Hold gladiator list scriptable object holds a list of gladiator objects, each holding stats for an individual gladiator
 
