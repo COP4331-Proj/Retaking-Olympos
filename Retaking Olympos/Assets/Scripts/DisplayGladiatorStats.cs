@@ -24,11 +24,15 @@ public class DisplayGladiatorStats : MonoBehaviour
         RefreshStats();
     }
 
-
+    private void Update()
+    {
+        RefreshStats();
+    }
 
     // Refreshes text fields with new gladiators stats
     public void RefreshStats() 
     {
+
         nameText.text = gladiatorList[gladiatorIndex].GetName().ToString();
         levelText.text = gladiatorList[gladiatorIndex].GetLevel().ToString();
         healthText.text = gladiatorList[gladiatorIndex].GetHealth().ToString();

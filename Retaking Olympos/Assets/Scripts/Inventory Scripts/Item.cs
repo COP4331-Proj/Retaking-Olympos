@@ -16,7 +16,8 @@ public class Item
 
     public ItemName itemName;
     public int amount;
-
+    public int plusPower = 0;
+    public int plusDefense = 0;
     // Returns the sprite of the item
     public Sprite GetSprite()
     {
@@ -61,6 +62,64 @@ public class Item
                 return GladiatorEquiptment.SlotName.Pants;
             case ItemName.Boots:
                 return GladiatorEquiptment.SlotName.Boots;
+        }
+    }
+
+    public int GetPower()
+    {
+        switch (itemName)
+        {
+            case ItemName.Sword:
+                {
+                    return 5;
+                }
+            case ItemName.Helmet:
+                {
+                    return 0;
+                }
+            case ItemName.Chestplate:
+                {
+                    return 0;
+                }
+            case ItemName.Pants:
+                {
+                    return 0;
+                }
+            case ItemName.Boots:
+                {
+                    return 0;
+                }
+            default:
+                return 0;
+        }
+    }
+
+    public int GetDefense()
+    {
+        switch (itemName)
+        {
+            case ItemName.Sword:
+                {
+                    return 0;
+                }
+            case ItemName.Helmet:
+                {
+                    return 5;
+                }
+            case ItemName.Chestplate:
+                {
+                    return 8;
+                }
+            case ItemName.Pants:
+                {
+                    return 7;
+                }
+            case ItemName.Boots:
+                {
+                    return 4;
+                }
+            default:
+                return 0;
         }
     }
 }

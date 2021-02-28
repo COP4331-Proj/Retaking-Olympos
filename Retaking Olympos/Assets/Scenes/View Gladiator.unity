@@ -8206,6 +8206,11 @@ PrefabInstance:
       propertyPath: uIEquiptment
       value: 
       objectReference: {fileID: 573075836}
+    - target: {fileID: 1559851630, guid: 7511aeffeb64af14f908c4be9c56ba62, type: 3}
+      propertyPath: holdGladiatorList
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d3faf8844b16454b828be8c9bc4fe54,
+        type: 2}
     - target: {fileID: 2762712358946013036, guid: 7511aeffeb64af14f908c4be9c56ba62,
         type: 3}
       propertyPath: m_RootOrder

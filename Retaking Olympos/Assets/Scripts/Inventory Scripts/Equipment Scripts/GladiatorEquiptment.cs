@@ -9,6 +9,7 @@ public class GladiatorEquiptment : MonoBehaviour
     public HoldPlayerEquipment playerEquipment;
     public event EventHandler onEquipmentChange;
     public UIInventory uIInventory;
+    public HoldGladiatorList holdGladiatorList;
     public enum SlotName
     {
         Sword,
@@ -19,7 +20,6 @@ public class GladiatorEquiptment : MonoBehaviour
     }
     private void Awake()
     {
-
 
     }
 
@@ -49,30 +49,75 @@ public class GladiatorEquiptment : MonoBehaviour
     // Setters for item slots
     private void SetWeapon(Item weapon, int equipmentIndex)
     {
+        if (weapon == null)
+        {
+            Item item = new Item { itemName = Item.ItemName.Sword };
+            holdGladiatorList.gladiatorList[equipmentIndex].SetPower(holdGladiatorList.gladiatorList[equipmentIndex].GetPower() - item.GetPower());
+        }
+        else
+        {
+            holdGladiatorList.gladiatorList[equipmentIndex].SetPower(holdGladiatorList.gladiatorList[equipmentIndex].GetPower() + weapon.GetPower());
+        }
         playerEquipment.individualGladiatorEquipment[equipmentIndex].weapon = weapon;
         uIEquiptment.SetEquipment(this);
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
     }
     private void SetHelmet(Item helmet, int equipmentIndex)
     {
+        if (helmet == null)
+        {
+            Item item = new Item { itemName = Item.ItemName.Helmet };
+            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
+        }
+        else
+        {
+            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() + helmet.GetDefense());
+        }
         playerEquipment.individualGladiatorEquipment[equipmentIndex].helmet = helmet;
         uIEquiptment.SetEquipment(this);
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
     }
     private void SetChestplate(Item chestplate, int equipmentIndex)
     {
+        if (chestplate == null)
+        {
+            Item item = new Item { itemName = Item.ItemName.Chestplate };
+            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
+        }
+        else
+        {
+            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() + chestplate.GetDefense());
+        }
         playerEquipment.individualGladiatorEquipment[equipmentIndex].chestplate = chestplate;
         uIEquiptment.SetEquipment(this);
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
     }
     private void SetLegs(Item legs, int equipmentIndex)
     {
+        if (legs == null)
+        {
+            Item item = new Item { itemName = Item.ItemName.Pants };
+            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
+        }
+        else
+        {
+            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() + legs.GetDefense());
+        }
         playerEquipment.individualGladiatorEquipment[equipmentIndex].legs = legs;
         uIEquiptment.SetEquipment(this);
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
     }
     private void SetBoots(Item boots, int equipmentIndex)
     {
+        if (boots == null)
+        {
+            Item item = new Item { itemName = Item.ItemName.Boots };
+            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
+        }
+        else 
+        {
+            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() + boots.GetDefense());
+        }
         playerEquipment.individualGladiatorEquipment[equipmentIndex].boots = boots;
         uIEquiptment.SetEquipment(this);
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
