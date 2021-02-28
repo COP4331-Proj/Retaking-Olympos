@@ -73,3 +73,33 @@ Tyler: Worked on resolution dropdown and fullscreen toggle
 Nathan: User Stories 14, 15; created gladiator, viewgladiator, displaygladiatorstats scripts, view gladiator tests, and view gladiator scene
 
 Xavier: Created health and stamina bars for user stories 19 and 20
+
+## Sprint 4
+
+[Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
+
+[System Architecture](https://github.com/COP4331-Proj/Retaking-Olympos/blob/main/artifacts/architecture.md)
+
+[Source Code](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Scripts)
+
+[Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Tests)
+
+[Demo Video](https://youtu.be/0fwideQcmMA)
+
+### Burndown Chart
+<img src="artifacts/Pictures/Charts/Burndown Chart Sprint 3.PNG">
+
+### Velocity Chart
+<img src="artifacts/Pictures/Charts/Velocity Chart Sprint 3.PNG">
+
+### Task Allocation
+
+Joshua: 
+
+Timothy: 
+
+Tyler: 
+
+Nathan: Created Inventory system and Equipment system, allowing different items with different effects to be equipped on a gladiator in the list and having the effects persist through scene loads
+
+Xavier: 
