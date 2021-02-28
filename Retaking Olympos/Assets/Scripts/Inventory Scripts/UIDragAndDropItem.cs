@@ -10,9 +10,12 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     Canvas canvas;
     CanvasGroup canvasGroup;
     Item item;
-    public UIInventory uIInventory;
+    // Create instance of drag and drop item so we can remember what item is being dragged
     public static UIDragAndDropItem instance;
+
+    public UIInventory uIInventory;
     public UIEquiptment uIEquiptment;
+
     bool dragable = true;
 
 
@@ -20,6 +23,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     {
         instance = this;
         uIEquiptment = GetComponentInParent<UIEquiptment>();
+        // Sets items equiped to not be dragable 
         if (transform.Find("isNotDragable") != null) 
         {
             dragable = false;
@@ -39,8 +43,6 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
             canvasGroup.alpha = 1f;
             canvasGroup.blocksRaycasts = true;
 
-            //uIInventory.inventory.RemoveItem(instance.item);
-
             uIInventory.RefreshInventory();
             Destroy(gameObject);
         }
@@ -49,7 +51,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     // When mouse is pressed and moved a little amount
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
-
+        // If dragable, set transparent and remember what item is being dragged
         if (dragable) 
         {
             Item item = new Item();
@@ -64,14 +66,14 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     {
         if (!dragable)
         {
-
+            // if right click on item in inventory, unequip it and add a copy to the inventory
             GetComponent<ItemGameObject>().onRightClick = () =>
             {
                 Item item = new Item();
                 item = eventData.pointerCurrentRaycast.gameObject.transform.parent.gameObject.GetComponent<ItemGameObject>().item;
 
                 uIEquiptment.holdPlayerInventory.playerInventory.AddItem(new Item { itemName = item.itemName, amount = 1 });
-                uIEquiptment.gladiatorEquiptment.Unequip(item);
+                uIEquiptment.gladiatorEquiptment.Unequip(item, uIEquiptment.gladiatorIndex);
                 Destroy(gameObject);
             };
         }
@@ -85,12 +87,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
         }
     }
-
-    private void Update()
-    {
-
-        
-    }
+    
     public void SetItem(Item item)
     {
         

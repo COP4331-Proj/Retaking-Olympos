@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2762712358946013036}
   - component: {fileID: 2762712358946013037}
+  - component: {fileID: 1559851630}
   m_Layer: 0
   m_Name: InventoryControler
   m_TagString: Untagged
@@ -45,4 +46,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdPlayerInventory: {fileID: 11400000, guid: 7f90c7bca067aa443878fc3b616c08ec,
     type: 2}
+  gladiatorList: {fileID: 11400000, guid: 6d3faf8844b16454b828be8c9bc4fe54, type: 2}
+  uIInventory: {fileID: 0}
+  uIEquiptment: {fileID: 0}
+  playerEquipment: {fileID: 11400000, guid: 1f581b110c3d75e4fb5dd4e369f5b4f6, type: 2}
+  gladiatorEquiptment: {fileID: 1559851630}
+--- !u!114 &1559851630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2762712358946013038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0682bd14776efd342aa4ac2df9ecc86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIEquiptment: {fileID: 0}
+  playerEquipment: {fileID: 11400000, guid: 1f581b110c3d75e4fb5dd4e369f5b4f6, type: 2}
   uIInventory: {fileID: 0}

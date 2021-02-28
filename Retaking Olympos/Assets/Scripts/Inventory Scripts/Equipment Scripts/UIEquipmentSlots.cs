@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using System;
 public class UIEquipmentSlots : MonoBehaviour, IDropHandler
 {
-    //Event for when item is dropped
+    
     public event EventHandler<OnItemDroppedEventArgs> OnItemDropped;
 
     public class OnItemDroppedEventArgs : EventArgs 
@@ -13,6 +13,7 @@ public class UIEquipmentSlots : MonoBehaviour, IDropHandler
         public Item item;
     }
 
+    // When item is dripped, pass along the slot that it was passed on and the item from UIDragAndDropItem.instance
     void IDropHandler.OnDrop(PointerEventData eventData)
     {
         

@@ -14,16 +14,6 @@ public class UIInventory : MonoBehaviour
     Transform itemContainer;
     Transform itemTemplate;
 
-    private void Start()
-    {
-        if (inventory != null) 
-        {
-            if (inventory.GetItemList().Count == 0)
-            {
-                inventory.PopulateWithItems();
-            }
-        }
-    }
 
     private void Awake()
     {
@@ -35,10 +25,14 @@ public class UIInventory : MonoBehaviour
     // Set local reference of inventory and add it to the event system
     public void SetInventory(PlayerInventory inventory) 
     {
+
+        
         this.inventory = inventory;
-
         inventory.UpdateItemList += Inventory_UpdateItemList;
-
+        if (inventory.GetItemList().Count == 0)
+        {
+            inventory.PopulateWithItems();
+        }
         RefreshInventory();
     }
     // On the event, refresh the inventory visuals

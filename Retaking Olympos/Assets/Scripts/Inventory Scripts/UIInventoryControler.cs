@@ -6,9 +6,10 @@ using UnityEngine;
 public class UIInventoryControler : MonoBehaviour
 {
     public HoldPlayerInventory holdPlayerInventory;
+    public HoldGladiatorList gladiatorList;
     public UIInventory uIInventory;
     public UIEquiptment uIEquiptment;
-    public PlayerEquipment playerEquipment;
+    public HoldPlayerEquipment playerEquipment;
     public GladiatorEquiptment gladiatorEquiptment;
 
     // Start is called before the first frame update
@@ -22,10 +23,21 @@ public class UIInventoryControler : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+        // load the inventory and equipment from scriptable objects
+        
         gladiatorEquiptment.playerEquipment = playerEquipment;
         uIInventory.SetInventory(holdPlayerInventory.playerInventory);
         uIEquiptment.SetEquipment(gladiatorEquiptment);
     }
 
 
+    public void IncrementEquipmentIndex() 
+    {
+        uIEquiptment.IncrementEquipmentIndex(gladiatorList);
+    }
+
+    public void DecrementEquipmentIndex()
+    {
+        uIEquiptment.DecrementEquipmentIndex(gladiatorList);
+    }
 }

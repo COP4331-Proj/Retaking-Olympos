@@ -7,16 +7,17 @@ using TMPro;
 // Dont want to rename until I make sure it wont mess anyone else up
 public class ViewGladiator: MonoBehaviour
 {
-    List<Gladiator> gladiatorList = new List<Gladiator>();
-
-
-
+    public HoldGladiatorList holdGladiatorList;
+    public HoldPlayerEquipment playerEquipment;
     // Creates two dummy gladiators to show the system working
     private void Start()
     {
-
-        createNewGladiator("Caesar", 3, 100, 100, 6, 14);
-        createNewGladiator("Bob", 4, 120, 120, 10, 12);
+        if (holdGladiatorList.gladiatorList.Count == 0) 
+        {
+            createNewGladiator("Caesar", 3, 100, 100, 6, 14);
+            createNewGladiator("Bob", 4, 120, 120, 10, 12);
+        }
+        
     }
 
     // Creates new gladiator, returns it, and addes it to the gladiator list
@@ -24,13 +25,14 @@ public class ViewGladiator: MonoBehaviour
     {
         Gladiator gladiator;
         gladiator = new Gladiator(name, level, health, stamina, power, defense);
-        gladiatorList.Add(gladiator);
+        holdGladiatorList.gladiatorList.Add(gladiator);
+        playerEquipment.individualGladiatorEquipment.Add(new IndividualGladiatorEquipment());
         return gladiator;
     }
 
     public List<Gladiator> GetGladiatorList() 
     {
-        return gladiatorList;
+        return holdGladiatorList.gladiatorList;
     }
 
 }

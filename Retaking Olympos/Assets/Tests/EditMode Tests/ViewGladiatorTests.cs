@@ -16,6 +16,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
+            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
             Assert.IsNotNull(gladiator);
@@ -27,6 +28,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
+            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
             Assert.AreEqual(gladiator.GetName(), "Caesar");
@@ -38,6 +40,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
+            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
             Assert.AreEqual(gladiator.GetLevel(), 3);
@@ -49,6 +52,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
+            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
             Assert.AreEqual(gladiator.GetHealth(), 100);
@@ -60,6 +64,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
+            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
             Assert.AreEqual(gladiator.GetStamina(), 100);
@@ -71,6 +76,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
+            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
             Assert.AreEqual(gladiator.GetPower(), 6);
@@ -82,6 +88,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
+            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
             Assert.AreEqual(gladiator.GetDefense(), 14);
@@ -93,6 +100,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
+            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
 
             List<Gladiator> gladiatorList = controler.GetComponent<ViewGladiator>().GetGladiatorList();
 
@@ -110,6 +118,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
+            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
 
             List<Gladiator> gladiatorList = controler.GetComponent<ViewGladiator>().GetGladiatorList();
             controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);

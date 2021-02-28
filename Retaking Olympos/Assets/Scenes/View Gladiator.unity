@@ -485,6 +485,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 397645021592813298}
+        m_MethodName: IncrementEquipmentIndex
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &163246448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,7 +1367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIInventory: {fileID: 510388579}
-  uIEquiptment: {fileID: 0}
+  uIEquiptment: {fileID: 573075836}
 --- !u!225 &310305111
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2528,9 +2539,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3f7e00af9a3f74ea625e5ada4b9e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gladiatorIndex: 0
   gladiatorEquiptment: {fileID: 1559851630}
   holdPlayerInventory: {fileID: 11400000, guid: 7f90c7bca067aa443878fc3b616c08ec,
     type: 2}
+  holdGladiatorList: {fileID: 11400000, guid: 6d3faf8844b16454b828be8c9bc4fe54, type: 2}
+  itemContainer: {fileID: 0}
+  itemTemplate: {fileID: 0}
 --- !u!1 &576970460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2991,6 +3006,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 784757016}
         m_MethodName: DecrementGladiatorIndex
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 397645021592813298}
+        m_MethodName: DecrementEquipmentIndex
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6118,27 +6144,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489359628}
   m_CullTransparentMesh: 0
---- !u!1 &1559851629 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2762712358946013038, guid: 7511aeffeb64af14f908c4be9c56ba62,
+--- !u!114 &1559851630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1559851630, guid: 7511aeffeb64af14f908c4be9c56ba62,
     type: 3}
   m_PrefabInstance: {fileID: 2762712358917848079}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1559851630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559851629}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0682bd14776efd342aa4ac2df9ecc86f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIEquiptment: {fileID: 573075836}
-  playerEquipment: {fileID: 11400000, guid: 1f581b110c3d75e4fb5dd4e369f5b4f6, type: 2}
-  uIInventory: {fileID: 510388579}
+--- !u!114 &1559851631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2762712358946013037, guid: 7511aeffeb64af14f908c4be9c56ba62,
+    type: 3}
+  m_PrefabInstance: {fileID: 2762712358917848079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9587e02e68ef314c93fac44d107cb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1564631157
 GameObject:
   m_ObjectHideFlags: 0
@@ -7098,17 +7127,17 @@ PrefabInstance:
     - target: {fileID: 5232967192509060824, guid: d3ecb7bc36f18c54e803778b94dddcf8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 185.29283
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5232967192509060824, guid: d3ecb7bc36f18c54e803778b94dddcf8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 375.293
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5232967192509060824, guid: d3ecb7bc36f18c54e803778b94dddcf8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -379.98227
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5232967192509060824, guid: d3ecb7bc36f18c54e803778b94dddcf8,
         type: 3}
@@ -7523,7 +7552,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TestShop
+          m_StringArgument: Test Shop
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1949616934
@@ -8076,6 +8105,92 @@ Transform:
   m_Father: {fileID: 1345052500}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &397645021592813297
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3148407196297224286, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_Name
+      value: EquipmentArrowScript
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228081646858487729, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: uIInventoryControler
+      value: 
+      objectReference: {fileID: 1559851631}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455333204967543548, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ace0d3a1512de94c928dd96add1bd7c, type: 3}
+--- !u!114 &397645021592813298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7228081646858487729, guid: 3ace0d3a1512de94c928dd96add1bd7c,
+    type: 3}
+  m_PrefabInstance: {fileID: 397645021592813297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4ae4126f381bb408779bad610766e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2762712358917848079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8083,6 +8198,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1559851630, guid: 7511aeffeb64af14f908c4be9c56ba62, type: 3}
+      propertyPath: uIInventory
+      value: 
+      objectReference: {fileID: 510388579}
+    - target: {fileID: 1559851630, guid: 7511aeffeb64af14f908c4be9c56ba62, type: 3}
+      propertyPath: uIEquiptment
+      value: 
+      objectReference: {fileID: 573075836}
     - target: {fileID: 2762712358946013036, guid: 7511aeffeb64af14f908c4be9c56ba62,
         type: 3}
       propertyPath: m_RootOrder
@@ -8150,6 +8273,12 @@ PrefabInstance:
       objectReference: {fileID: 573075836}
     - target: {fileID: 2762712358946013037, guid: 7511aeffeb64af14f908c4be9c56ba62,
         type: 3}
+      propertyPath: gladiatorList
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d3faf8844b16454b828be8c9bc4fe54,
+        type: 2}
+    - target: {fileID: 2762712358946013037, guid: 7511aeffeb64af14f908c4be9c56ba62,
+        type: 3}
       propertyPath: playerEquipment
       value: 
       objectReference: {fileID: 11400000, guid: 1f581b110c3d75e4fb5dd4e369f5b4f6,
@@ -8184,9 +8313,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 510388579}
     - target: {fileID: 784757018, guid: cd1232595ec6a9147b11a2a698b8b501, type: 3}
+      propertyPath: playerEquipment
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f581b110c3d75e4fb5dd4e369f5b4f6,
+        type: 2}
+    - target: {fileID: 784757018, guid: cd1232595ec6a9147b11a2a698b8b501, type: 3}
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 13c68297e12c96f4da38ee4463be4d4c,
+        type: 2}
+    - target: {fileID: 784757018, guid: cd1232595ec6a9147b11a2a698b8b501, type: 3}
+      propertyPath: holdGladiatorList
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d3faf8844b16454b828be8c9bc4fe54,
         type: 2}
     - target: {fileID: 784757018, guid: cd1232595ec6a9147b11a2a698b8b501, type: 3}
       propertyPath: holdPlayerInventory
