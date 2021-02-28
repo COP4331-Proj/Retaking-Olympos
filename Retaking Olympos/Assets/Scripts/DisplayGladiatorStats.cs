@@ -24,6 +24,8 @@ public class DisplayGladiatorStats : MonoBehaviour
         RefreshStats();
     }
 
+    // TODO make this faster using events like inventory updates
+    // Currently in update for updating stats when weapon equiped
     private void Update()
     {
         RefreshStats();
