@@ -32,21 +32,69 @@ You should have your UML Class diagram and any other useful UML diagrams in this
 
 See Code Complete, Chapter 3 and https://c4model.com/
 
-We need the Gladiator class to manage each gladiator. This class contains the gladiators' health, stamina, class, etc...
-The Gladiator class will have the types of gladiators (the gladiator's class) as the its subclasses
-A ton of variables from the GladiatorCharacter class will be used in the DamageControl class to calculate how much damage the gladiator will deal/will be dealt.
-The movement class is needed to control the movement of the characters. The amount of sprint energy a character has will be determined by its stamina.
-The PauseControl class is simply there to pause the game.
+Note: Red classes denote unity monobehavior classes, blue denote classes not inheriting from them, and green classes denote scriptable objects to store data
+
+The Movement class is needed to control the movement of the characters. The amount of sprint energy a character has will be determined by its stamina.
+
+The Pause menu class allows for the game to be paused.
+
 The DifficultyControl class will use the Options Menu to control the difficulty of the game.
+
 The PlayerStaus class will check the player's health and stamina
+
 The PlayerControl class will control the player's movement
+
 OptionsMenu will manage everything in the options menu. This includes but is not limited to: adjusting the difficulty, resolution, and volume of the game.
+
 ManagementStats will keep track of everything during the management phase. The includes but is not limited to: currency and skillpoints.
+
 The skill class will manage the gladiators' abilities. 
-The weapon class is there to create weapon objects. The class will control the name, damage type, damage, and cost of the weapon.
+
 The SceneLoader class is there to switch between scenes.
 
+The Healthbar and Staminabar classes display the respective bars in the battle scene
+
 <img src="Pictures/Class-Diagram/ClassDiagram.png">
+
+The Gladiator Stats picture holds all the classes to do with Gladiator Stats for orginizational clearity
+
+The Hold gladiator list scriptable object holds a list of gladiator objects, each holding stats for an individual gladiator
+
+The gladiator object holds all the stat data for a single gladiator
+
+The Hold Player Equipment scriptable object holds a list of gladiator equipment, each holding what items are equipped for an individual gladiator, the index to this list is the same as the index in the hold gladiator list
+
+The Individual gladiator Equipment class holds all the items equipped by an individual gladiator
+
+The Hold Player Inventory scriptable objects holds all the items in the players inventory.
+
+The Player inventory class allows for items to be added and removed from the Hold Player Inventory
+
+The View Gladiator Class Allows gladiators to be created, viewed and accessed from the Hold Gladiator List object
+
+The Display Gladiator Stats class updates the stats text on the view gladiator scene
+
+The UIInventoryControler class sets up the UIInventory and UIEquipment classes with references to the scriptable objects
+
+The UIInventory class allows for items in the player inventory to be displayed on the screen
+
+The UIEquipment class allows for items equiped on the current gladiator to be displayed on the screen
+
+The GladiatorEquipment class allows for items dragged onto a slot to be added to the current gladiators equipment
+
+The UIDragAndDrop class allows for the game object that its attatched to to be dragged
+
+The ItemClickable class allows for the game object to be clicked
+
+The UIEquipmentSlot class marks the game object as an item slot
+
+The EquipmentIndex class is attatched to the left and right arrows and updates the index of the equipment list when pressed
+
+The Item class defines what an item object contains
+
+The Item Assets class links an item name to a sprite
+
+<img src="Pictures/Class-Diagram/GladiatorStats.png">
 
 <img src="Pictures/Class-Diagram/UserStoryTable.png">
 
