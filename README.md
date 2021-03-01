@@ -96,11 +96,11 @@ Xavier: Created health and stamina bars for user stories 19 and 20
 
 ### Task Allocation
 
-Joshua: 
+Joshua: Implmeneted the ability to change game resolution
 
-Timothy: 
+Timothy: Added sprinting and a mute button
 
-Tyler: 
+Tyler: Added the ability to change between full screen and windowed mode and pause menu
 
 Nathan: Created Inventory system and Equipment system, allowing different items with different effects to be equipped on a gladiator in the list and having the effects persist through scene loads
 
