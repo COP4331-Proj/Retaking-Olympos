@@ -104,4 +104,4 @@ Tyler:
 
 Nathan: Created Inventory system and Equipment system, allowing different items with different effects to be equipped on a gladiator in the list and having the effects persist through scene loads
 
-Xavier: 
+Xavier: Created enemy gladiator entity in battle scene and rudimentary attack methods for user story 34
