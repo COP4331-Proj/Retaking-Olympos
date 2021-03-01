@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isSprinting = false;
     public StaminaBar staminaBar;
 
+
     void Update()
     {
         // Set the sprinting speed
