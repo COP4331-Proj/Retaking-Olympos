@@ -15,7 +15,7 @@ public class MuteManager : MonoBehaviour
             loadMuteState();
     }
 
-    public static void mutePressed()
+    public void mutePressed()
     {
         isMuted = !isMuted;
         AudioListener.pause = isMuted;

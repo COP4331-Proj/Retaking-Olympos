@@ -82,15 +82,17 @@ Xavier: Created health and stamina bars for user stories 19 and 20
 
 [Source Code](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Scripts)
 
-[Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Tests)
+[Automated Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Tests)
 
-[Demo Video](https://youtu.be/0fwideQcmMA)
+[Manual Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/artifacts/Manual%20Tests)
+
+[Demo Video](https://youtu.be/EZewUvFRwsE)
 
 ### Burndown Chart
-<img src="artifacts/Pictures/Charts/Burndown Chart Sprint 3.PNG">
+<img src="artifacts/Pictures/Charts/Burndown Chart Sprint 4.PNG">
 
 ### Velocity Chart
-<img src="artifacts/Pictures/Charts/Velocity Chart Sprint 3.PNG">
+<img src="artifacts/Pictures/Charts/Velocity Chart Sprint 4.PNG">
 
 ### Task Allocation
 
