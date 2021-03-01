@@ -14,10 +14,7 @@ public class PlayerGladiator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = player.GetHealth();
-        healthBar.setMaxHealth(player.GetHealth());
-        currentStamina = player.GetStamina();
-        staminaBar.setMaxStamina(player.GetStamina());
+        setupPlayerGladiator();
     }
 
     // Update is called once per frame
@@ -32,7 +29,7 @@ public class PlayerGladiator : MonoBehaviour
     }
 
     // Method to test health bar change
-    void takeDamage(int damage)
+    public void takeDamage(int damage)
     {
         if (currentHealth <= 0)
             return;
@@ -51,5 +48,19 @@ public class PlayerGladiator : MonoBehaviour
         currentStamina -= stamina;
 
         staminaBar.setStamina(currentStamina);
+    }
+
+    public int getCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+
+    public void setupPlayerGladiator()
+    {
+        currentHealth = player.GetHealth();
+        healthBar.setMaxHealth(player.GetHealth());
+        currentStamina = player.GetStamina();
+        staminaBar.setMaxStamina(player.GetStamina());
     }
 }
