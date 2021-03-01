@@ -86,7 +86,7 @@ Xavier: Created health and stamina bars for user stories 19 and 20
 
 [Manual Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/artifacts/Manual%20Tests)
 
-[Demo Video](https://youtu.be/EZewUvFRwsE)
+[Demo Video](https://youtu.be/ETVU6teygLY)
 
 ### Burndown Chart
 <img src="artifacts/Pictures/Charts/Burndown Chart Sprint 4.PNG">
