@@ -19,6 +19,7 @@ public class EnemyGladiator : MonoBehaviour
     void Update()
     {
         // Pressing space will modify size of bars
+        healthBar.setHealth(currentHealth);
     }
 
     // Method to test health bar change
@@ -28,8 +29,6 @@ public class EnemyGladiator : MonoBehaviour
             return;
 
         currentHealth -= damage;
-
-        healthBar.setHealth(currentHealth);
     }
 
     public int getCurrentHealth()

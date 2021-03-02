@@ -26,6 +26,8 @@ public class PlayerGladiator : MonoBehaviour
             takeDamage(10);
             useSkill(10);
         }
+        healthBar.setHealth(currentHealth);
+        staminaBar.setStamina(currentStamina);
     }
 
     // Method to test health bar change
@@ -35,8 +37,6 @@ public class PlayerGladiator : MonoBehaviour
             return;
 
         currentHealth -= damage;
-
-        healthBar.setHealth(currentHealth);
     }
 
     // Method to test stamina bar change
@@ -46,8 +46,6 @@ public class PlayerGladiator : MonoBehaviour
             return;
 
         currentStamina -= stamina;
-
-        staminaBar.setStamina(currentStamina);
     }
 
     public int getCurrentHealth()

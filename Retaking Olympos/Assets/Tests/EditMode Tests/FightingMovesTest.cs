@@ -3,19 +3,12 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.UI;
 
 namespace Tests
 {
     public class FightingMovesTest
     {
-        // A Test behaves as an ordinary method
-        [Test]
-        public void FightingMovesTestSimplePasses()
-        {
-            // Use the Assert class to test conditions
-        }
-
-        /*
         [Test]
         public void playerSwingTest()
         {
@@ -25,9 +18,7 @@ namespace Tests
             PlayerGladiator playerGlad = player.AddComponent<PlayerGladiator>();
             EnemyGladiator enemyGlad = enemy.AddComponent<EnemyGladiator>();
             FightingMoves attacks = moves.AddComponent<FightingMoves>();
-            enemyGlad.healthBar = enemy.AddComponent<HealthBar>();
-            enemyGlad.healthBar.slider = enemy.AddComponent<Slider>();
-            enemyGlad.setupEnemyGladiator();
+            EnemyGladiator.currentHealth = enemyGlad.enemy.GetHealth();
             attacks.playerSwing(enemyGlad);
             Assert.AreEqual(80, enemyGlad.getCurrentHealth());
         }
@@ -41,10 +32,9 @@ namespace Tests
             PlayerGladiator playerGlad = player.AddComponent<PlayerGladiator>();
             EnemyGladiator enemyGlad = enemy.AddComponent<EnemyGladiator>();
             FightingMoves attacks = moves.AddComponent<FightingMoves>();
+            PlayerGladiator.currentHealth = playerGlad.player.GetHealth();
             attacks.enemySwing(playerGlad);
             Assert.AreEqual(80, playerGlad.getCurrentHealth());
         }
-        */
-
     }
 }
