@@ -23,16 +23,23 @@ public class UIInventory : MonoBehaviour
 
     }
     // Set local reference of inventory and add it to the event system
-    public void SetInventory(PlayerInventory inventory) 
+    // true if this is a player inventory, false if shop inventory
+    public void SetInventory(PlayerInventory inventory, bool playerOrShop) 
     {
-
-        
         this.inventory = inventory;
         inventory.UpdateItemList += Inventory_UpdateItemList;
-        if (inventory.GetItemList().Count == 0)
+        if (inventory.GetItemList().Count == 0 )
         {
-            inventory.PopulateWithItems();
+            if (playerOrShop)
+            {
+                inventory.PopulateWithItems();
+            }
+            else 
+            {
+                inventory.PopulateWithShopItems();
+            }
         }
+        
         RefreshInventory();
     }
     // On the event, refresh the inventory visuals
@@ -119,6 +126,9 @@ public class UIInventory : MonoBehaviour
     // Nessicary to unsubscribe from event to prevent broken references when reloading scene
     private void OnDestroy()
     {
-        inventory.UpdateItemList -= Inventory_UpdateItemList;
+        if (inventory != null) 
+        {
+            inventory.UpdateItemList -= Inventory_UpdateItemList;
+        }
     }
 }

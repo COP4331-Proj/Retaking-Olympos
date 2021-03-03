@@ -16,6 +16,7 @@ public class Item
 
     public ItemName itemName;
     public int amount;
+    public bool isShop = false;
     // Returns the sprite of the item
     public Sprite GetSprite()
     {
@@ -115,6 +116,93 @@ public class Item
             case ItemName.Boots:
                 {
                     return 4;
+                }
+            default:
+                return 0;
+        }
+    }
+
+    public int GetCost()
+    {
+        switch (itemName)
+        {
+            case ItemName.Sword:
+                {
+                    return 100;
+                }
+            case ItemName.Helmet:
+                {
+                    return 50;
+                }
+            case ItemName.Chestplate:
+                {
+                    return 80;
+                }
+            case ItemName.Pants:
+                {
+                    return 70;
+                }
+            case ItemName.Boots:
+                {
+                    return 40;
+                }
+            default:
+                return 0;
+        }
+    }
+
+    public int GetSellPrice()
+    {
+        switch (itemName)
+        {
+            case ItemName.Sword:
+                {
+                    return 100;
+                }
+            case ItemName.Helmet:
+                {
+                    return 50;
+                }
+            case ItemName.Chestplate:
+                {
+                    return 80;
+                }
+            case ItemName.Pants:
+                {
+                    return 70;
+                }
+            case ItemName.Boots:
+                {
+                    return 40;
+                }
+            default:
+                return 0;
+        }
+    }
+
+    public int GetBuyPrice()
+    {
+        switch (itemName)
+        {
+            case ItemName.Sword:
+                {
+                    return 150;
+                }
+            case ItemName.Helmet:
+                {
+                    return 75;
+                }
+            case ItemName.Chestplate:
+                {
+                    return 120;
+                }
+            case ItemName.Pants:
+                {
+                    return 105;
+                }
+            case ItemName.Boots:
+                {
+                    return 60;
                 }
             default:
                 return 0;

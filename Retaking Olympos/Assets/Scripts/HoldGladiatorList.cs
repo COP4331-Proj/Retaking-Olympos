@@ -9,6 +9,4 @@ public class HoldGladiatorList : ScriptableObject
 {
 
     public List<Gladiator> gladiatorList = new List<Gladiator>();
-
-
 }

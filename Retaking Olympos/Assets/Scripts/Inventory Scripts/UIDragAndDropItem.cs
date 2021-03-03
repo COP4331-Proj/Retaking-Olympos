@@ -55,6 +55,12 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
         if (dragable) 
         {
             Item item = new Item();
+            // Hitbox is not exactly alligned with sprite, if the user clicks on the very edge of item, event data is null
+            if (eventData.pointerCurrentRaycast.gameObject.transform.parent.gameObject.GetComponent<ItemClickable>().item == null)
+            {
+                return;
+            }
+
             item = eventData.pointerCurrentRaycast.gameObject.transform.parent.gameObject.GetComponent<ItemClickable>().item;
             instance.SetItem(item);
             canvasGroup.alpha = .5f;
@@ -84,7 +90,8 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     {
         if (dragable)
         {
-            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            // This * 0.9f should cancel out the canvas scale factor but it doesnt and makes the item correctly follow the mouse
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor * 0.9f;
         }
     }
     

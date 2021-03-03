@@ -26,8 +26,11 @@ public class UIInventoryControler : MonoBehaviour
         // load the inventory and equipment from scriptable objects
         
         gladiatorEquiptment.playerEquipment = playerEquipment;
-        uIInventory.SetInventory(holdPlayerInventory.playerInventory);
-        uIEquiptment.SetEquipment(gladiatorEquiptment);
+        uIInventory.SetInventory(holdPlayerInventory.playerInventory, true);
+        if (uIEquiptment != null) 
+        {
+            uIEquiptment.SetEquipment(gladiatorEquiptment);
+        }
     }
 
 
