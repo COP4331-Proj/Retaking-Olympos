@@ -7,13 +7,13 @@ using TMPro;
 public class DisplayGold : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI goldText;
-    [SerializeField] HoldPlayerGold playerGold;
+    [SerializeField] HoldPlayerInformation playerInformation;
 
     private void Update()
     {
         if (goldText != null) 
         {
-            goldText.text = playerGold.gold.ToString();
+            goldText.text = playerInformation.gold.ToString();
         }
     }
 }

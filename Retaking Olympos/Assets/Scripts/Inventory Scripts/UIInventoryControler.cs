@@ -5,11 +5,10 @@ using UnityEngine;
 // Helper class to create a UIInventory object and not have it destroyed on scene load
 public class UIInventoryControler : MonoBehaviour
 {
-    public HoldPlayerInventory holdPlayerInventory;
-    public HoldGladiatorList gladiatorList;
+    public HoldPlayerInformation playerInformation;
     public UIInventory uIInventory;
     public UIEquiptment uIEquiptment;
-    public HoldPlayerEquipment playerEquipment;
+    
     public GladiatorEquiptment gladiatorEquiptment;
 
     // Start is called before the first frame update
@@ -25,8 +24,8 @@ public class UIInventoryControler : MonoBehaviour
         }
         // load the inventory and equipment from scriptable objects
         
-        gladiatorEquiptment.playerEquipment = playerEquipment;
-        uIInventory.SetInventory(holdPlayerInventory.playerInventory, true);
+        gladiatorEquiptment.playerInformation = playerInformation;
+        uIInventory.SetInventory(playerInformation.playerInventory, true);
         if (uIEquiptment != null) 
         {
             uIEquiptment.SetEquipment(gladiatorEquiptment);
@@ -37,11 +36,11 @@ public class UIInventoryControler : MonoBehaviour
     // Pass along the list of gladiators when modifying index
     public void IncrementEquipmentIndex() 
     {
-        uIEquiptment.IncrementEquipmentIndex(gladiatorList);
+        uIEquiptment.IncrementEquipmentIndex(playerInformation);
     }
 
     public void DecrementEquipmentIndex()
     {
-        uIEquiptment.DecrementEquipmentIndex(gladiatorList);
+        uIEquiptment.DecrementEquipmentIndex(playerInformation);
     }
 }

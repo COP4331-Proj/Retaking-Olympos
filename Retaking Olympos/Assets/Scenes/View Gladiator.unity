@@ -2174,7 +2174,6 @@ GameObject:
   m_Component:
   - component: {fileID: 493355359}
   - component: {fileID: 493355360}
-  - component: {fileID: 493355361}
   m_Layer: 5
   m_Name: Weapon Slot
   m_TagString: Untagged
@@ -2212,18 +2211,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47dbaa67b00482845b02ea8af3644fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &493355361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493355358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed133e73aa61f542bcf2d372af984b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &510388577
@@ -2273,6 +2260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5186f71e35b8564a855fb23680f9f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInformation: {fileID: 11400000, guid: b40ba94ac0f59f44082dd4eb50a74823, type: 2}
 --- !u!1 &532125914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,9 +2528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gladiatorIndex: 0
   gladiatorEquiptment: {fileID: 1559851630}
-  holdPlayerInventory: {fileID: 11400000, guid: 7f90c7bca067aa443878fc3b616c08ec,
-    type: 2}
-  holdGladiatorList: {fileID: 11400000, guid: 6d3faf8844b16454b828be8c9bc4fe54, type: 2}
+  playerInformation: {fileID: 11400000, guid: b40ba94ac0f59f44082dd4eb50a74823, type: 2}
   itemContainer: {fileID: 0}
   itemTemplate: {fileID: 0}
 --- !u!1 &576970460
@@ -3289,7 +3275,6 @@ GameObject:
   m_Component:
   - component: {fileID: 772403715}
   - component: {fileID: 772403716}
-  - component: {fileID: 772403717}
   m_Layer: 5
   m_Name: Legs Slot
   m_TagString: Untagged
@@ -3327,18 +3312,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47dbaa67b00482845b02ea8af3644fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &772403717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772403714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed133e73aa61f542bcf2d372af984b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &784757016 stripped
@@ -3666,7 +3639,6 @@ GameObject:
   m_Component:
   - component: {fileID: 868344211}
   - component: {fileID: 868344212}
-  - component: {fileID: 868344213}
   m_Layer: 5
   m_Name: Chest Slot
   m_TagString: Untagged
@@ -3704,18 +3676,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47dbaa67b00482845b02ea8af3644fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &868344213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868344210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed133e73aa61f542bcf2d372af984b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &877174774
@@ -4862,7 +4822,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1204865451}
   - component: {fileID: 1204865453}
-  - component: {fileID: 1204865452}
   m_Layer: 5
   m_Name: Helmet Slot
   m_TagString: Untagged
@@ -4890,18 +4849,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1204865452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204865450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed133e73aa61f542bcf2d372af984b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1204865453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7514,7 +7461,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2011405150}
   - component: {fileID: 2011405151}
-  - component: {fileID: 2011405152}
   m_Layer: 5
   m_Name: Boots Slot
   m_TagString: Untagged
@@ -7552,18 +7498,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47dbaa67b00482845b02ea8af3644fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2011405152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011405149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed133e73aa61f542bcf2d372af984b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2040655280
@@ -7990,6 +7924,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6d3faf8844b16454b828be8c9bc4fe54,
         type: 2}
+    - target: {fileID: 1559851630, guid: 7511aeffeb64af14f908c4be9c56ba62, type: 3}
+      propertyPath: playerInformation
+      value: 
+      objectReference: {fileID: 11400000, guid: b40ba94ac0f59f44082dd4eb50a74823,
+        type: 2}
     - target: {fileID: 2762712358946013036, guid: 7511aeffeb64af14f908c4be9c56ba62,
         type: 3}
       propertyPath: m_RootOrder
@@ -8069,6 +8008,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 2762712358946013037, guid: 7511aeffeb64af14f908c4be9c56ba62,
         type: 3}
+      propertyPath: playerInformation
+      value: 
+      objectReference: {fileID: 11400000, guid: b40ba94ac0f59f44082dd4eb50a74823,
+        type: 2}
+    - target: {fileID: 2762712358946013037, guid: 7511aeffeb64af14f908c4be9c56ba62,
+        type: 3}
       propertyPath: gladiatorEquiptment
       value: 
       objectReference: {fileID: 1559851630}
@@ -8115,6 +8060,11 @@ PrefabInstance:
       propertyPath: holdPlayerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 7f90c7bca067aa443878fc3b616c08ec,
+        type: 2}
+    - target: {fileID: 784757018, guid: cd1232595ec6a9147b11a2a698b8b501, type: 3}
+      propertyPath: holdPlayerInformation
+      value: 
+      objectReference: {fileID: 11400000, guid: b40ba94ac0f59f44082dd4eb50a74823,
         type: 2}
     - target: {fileID: 3803679163453083312, guid: cd1232595ec6a9147b11a2a698b8b501,
         type: 3}

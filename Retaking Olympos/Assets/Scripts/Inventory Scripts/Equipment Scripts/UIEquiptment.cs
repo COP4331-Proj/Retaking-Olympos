@@ -18,8 +18,8 @@ public class UIEquiptment : MonoBehaviour
     public int gladiatorIndex = 0;
 
     public GladiatorEquiptment gladiatorEquiptment;
-    public HoldPlayerInventory holdPlayerInventory;
-    public HoldGladiatorList holdGladiatorList;
+    public HoldPlayerInformation playerInformation;
+
     // Container to hold game objects
     public Transform itemContainer;
     // template game object
@@ -157,18 +157,18 @@ public class UIEquiptment : MonoBehaviour
     }
 
     // Update index for showing equipment on a gladiator
-    public void IncrementEquipmentIndex(HoldGladiatorList gladiatorList)
+    public void IncrementEquipmentIndex(HoldPlayerInformation playerInformation)
     {
-        gladiatorIndex = (gladiatorIndex + 1) % gladiatorList.gladiatorList.Count;
+        gladiatorIndex = (gladiatorIndex + 1) % playerInformation.gladiatorList.Count;
         UpdateItem();
     }
 
-    public void DecrementEquipmentIndex(HoldGladiatorList gladiatorList)
+    public void DecrementEquipmentIndex(HoldPlayerInformation playerInformation)
     {
-        gladiatorIndex = (gladiatorIndex - 1) % gladiatorList.gladiatorList.Count;
+        gladiatorIndex = (gladiatorIndex - 1) % playerInformation.gladiatorList.Count;
         if (gladiatorIndex < 0)
         {
-            gladiatorIndex += gladiatorList.gladiatorList.Count;
+            gladiatorIndex += playerInformation.gladiatorList.Count;
         }
         UpdateItem();
     }

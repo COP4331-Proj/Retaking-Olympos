@@ -16,10 +16,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
-            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
-
-            HoldPlayerEquipment holdPlayerEquipment = ScriptableObject.CreateInstance<HoldPlayerEquipment>();
-            controler.GetComponent<ViewGladiator>().playerEquipment = holdPlayerEquipment;
+            controler.GetComponent<ViewGladiator>().holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
 
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
@@ -32,10 +29,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
-            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
-
-            HoldPlayerEquipment holdPlayerEquipment = ScriptableObject.CreateInstance<HoldPlayerEquipment>();
-            controler.GetComponent<ViewGladiator>().playerEquipment = holdPlayerEquipment;
+            controler.GetComponent<ViewGladiator>().holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
 
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
@@ -48,10 +42,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
-            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
-
-            HoldPlayerEquipment holdPlayerEquipment = ScriptableObject.CreateInstance<HoldPlayerEquipment>();
-            controler.GetComponent<ViewGladiator>().playerEquipment = holdPlayerEquipment;
+            controler.GetComponent<ViewGladiator>().holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
 
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
@@ -64,10 +55,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
-            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
-
-            HoldPlayerEquipment holdPlayerEquipment = ScriptableObject.CreateInstance<HoldPlayerEquipment>();
-            controler.GetComponent<ViewGladiator>().playerEquipment = holdPlayerEquipment;
+            controler.GetComponent<ViewGladiator>().holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
 
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
@@ -80,10 +68,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
-            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
-
-            HoldPlayerEquipment holdPlayerEquipment = ScriptableObject.CreateInstance<HoldPlayerEquipment>();
-            controler.GetComponent<ViewGladiator>().playerEquipment = holdPlayerEquipment;
+            controler.GetComponent<ViewGladiator>().holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
 
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
@@ -96,10 +81,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
-            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
-
-            HoldPlayerEquipment holdPlayerEquipment = ScriptableObject.CreateInstance<HoldPlayerEquipment>();
-            controler.GetComponent<ViewGladiator>().playerEquipment = holdPlayerEquipment;
+            controler.GetComponent<ViewGladiator>().holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
 
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
@@ -112,10 +94,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
-            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
-
-            HoldPlayerEquipment holdPlayerEquipment = ScriptableObject.CreateInstance<HoldPlayerEquipment>();
-            controler.GetComponent<ViewGladiator>().playerEquipment = holdPlayerEquipment;
+            controler.GetComponent<ViewGladiator>().holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
 
             Gladiator gladiator = controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);
 
@@ -128,11 +107,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
-            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
-
-            HoldPlayerEquipment holdPlayerEquipment = ScriptableObject.CreateInstance<HoldPlayerEquipment>();
-            controler.GetComponent<ViewGladiator>().playerEquipment = holdPlayerEquipment;
-
+            controler.GetComponent<ViewGladiator>().holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
 
             List<Gladiator> gladiatorList = controler.GetComponent<ViewGladiator>().GetGladiatorList();
 
@@ -150,11 +125,7 @@ namespace Tests
         {
             GameObject controler = new GameObject();
             controler.AddComponent<ViewGladiator>();
-            controler.GetComponent<ViewGladiator>().holdGladiatorList = ScriptableObject.CreateInstance<HoldGladiatorList>();
-
-            HoldPlayerEquipment holdPlayerEquipment = ScriptableObject.CreateInstance<HoldPlayerEquipment>();
-            controler.GetComponent<ViewGladiator>().playerEquipment = holdPlayerEquipment;
-
+            controler.GetComponent<ViewGladiator>().holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
 
             List<Gladiator> gladiatorList = controler.GetComponent<ViewGladiator>().GetGladiatorList();
             controler.GetComponent<ViewGladiator>().createNewGladiator("Caesar", 3, 100, 100, 6, 14);

@@ -13,15 +13,15 @@ namespace Tests
         [Test]
         public void CreateInventory()
         {
-            HoldPlayerInventory holdPlayerInventory = ScriptableObject.CreateInstance<HoldPlayerInventory>();
-            Assert.IsNotNull(holdPlayerInventory);
+            HoldPlayerInformation holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
+            Assert.IsNotNull(holdPlayerInformation);
         }
 
         [Test]
         public void AddItemToInventory()
         {
-            HoldPlayerInventory holdPlayerInventory = ScriptableObject.CreateInstance<HoldPlayerInventory>();
-            PlayerInventory inventory = holdPlayerInventory.playerInventory;
+            HoldPlayerInformation holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
+            PlayerInventory inventory = holdPlayerInformation.playerInventory;
             inventory.AddItem(new Item { itemName = Item.ItemName.Sword});
             Assert.AreEqual(1, inventory.GetItemList().Count);
         }
@@ -30,8 +30,8 @@ namespace Tests
         [Test]
         public void RemoveItemFromInventory()
         {
-            HoldPlayerInventory holdPlayerInventory = ScriptableObject.CreateInstance<HoldPlayerInventory>();
-            PlayerInventory inventory = holdPlayerInventory.playerInventory;
+            HoldPlayerInformation holdPlayerInformation = ScriptableObject.CreateInstance<HoldPlayerInformation>();
+            PlayerInventory inventory = holdPlayerInformation.playerInventory;
             inventory.AddItem(new Item { itemName = Item.ItemName.Sword});
             List<Item> itemList = inventory.GetItemList();
             Assert.AreEqual(1, itemList.Count);

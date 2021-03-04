@@ -13,14 +13,15 @@ public class UIInventory : MonoBehaviour
     // and the empty game object to hold the clones of it
     Transform itemContainer;
     Transform itemTemplate;
-
+    public HoldPlayerInformation playerInformation;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] sounds;
 
     private void Awake()
     {
-
+        
         itemContainer = transform.Find("itemContainer");
         itemTemplate = transform.Find("itemTemplate");
-
     }
     // Set local reference of inventory and add it to the event system
     // true if this is a player inventory, false if shop inventory
@@ -82,13 +83,22 @@ public class UIInventory : MonoBehaviour
             // On right click
             itemSlotRectTransform.GetComponent<ItemClickable>().onRightClick = () =>
             {
-                
-                inventory.RemoveItem(item);
+                // If item is in inventory, remove
+                if (!item.isShop)
+                {
+                    audioSource.PlayOneShot(sounds[0]);
+                    playerInformation.gold += item.GetSellPrice();
+                    inventory.RemoveItem(item);
+                }
             };
 
             // On left click
             itemSlotRectTransform.GetComponent<ItemClickable>().onLeftClick = () =>
             {
+                if (item.isShop) 
+                {
+                    TestBuy(item);
+                }
             };
 
             // Get position of next item slot by multiplying its number by the size of the slot in pixels
@@ -123,6 +133,18 @@ public class UIInventory : MonoBehaviour
             
         }
     }
+
+    private void TestBuy(Item item)
+    {
+        
+        if (item.GetBuyPrice() < playerInformation.gold) 
+        {
+            audioSource.PlayOneShot(sounds[1]);
+            playerInformation.gold -= item.GetBuyPrice();
+            playerInformation.playerInventory.AddItem(new Item {itemName = item.itemName, amount = 1, isShop = false });
+        }
+    }
+
     // Nessicary to unsubscribe from event to prevent broken references when reloading scene
     private void OnDestroy()
     {

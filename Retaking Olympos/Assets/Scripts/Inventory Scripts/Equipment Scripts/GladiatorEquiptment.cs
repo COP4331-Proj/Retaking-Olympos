@@ -6,10 +6,9 @@ using System;
 public class GladiatorEquiptment : MonoBehaviour
 {
     public UIEquiptment uIEquiptment;
-    public HoldPlayerEquipment playerEquipment;
+    public HoldPlayerInformation playerInformation;
     public event EventHandler onEquipmentChange;
     public UIInventory uIInventory;
-    public HoldGladiatorList holdGladiatorList;
 
     public enum SlotName
     {
@@ -24,23 +23,23 @@ public class GladiatorEquiptment : MonoBehaviour
     public Item GetWeapon(int equipmentIndex)
     {
         
-        return playerEquipment.individualGladiatorEquipment[equipmentIndex].weapon;
+        return playerInformation.individualGladiatorEquipment[equipmentIndex].weapon;
     }
     public Item GetHelmet(int equipmentIndex)
     {
-        return playerEquipment.individualGladiatorEquipment[equipmentIndex].helmet;
+        return playerInformation.individualGladiatorEquipment[equipmentIndex].helmet;
     }
     public Item GetChestplate(int equipmentIndex)
     {
-        return playerEquipment.individualGladiatorEquipment[equipmentIndex].chestplate;
+        return playerInformation.individualGladiatorEquipment[equipmentIndex].chestplate;
     }
     public Item GetLegs(int equipmentIndex)
     {
-        return playerEquipment.individualGladiatorEquipment[equipmentIndex].legs;
+        return playerInformation.individualGladiatorEquipment[equipmentIndex].legs;
     }
     public Item GetBoots(int equipmentIndex)
     {
-        return playerEquipment.individualGladiatorEquipment[equipmentIndex].boots;
+        return playerInformation.individualGladiatorEquipment[equipmentIndex].boots;
     }
 
     // Setters for item slots, called by test equip
@@ -49,13 +48,13 @@ public class GladiatorEquiptment : MonoBehaviour
         if (weapon == null)
         {
             Item item = new Item { itemName = Item.ItemName.Sword };
-            holdGladiatorList.gladiatorList[equipmentIndex].SetPower(holdGladiatorList.gladiatorList[equipmentIndex].GetPower() - item.GetPower());
+            playerInformation.gladiatorList[equipmentIndex].SetPower(playerInformation.gladiatorList[equipmentIndex].GetPower() - item.GetPower());
         }
         else
         {
-            holdGladiatorList.gladiatorList[equipmentIndex].SetPower(holdGladiatorList.gladiatorList[equipmentIndex].GetPower() + weapon.GetPower());
+            playerInformation.gladiatorList[equipmentIndex].SetPower(playerInformation.gladiatorList[equipmentIndex].GetPower() + weapon.GetPower());
         }
-        playerEquipment.individualGladiatorEquipment[equipmentIndex].weapon = weapon;
+        playerInformation.individualGladiatorEquipment[equipmentIndex].weapon = weapon;
         uIEquiptment.SetEquipment(this);
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
     }
@@ -64,13 +63,13 @@ public class GladiatorEquiptment : MonoBehaviour
         if (helmet == null)
         {
             Item item = new Item { itemName = Item.ItemName.Helmet };
-            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
+            playerInformation.gladiatorList[equipmentIndex].SetDefense(playerInformation.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
         }
         else
         {
-            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() + helmet.GetDefense());
+            playerInformation.gladiatorList[equipmentIndex].SetDefense(playerInformation.gladiatorList[equipmentIndex].GetDefense() + helmet.GetDefense());
         }
-        playerEquipment.individualGladiatorEquipment[equipmentIndex].helmet = helmet;
+        playerInformation.individualGladiatorEquipment[equipmentIndex].helmet = helmet;
         uIEquiptment.SetEquipment(this);
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
     }
@@ -79,13 +78,13 @@ public class GladiatorEquiptment : MonoBehaviour
         if (chestplate == null)
         {
             Item item = new Item { itemName = Item.ItemName.Chestplate };
-            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
+            playerInformation.gladiatorList[equipmentIndex].SetDefense(playerInformation.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
         }
         else
         {
-            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() + chestplate.GetDefense());
+            playerInformation.gladiatorList[equipmentIndex].SetDefense(playerInformation.gladiatorList[equipmentIndex].GetDefense() + chestplate.GetDefense());
         }
-        playerEquipment.individualGladiatorEquipment[equipmentIndex].chestplate = chestplate;
+        playerInformation.individualGladiatorEquipment[equipmentIndex].chestplate = chestplate;
         uIEquiptment.SetEquipment(this);
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
     }
@@ -94,13 +93,13 @@ public class GladiatorEquiptment : MonoBehaviour
         if (legs == null)
         {
             Item item = new Item { itemName = Item.ItemName.Pants };
-            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
+            playerInformation.gladiatorList[equipmentIndex].SetDefense(playerInformation.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
         }
         else
         {
-            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() + legs.GetDefense());
+            playerInformation.gladiatorList[equipmentIndex].SetDefense(playerInformation.gladiatorList[equipmentIndex].GetDefense() + legs.GetDefense());
         }
-        playerEquipment.individualGladiatorEquipment[equipmentIndex].legs = legs;
+        playerInformation.individualGladiatorEquipment[equipmentIndex].legs = legs;
         uIEquiptment.SetEquipment(this);
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
     }
@@ -109,13 +108,13 @@ public class GladiatorEquiptment : MonoBehaviour
         if (boots == null)
         {
             Item item = new Item { itemName = Item.ItemName.Boots };
-            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
+            playerInformation.gladiatorList[equipmentIndex].SetDefense(playerInformation.gladiatorList[equipmentIndex].GetDefense() - item.GetDefense());
         }
         else 
         {
-            holdGladiatorList.gladiatorList[equipmentIndex].SetDefense(holdGladiatorList.gladiatorList[equipmentIndex].GetDefense() + boots.GetDefense());
+            playerInformation.gladiatorList[equipmentIndex].SetDefense(playerInformation.gladiatorList[equipmentIndex].GetDefense() + boots.GetDefense());
         }
-        playerEquipment.individualGladiatorEquipment[equipmentIndex].boots = boots;
+        playerInformation.individualGladiatorEquipment[equipmentIndex].boots = boots;
         uIEquiptment.SetEquipment(this);
         onEquipmentChange?.Invoke(this, EventArgs.Empty);
     }

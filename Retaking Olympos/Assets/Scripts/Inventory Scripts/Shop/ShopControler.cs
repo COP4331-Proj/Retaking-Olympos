@@ -5,19 +5,12 @@ using UnityEngine;
 public class ShopControler : MonoBehaviour
 {
     public UIInventory uIInventory;
-    public HoldShopInventory holdShopInventory;
+    public HoldPlayerInformation holdPlayerInformation;
     void Start()
     {
-        if (FindObjectsOfType<UIInventoryControler>().Length > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+
         // load the inventory and equipment from scriptable objects
-        uIInventory.SetInventory(holdShopInventory.shopInventory, false);
+        uIInventory.SetInventory(holdPlayerInformation.shopInventory, false);
 
     }
 }

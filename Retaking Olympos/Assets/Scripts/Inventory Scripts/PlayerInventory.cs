@@ -53,6 +53,7 @@ public class PlayerInventory
         AddItem(new Item { itemName = Item.ItemName.Helmet, amount = 1, isShop = true });
         AddItem(new Item { itemName = Item.ItemName.Chestplate, amount = 1, isShop = true });
         AddItem(new Item { itemName = Item.ItemName.Pants, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Boots, amount = 1, isShop = true });
     }
 
     // Add item to the inventory

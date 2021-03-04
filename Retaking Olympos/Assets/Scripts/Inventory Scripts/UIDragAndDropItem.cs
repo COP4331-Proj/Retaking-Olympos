@@ -72,15 +72,19 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     {
         if (!dragable)
         {
+            // unequip Item
             // if right click on item in inventory, unequip it and add a copy to the inventory
             GetComponent<ItemClickable>().onRightClick = () =>
             {
                 Item item = new Item();
                 item = eventData.pointerCurrentRaycast.gameObject.transform.parent.gameObject.GetComponent<ItemClickable>().item;
 
-                uIEquiptment.holdPlayerInventory.playerInventory.AddItem(new Item { itemName = item.itemName, amount = 1 });
-                uIEquiptment.gladiatorEquiptment.Unequip(item, uIEquiptment.gladiatorIndex);
-                Destroy(gameObject);
+                if (!item.isShop)
+                {
+                    uIEquiptment.playerInformation.playerInventory.AddItem(new Item { itemName = item.itemName, amount = 1 });
+                    uIEquiptment.gladiatorEquiptment.Unequip(item, uIEquiptment.gladiatorIndex);
+                    Destroy(gameObject);
+                }
             };
         }
     }
