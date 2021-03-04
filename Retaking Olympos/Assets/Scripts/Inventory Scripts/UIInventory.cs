@@ -86,7 +86,10 @@ public class UIInventory : MonoBehaviour
                 // If item is in inventory, remove
                 if (!item.isShop)
                 {
-                    audioSource.PlayOneShot(sounds[0]);
+                    if (sounds!= null) 
+                    {
+                        audioSource.PlayOneShot(sounds[0]);
+                    }
                     playerInformation.gold += item.GetSellPrice();
                     inventory.RemoveItem(item);
                 }
