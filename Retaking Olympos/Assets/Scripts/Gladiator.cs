@@ -11,12 +11,15 @@ public class Gladiator
     private int power;
     private int defense;
 
+    private float difficulty =
+        PlayerPrefs.HasKey("DifficultyPreference") ? PlayerPrefs.GetFloat("DifficultyPreference") : 0f;
+
     // Gladiator constructor
     public Gladiator(string name, int level, int health, int stamina, int power, int defense) 
     {
         this.gladiatorName = name;
         this.level = level;
-        this.health = health;
+        this.health = (int)(health * difficulty);
         this.stamina = stamina;
         this.power = power;
         this.defense = defense;

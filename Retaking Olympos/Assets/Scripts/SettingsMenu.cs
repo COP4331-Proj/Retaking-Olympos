@@ -12,6 +12,7 @@ public class SettingsMenu : MonoBehaviour
     public Slider volumeSlider;
     public Toggle toggle;
     public Dropdown resolutionDropdown;
+    public Dropdown difficultyDropdown;
     static float currentVolume;
     static String previousClass;
     Resolution[] resolutions;
@@ -99,6 +100,21 @@ public class SettingsMenu : MonoBehaviour
         {
             resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
         }
+        else if (PlayerPrefs.HasKey("DifficultyPreference"))
+        {
+            switch (PlayerPrefs.GetFloat("DifficultyPreference"))
+            {
+                case 0.5f: // Easy
+                    difficultyDropdown.value = 0;
+                    break;
+                case 1.0f: // Normal
+                    difficultyDropdown.value = 1;
+                    break;
+                case 1.5f: // Hard
+                    difficultyDropdown.value = 2;
+                    break;
+            }
+        }
     }
 
     public void SaveSettings()
@@ -106,5 +122,18 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("VolumePreference", currentVolume);
         PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreen));
         PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
+
+        switch (difficultyDropdown.value)
+        {
+            case 0: // Easy
+                PlayerPrefs.SetFloat("DifficultyPreference", 0.5f);
+                break;
+            case 1: // Normal
+                PlayerPrefs.SetFloat("DifficultyPreference", 1.0f);
+                break;
+            case 2: // Hard
+                PlayerPrefs.SetFloat("DifficultyPreference", 1.5f);
+                break;
+        }
     }
 }
