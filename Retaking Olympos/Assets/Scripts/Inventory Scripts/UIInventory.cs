@@ -46,6 +46,7 @@ public class UIInventory : MonoBehaviour
     // On the event, refresh the inventory visuals
     private void Inventory_UpdateItemList(object sender, EventArgs e)
     {
+        
         RefreshInventory();
     }
 
@@ -147,6 +148,8 @@ public class UIInventory : MonoBehaviour
             playerInformation.playerInventory.AddItem(new Item {itemName = item.itemName, amount = 1, isShop = false });
         }
     }
+
+
 
     // Nessicary to unsubscribe from event to prevent broken references when reloading scene
     private void OnDestroy()

@@ -8,6 +8,7 @@ public class PlayerInventory
     List<Item> itemList;
 
     public event EventHandler UpdateItemList;
+    
 
     // An inventory holds a list of items
     public PlayerInventory() 
@@ -94,8 +95,10 @@ public class PlayerInventory
             {
                 itemList.Remove(item);
             }
+     
         // Update list using unity event manager
         UpdateItemList?.Invoke(this, EventArgs.Empty);
+
     }
 
     public List<Item> GetItemList() 

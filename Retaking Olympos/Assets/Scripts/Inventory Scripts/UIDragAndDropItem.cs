@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 // Allows for item to be dragged and dropped
-public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     RectTransform rectTransform;
     Canvas canvas;
@@ -15,9 +15,10 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
 
     public UIInventory uIInventory;
     public UIEquiptment uIEquiptment;
+    [SerializeField] UIInventoryControler uIInventoryControler;
 
     bool dragable = true;
-
+    bool beingDragged = false;
 
     private void Awake()
     {
@@ -29,6 +30,10 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
             dragable = false;
         }
 
+        if (uIInventoryControler == null) 
+        {
+            uIInventoryControler = GameObject.FindObjectOfType<UIInventoryControler>();
+        }
         rectTransform = GetComponent<RectTransform>();
         canvas = FindObjectOfType<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
@@ -37,7 +42,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     // When mouse button is released
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
-
+        beingDragged = false;
         if (dragable) 
         {
             canvasGroup.alpha = 1f;
@@ -46,6 +51,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
             uIInventory.RefreshInventory();
             Destroy(gameObject);
         }
+        
     }
     
     // When mouse is pressed and moved a little amount
@@ -56,7 +62,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
         {
             Item item = new Item();
             // Hitbox is not exactly alligned with sprite, if the user clicks on the very edge of item, event data is null
-            if (eventData.pointerCurrentRaycast.gameObject.transform.parent.gameObject.GetComponent<ItemClickable>().item == null)
+            if (eventData.pointerCurrentRaycast.gameObject == null)
             {
                 return;
             }
@@ -92,6 +98,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     // While being dragged
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
+        beingDragged = true;
         if (dragable)
         {
             // This * 0.9f should cancel out the canvas scale factor but it doesnt and makes the item correctly follow the mouse
@@ -107,5 +114,25 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     public Item GetItem()
     {
         return item;
+    }
+
+    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
+    {
+        item = eventData.pointerCurrentRaycast.gameObject.transform.parent.gameObject.GetComponent<ItemClickable>().item;
+        if (!beingDragged && dragable)
+        {
+            
+            uIInventoryControler.ShowToolTip(transform.position, item);
+
+        }
+        else if (item.isShop) 
+        {
+            uIInventoryControler.ShowToolTip(transform.position, item);
+        }
+    }
+
+    void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
+    {
+        uIInventoryControler.HideToolTip();
     }
 }

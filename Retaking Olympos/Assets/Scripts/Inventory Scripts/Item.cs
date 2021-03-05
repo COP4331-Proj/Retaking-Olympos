@@ -208,4 +208,33 @@ public class Item
                 return 0;
         }
     }
+
+    public string GetDescription()
+    {
+        switch (itemName)
+        {
+            case ItemName.Sword:
+                {
+                    return "A Thracian's sword and shield";
+                }
+            case ItemName.Helmet:
+                {
+                    return "A Thracian's helmet";
+                }
+            case ItemName.Chestplate:
+                {
+                    return "A Thracian's chestplate";
+                }
+            case ItemName.Pants:
+                {
+                    return "A Thracian's leggings";
+                }
+            case ItemName.Boots:
+                {
+                    return "A Thracian's footware";
+                }
+            default:
+                return "";
+        }
+    }
 }
