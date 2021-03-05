@@ -92,15 +92,15 @@ public class SettingsMenu : MonoBehaviour
         {
             volumeSlider.value = PlayerPrefs.GetFloat("VolumePreference");
         } 
-        else if (PlayerPrefs.HasKey("FullscreenPreference"))
+        if (PlayerPrefs.HasKey("FullscreenPreference"))
         {
             toggle.enabled = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         }
-        else if (PlayerPrefs.HasKey("ResolutionPreference"))
+        if (PlayerPrefs.HasKey("ResolutionPreference"))
         {
             resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
         }
-        else if (PlayerPrefs.HasKey("DifficultyPreference"))
+        if (PlayerPrefs.HasKey("DifficultyPreference"))
         {
             switch (PlayerPrefs.GetFloat("DifficultyPreference"))
             {
