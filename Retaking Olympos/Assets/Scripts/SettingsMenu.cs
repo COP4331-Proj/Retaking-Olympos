@@ -43,7 +43,7 @@ public class SettingsMenu : MonoBehaviour
         gameObject.GetComponent<SceneLoader>().GoToScene(previousClass);
     }
 
-    public void setVolume (float volume)
+    public void SetVolume (float volume)
     {
         audioMixer.SetFloat("Volume", volume);
         currentVolume = volume;
