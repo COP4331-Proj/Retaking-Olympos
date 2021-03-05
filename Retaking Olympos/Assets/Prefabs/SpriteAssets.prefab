@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3129ad10e3bad49a704ab6a35f11fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSprite: {fileID: 21300000, guid: 9186f545a0eee454cacc62ea65d75bde, type: 3}
-  helmetSprite: {fileID: 21300000, guid: e8f4029b832ae8a429c1b70dd79c4533, type: 3}
-  chestplateSprite: {fileID: 21300000, guid: de0a2c67379a0954ebfa3c7caaaf67f0, type: 3}
-  pantsSprite: {fileID: 21300000, guid: 411bca6aba4886e43aa680da9b96602c, type: 3}
-  bootsSprite: {fileID: 21300000, guid: 5a3223922e932df4592fd0d14c0e6c62, type: 3}
+  swordSprite: {fileID: 21300000, guid: 12962e6bb1d68ae48b0ebcc4e1494db8, type: 3}
+  helmetSprite: {fileID: 21300000, guid: c388b23217dbfbd4d98a2a7a0fdfc518, type: 3}
+  chestplateSprite: {fileID: 21300000, guid: 11cbc7528f559074aa494c8a99701b55, type: 3}
+  pantsSprite: {fileID: 21300000, guid: 5104d4a273903434fb766e6287c08b4c, type: 3}
+  bootsSprite: {fileID: 21300000, guid: 196a9fa954bdba242963256383b83375, type: 3}
