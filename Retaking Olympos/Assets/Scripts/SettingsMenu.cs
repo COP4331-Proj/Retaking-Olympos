@@ -21,6 +21,10 @@ public class SettingsMenu : MonoBehaviour
     {
         LoadResolutions();
         LoadSettings();
+
+        GameObject gameObject = new GameObject();
+        gameObject.AddComponent<MuteManager>();
+        gameObject.GetComponent<MuteManager>().Load();
     }
 
     public void OnDestroy()

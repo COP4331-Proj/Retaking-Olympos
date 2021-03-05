@@ -7,7 +7,7 @@ public class MuteManager : MonoBehaviour
 {
     private static bool isMuted = false;
 
-    void Start()
+    public void Load()
     {
         if (!PlayerPrefs.HasKey("muted"))
             PlayerPrefs.SetInt("muted", 0);
