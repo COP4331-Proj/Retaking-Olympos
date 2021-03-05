@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnemyGladiator : MonoBehaviour
 {
     public static int currentHealth;
-    public Gladiator enemy = new Gladiator("Enemy", 1, 100, 100, 6, 14);
-
     public HealthBar healthBar;
+    public Gladiator enemy;
+
+    private float difficulty =
+        PlayerPrefs.HasKey("DifficultyPreference") ? PlayerPrefs.GetFloat("DifficultyPreference") : 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,7 @@ public class EnemyGladiator : MonoBehaviour
 
     public void setupEnemyGladiator()
     {
+        enemy = new Gladiator("Enemy", 1, (int)(100 * difficulty), 100, 6, 14);
         currentHealth = enemy.GetHealth();
         healthBar.setMaxHealth(enemy.GetHealth());
     }
