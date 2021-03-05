@@ -7811,10 +7811,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1015295162}
     m_Modifications:
+    - target: {fileID: 6155191072367252151, guid: bababefef6e97ce4ab52633376b2fa2a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155191072367252151, guid: bababefef6e97ce4ab52633376b2fa2a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155191072367252151, guid: bababefef6e97ce4ab52633376b2fa2a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 122.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155191072367252151, guid: bababefef6e97ce4ab52633376b2fa2a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 15.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155191072367252151, guid: bababefef6e97ce4ab52633376b2fa2a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 76.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155191072367252151, guid: bababefef6e97ce4ab52633376b2fa2a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.825
+      objectReference: {fileID: 0}
     - target: {fileID: 6155191072517268445, guid: bababefef6e97ce4ab52633376b2fa2a,
         type: 3}
       propertyPath: m_Name
       value: Tooltip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155191072517268445, guid: bababefef6e97ce4ab52633376b2fa2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6155191072517268446, guid: bababefef6e97ce4ab52633376b2fa2a,
         type: 3}
@@ -7854,12 +7889,12 @@ PrefabInstance:
     - target: {fileID: 6155191072517268446, guid: bababefef6e97ce4ab52633376b2fa2a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 132.54001
+      value: 152.7
       objectReference: {fileID: 0}
     - target: {fileID: 6155191072517268446, guid: bababefef6e97ce4ab52633376b2fa2a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 93.94
+      value: 45.65
       objectReference: {fileID: 0}
     - target: {fileID: 6155191072517268446, guid: bababefef6e97ce4ab52633376b2fa2a,
         type: 3}
