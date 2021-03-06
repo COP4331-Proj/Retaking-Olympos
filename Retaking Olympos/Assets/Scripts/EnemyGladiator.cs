@@ -7,13 +7,12 @@ public class EnemyGladiator : MonoBehaviour
     public static int currentHealth;
     public HealthBar healthBar;
     public Gladiator enemy;
-
-    private float difficulty =
-        PlayerPrefs.HasKey("DifficultyPreference") ? PlayerPrefs.GetFloat("DifficultyPreference") : 0f;
+    private float difficulty;
 
     // Start is called before the first frame update
     void Start()
     {
+        difficulty = PlayerPrefs.HasKey("DifficultyPreference") ? PlayerPrefs.GetFloat("DifficultyPreference") : 0f;
         setupEnemyGladiator();
     }
 
