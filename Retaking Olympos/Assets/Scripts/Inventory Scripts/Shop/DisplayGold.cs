@@ -6,8 +6,8 @@ using TMPro;
 
 public class DisplayGold : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI goldText;
-    [SerializeField] HoldPlayerInformation playerInformation;
+    public TextMeshProUGUI goldText;
+    public HoldPlayerInformation playerInformation;
 
     private void Update()
     {

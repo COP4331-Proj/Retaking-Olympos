@@ -48,7 +48,7 @@ public class PlayerInventory
         AddItem(new Item { itemName = Item.ItemName.Boots, amount = 4 });
     }
 
-    internal void PopulateWithShopItems()
+    public void PopulateWithShopItems()
     {
         AddItem(new Item { itemName = Item.ItemName.Sword, amount = 1 , isShop = true});
         AddItem(new Item { itemName = Item.ItemName.Helmet, amount = 1, isShop = true });
