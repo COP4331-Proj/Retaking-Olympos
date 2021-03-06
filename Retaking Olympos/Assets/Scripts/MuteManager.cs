@@ -43,9 +43,6 @@ public class MuteManager : MonoBehaviour
     private static void updateText()
     {
         Text muteStatus = GameObject.Find("Canvas/Mute/Text").GetComponent<Text>();
-        if (isMuted)
-            muteStatus.text = "Unmute";
-        else
-            muteStatus.text = "Mute";
+        muteStatus.text = isMuted ? "Unmute" : "Mute";
     }
 }

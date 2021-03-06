@@ -17,7 +17,7 @@ public class SettingsMenu : MonoBehaviour
     static String previousClass;
     Resolution[] resolutions;
 
-    public void Awake()
+    public void Start()
     {
         LoadResolutions();
         LoadSettings();
@@ -27,7 +27,7 @@ public class SettingsMenu : MonoBehaviour
         gameObject.GetComponent<MuteManager>().Load();
     }
 
-    public void OnDestroy()
+    public void Save()
     {
         SaveSettings();
     }
@@ -43,6 +43,8 @@ public class SettingsMenu : MonoBehaviour
 
     public void ReturnToPreviousClass()
     {
+        Save();
+
         GameObject gameObject = new GameObject();
         gameObject.AddComponent<SceneLoader>();
         gameObject.GetComponent<SceneLoader>().GoToScene(previousClass);
@@ -69,7 +71,7 @@ public class SettingsMenu : MonoBehaviour
     {
         resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
 
-        resolutionDropdown.ClearOptions();
+        resolutionDropdown?.ClearOptions();
 
         List<string> options = new List<string>();
 
@@ -85,37 +87,38 @@ public class SettingsMenu : MonoBehaviour
             }
         }
 
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
-    }
+        resolutionDropdown?.AddOptions(options);
+        resolutionDropdown?.SetValueWithoutNotify(currentResolutionIndex);
+        resolutionDropdown?.RefreshShownValue();
+        }
 
     public void LoadSettings()
     {
         if (PlayerPrefs.HasKey("VolumePreference"))
         {
-            volumeSlider.value = PlayerPrefs.GetFloat("VolumePreference");
-        } 
-        if (PlayerPrefs.HasKey("FullscreenPreference"))
-        {
-            toggle.enabled = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
+            volumeSlider?.SetValueWithoutNotify(PlayerPrefs.GetFloat("VolumePreference"));
         }
         if (PlayerPrefs.HasKey("ResolutionPreference"))
         {
-            resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
+            resolutionDropdown?.SetValueWithoutNotify(PlayerPrefs.GetInt("ResolutionPreference"));
         }
+        if (PlayerPrefs.HasKey("FullscreenPreference"))
+        {
+            toggle?.SetIsOnWithoutNotify(Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference")));
+        }
+
         if (PlayerPrefs.HasKey("DifficultyPreference"))
         {
             switch (PlayerPrefs.GetFloat("DifficultyPreference"))
             {
                 case 0.5f: // Easy
-                    difficultyDropdown.value = 0;
+                    difficultyDropdown?.SetValueWithoutNotify(0);
                     break;
                 case 1.0f: // Normal
-                    difficultyDropdown.value = 1;
+                    difficultyDropdown?.SetValueWithoutNotify(1);
                     break;
                 case 1.5f: // Hard
-                    difficultyDropdown.value = 2;
+                    difficultyDropdown?.SetValueWithoutNotify(2);
                     break;
             }
         }
