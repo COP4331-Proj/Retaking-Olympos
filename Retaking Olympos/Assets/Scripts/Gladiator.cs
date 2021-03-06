@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gladiator
 {
     private string gladiatorName;
+    private string gladiatorClass;
     private int level;
     private int health;
     private int stamina;
@@ -15,6 +16,7 @@ public class Gladiator
     public Gladiator(string name, int level, int health, int stamina, int power, int defense) 
     {
         this.gladiatorName = name;
+        this.gladiatorClass = "Classless";
         this.level = level;
         this.health = health;
         this.stamina = stamina;
@@ -31,7 +33,14 @@ public class Gladiator
     {
         this.gladiatorName = name;
     }
-
+    public string GetClass()
+    {
+        return this.gladiatorClass;
+    }
+    public void SetClass(string gladiatorClass)
+    {
+        this.gladiatorClass = gladiatorClass;
+    }
     public int GetLevel()
     {
         return this.level;
