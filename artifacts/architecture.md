@@ -94,6 +94,8 @@ The shop controler class creates an inventory for the shop
 
 The display gold class allows for the players gold to be displayed on the screen
 
+The Tooltip Controler class controls all the functions of the tooltip when its called from an onCursorEnter event in the UIDragAndDrop class
+
 <img src="Pictures/Class-Diagram/GladiatorStats.png">
 
 <img src="Pictures/Class-Diagram/UserStoryTable.png">
