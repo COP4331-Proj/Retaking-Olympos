@@ -122,35 +122,6 @@ public class Item
         }
     }
 
-    public int GetCost()
-    {
-        switch (itemName)
-        {
-            case ItemName.Sword:
-                {
-                    return 100;
-                }
-            case ItemName.Helmet:
-                {
-                    return 50;
-                }
-            case ItemName.Chestplate:
-                {
-                    return 80;
-                }
-            case ItemName.Pants:
-                {
-                    return 70;
-                }
-            case ItemName.Boots:
-                {
-                    return 40;
-                }
-            default:
-                return 0;
-        }
-    }
-
     public int GetSellPrice()
     {
         switch (itemName)
