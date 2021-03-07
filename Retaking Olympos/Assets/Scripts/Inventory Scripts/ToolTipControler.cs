@@ -5,9 +5,10 @@ using TMPro;
 
 public class ToolTipControler : MonoBehaviour
 {
-    Canvas canvas;
+    private Canvas canvas;
     public GameObject toolTip;
-    Vector3 toolTipPos;
+    private Vector3 toolTipPos;
+
     private void Start()
     {
         canvas = FindObjectOfType<Canvas>();
