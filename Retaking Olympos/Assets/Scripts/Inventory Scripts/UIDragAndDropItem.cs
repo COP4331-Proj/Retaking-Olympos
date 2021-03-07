@@ -15,6 +15,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
 
     public UIInventory uIInventory;
     public UIEquiptment uIEquiptment;
+    public ToolTipControler toolTipControler;
     [SerializeField] UIInventoryControler uIInventoryControler;
 
     bool dragable = true;
@@ -37,6 +38,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
         rectTransform = GetComponent<RectTransform>();
         canvas = FindObjectOfType<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
+        toolTipControler = FindObjectOfType<ToolTipControler>();
     }
 
     // When mouse button is released
@@ -116,23 +118,34 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
         return item;
     }
 
+
+    // When a pointer hovers over the item
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
         item = eventData.pointerCurrentRaycast.gameObject.transform.parent.gameObject.GetComponent<ItemClickable>().item;
+
+        // If item isnt currently being dragged and is able to be dragged, i.e. is in the players inventory
+        // This excludes tooltips for equipped items and items being moved
         if (!beingDragged && dragable)
         {
-            
-            uIInventoryControler.ShowToolTip(transform.position, item);
+
+            toolTipControler.ShowToolTip(transform.position, item);
 
         }
+        // also show tooltip for items in the shop
         else if (item.isShop) 
         {
-            uIInventoryControler.ShowToolTip(transform.position, item);
+            toolTipControler.ShowToolTip(transform.position, item);
         }
+
+
     }
 
+    // When pointer leaves the item
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
-        uIInventoryControler.HideToolTip();
+        toolTipControler.HideToolTip();
     }
+
+
 }

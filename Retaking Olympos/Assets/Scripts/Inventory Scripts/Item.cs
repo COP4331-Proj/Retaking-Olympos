@@ -186,23 +186,23 @@ public class Item
         {
             case ItemName.Sword:
                 {
-                    return "A Thracian's sword and shield";
+                    return "A Thracian's sword and shield \nPower + 5";
                 }
             case ItemName.Helmet:
                 {
-                    return "A Thracian's helmet";
+                    return "A Thracian's helmet \nDefense + 5";
                 }
             case ItemName.Chestplate:
                 {
-                    return "A Thracian's chestplate";
+                    return "A Thracian's chestplate \nDefense + 8";
                 }
             case ItemName.Pants:
                 {
-                    return "A Thracian's leggings";
+                    return "A Thracian's leggings \nDefense + 7";
                 }
             case ItemName.Boots:
                 {
-                    return "A Thracian's footware";
+                    return "A Thracian's footware \nDefense + 4";
                 }
             default:
                 return "";

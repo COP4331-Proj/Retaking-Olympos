@@ -138,6 +138,7 @@ public class UIInventory : MonoBehaviour
         }
     }
 
+    // Check if the player has enough money to buy the item
     private void TestBuy(Item item)
     {
         

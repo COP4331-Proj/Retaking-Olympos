@@ -11,6 +11,7 @@ public class DisplayGold : MonoBehaviour
 
     private void Update()
     {
+        // If gold text exists, update it with the players gold
         if (goldText != null) 
         {
             goldText.text = playerInformation.gold.ToString();

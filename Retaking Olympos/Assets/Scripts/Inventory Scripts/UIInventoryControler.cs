@@ -9,7 +9,7 @@ public class UIInventoryControler : MonoBehaviour
     public HoldPlayerInformation playerInformation;
     public UIInventory uIInventory;
     public UIEquiptment uIEquiptment;
-    public GameObject toolTip;
+    
     public GladiatorEquiptment gladiatorEquiptment;
 
     // Start is called before the first frame update
@@ -28,26 +28,6 @@ public class UIInventoryControler : MonoBehaviour
 
     }
 
-    public void ShowToolTip(Vector3 position, Item item)
-    {
-        if (toolTip == null)
-        {
-            toolTip = GameObject.FindWithTag("ToolTip");
-        }
-        toolTip.SetActive(true);
-        
-        toolTip.transform.position = position;
-        toolTip.GetComponentInChildren<TextMeshProUGUI>().text = item.GetDescription();
-    }
-
-    public void HideToolTip()
-    {
-        if (toolTip == null)
-        {
-            toolTip = GameObject.FindWithTag("ToolTip");
-        }
-        toolTip.SetActive(false);
-    }
     // Pass along the list of gladiators when modifying index
     public void IncrementEquipmentIndex() 
     {
@@ -58,4 +38,5 @@ public class UIInventoryControler : MonoBehaviour
     {
         uIEquiptment.DecrementEquipmentIndex(playerInformation);
     }
+
 }
