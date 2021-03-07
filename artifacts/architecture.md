@@ -56,17 +56,13 @@ The Healthbar and Staminabar classes display the respective bars in the battle s
 
 <img src="Pictures/Class-Diagram/ClassDiagram.png">
 
-The Gladiator Stats picture holds all the classes to do with Gladiator Stats for organizational clarity, all of the classes here relate to user stories 13 and 14
+The Gladiator Stats picture holds all the classes to do with Gladiator Stats and items for organizational clarity
 
-The Hold gladiator list scriptable object holds a list of gladiator objects, each holding stats for an individual gladiator
+The holdPlayerInformation class holds the player's gold amount, their inventory, the shop's inventory, the list of player gladiators, and the gladiator's equipment. This is a scriptable object so information can be presereved through scene loads
 
 The gladiator object holds all the stat data for a single gladiator
 
-The Hold Player Equipment scriptable object holds a list of gladiator equipment, each holding what items are equipped for an individual gladiator, the index to this list is the same as the index in the hold gladiator list
-
 The Individual gladiator Equipment class holds all the items equipped by an individual gladiator
-
-The Hold Player Inventory scriptable objects holds all the items in the players inventory.
 
 The Player inventory class allows for items to be added and removed from the Hold Player Inventory
 
@@ -93,6 +89,10 @@ The EquipmentIndex class is attatched to the left and right arrows and updates t
 The Item class defines what an item object contains
 
 The Item Assets class links an item name to a sprite
+
+The shop controler class creates an inventory for the shop
+
+The display gold class allows for the players gold to be displayed on the screen
 
 <img src="Pictures/Class-Diagram/GladiatorStats.png">
 
