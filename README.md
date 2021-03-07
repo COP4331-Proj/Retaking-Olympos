@@ -105,3 +105,35 @@ Tyler: Added the ability to change between full screen and windowed mode and pau
 Nathan: Created Inventory system and Equipment system, allowing different items with different effects to be equipped on a gladiator in the list and having the effects persist through scene loads
 
 Xavier: Created enemy gladiator entity in battle scene and rudimentary attack methods for user story 34
+
+## Sprint 5
+
+[Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
+
+[System Architecture](https://github.com/COP4331-Proj/Retaking-Olympos/blob/main/artifacts/architecture.md)
+
+[Source Code](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Scripts)
+
+[Automated Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Tests)
+
+[Manual Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/artifacts/Manual%20Tests)
+
+[Demo Video](https://youtu.be/ETVU6teygLY)
+
+### Burndown Chart
+<img src="artifacts/Pictures/Charts/Burndown Chart Sprint 4.PNG">
+
+### Velocity Chart
+<img src="artifacts/Pictures/Charts/Velocity Chart Sprint 4.PNG">
+
+### Task Allocation
+
+Joshua: 
+
+Timothy: 
+
+Tyler: 
+
+Nathan: Created shop with ability to buy items from a shop inventory and sell items from the player inventory. Also created tooltips that display item information when an item is moused over.
+
+Xavier: 
