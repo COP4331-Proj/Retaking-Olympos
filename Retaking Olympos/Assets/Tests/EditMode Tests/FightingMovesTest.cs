@@ -18,6 +18,7 @@ namespace Tests
             PlayerGladiator playerGlad = player.AddComponent<PlayerGladiator>();
             EnemyGladiator enemyGlad = enemy.AddComponent<EnemyGladiator>();
             FightingMoves attacks = moves.AddComponent<FightingMoves>();
+            enemyGlad.setupEnemyGladiator();
             EnemyGladiator.currentHealth = enemyGlad.enemy.GetHealth();
             attacks.playerSwing(enemyGlad);
             Assert.AreEqual(80, enemyGlad.getCurrentHealth());

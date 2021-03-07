@@ -7,7 +7,7 @@ public class EnemyGladiator : MonoBehaviour
     public static int currentHealth;
     public HealthBar healthBar;
     public Gladiator enemy;
-    private float difficulty;
+    private float difficulty = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +41,9 @@ public class EnemyGladiator : MonoBehaviour
     {
         enemy = new Gladiator("Enemy", 1, (int)(100 * difficulty), 100, 6, 14);
         currentHealth = enemy.GetHealth();
-        healthBar.setMaxHealth(enemy.GetHealth());
+        if (healthBar != null) 
+        {
+            healthBar.setMaxHealth(enemy.GetHealth());
+        }
     }
 }
