@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isSprinting = false;
     public StaminaBar staminaBar;
 
-
     void Update()
     {
+
         // Set the sprinting speed
         sprintingSpeed = walkingSpeed * sprintSpeedMultiplier;
 
@@ -27,11 +27,19 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
             transform.position = new Vector2(transform.position.x, (float)(transform.position.y + speed));
         if (Input.GetKey(KeyCode.A))
+        {
+            if (transform.localScale.x > 0)
+                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
             transform.position = new Vector2((float)(transform.position.x - speed), transform.position.y);
+        }
         if (Input.GetKey(KeyCode.S))
             transform.position = new Vector2(transform.position.x, (float)(transform.position.y - speed));
         if (Input.GetKey(KeyCode.D))
+        {
+            if (transform.localScale.x < 0)
+              transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
             transform.position = new Vector2((float)(transform.position.x + speed), transform.position.y);
+        }
 
         if (isSprinting)
             staminaBar.setStamina(PlayerGladiator.currentStamina);
