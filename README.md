@@ -130,7 +130,7 @@ Xavier: Created enemy gladiator entity in battle scene and rudimentary attack me
 
 Joshua:
 
-Timothy:
+Timothy: Added classes for gladiators with stats that scale based on the level and class of the gladiator
 
 Tyler: Created a general back button to complete navigation between scenes, implemented the difficulty setting, and fixed loading settings.
 
