@@ -136,4 +136,4 @@ Tyler: Created a general back button to complete navigation between scenes, impl
 
 Nathan: Created shop with ability to buy items from a shop inventory and sell items from the player inventory. Also created tooltips that display item information when an item is moused over.
 
-Xavier:
+Xavier: Added collision physics to gladiator models and environment in battle scene and implemented attack collision for user story 38.
