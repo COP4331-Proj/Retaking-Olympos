@@ -233,8 +233,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c39741b4c95d90498f0071f1e16e79c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2012492386}
-  enemy: {fileID: 1438262663}
+  player: {fileID: 1555567057}
+  enemy: {fileID: 1798561729}
+  playerAttackPoint: {fileID: 1555567052}
+  enemyAttackPoint: {fileID: 1798561724}
+  playerRange: 1
+  enemyRange: 1
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!4 &282281967
 Transform:
   m_ObjectHideFlags: 0
@@ -582,6 +592,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Sprite
       objectReference: {fileID: 0}
+    - target: {fileID: 92734912238738753, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 92734912238738754, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
         type: 3}
       propertyPath: m_Enabled
@@ -872,8 +887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1438262662}
-  - component: {fileID: 1438262663}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyGladiator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,19 +909,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1438262663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438262661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e73294daef9ea4e81ba86148b42380, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 1460706736}
 --- !u!1 &1440496695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,6 +1219,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 92734912845153116}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1555567052 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 92734912238738813, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
+    type: 3}
+  m_PrefabInstance: {fileID: 92734912845153116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!61 &1555567053
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1244,6 +1251,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.22603804, y: 0.24962148}
   m_EdgeRadius: 0
+--- !u!114 &1555567057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555567051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568cc2b796be1de41a852cf135c938ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1720087990}
+  staminaBar: {fileID: 1676407811}
 --- !u!114 &1676407811 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1502559341551798252, guid: bd883cbc0309344489c98ff56e18eb1e,
@@ -1334,6 +1355,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerGladiator
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285919941062830371, guid: 513be51e5a76aac4aac92a2f15cc7f44,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2285919941062830373, guid: 513be51e5a76aac4aac92a2f15cc7f44,
         type: 3}
@@ -1454,26 +1480,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.22385949, y: 0.24877328}
   m_EdgeRadius: 0
---- !u!1 &2012492385 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2285919941062830371, guid: 513be51e5a76aac4aac92a2f15cc7f44,
-    type: 3}
-  m_PrefabInstance: {fileID: 1748415565}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2012492386
+--- !u!114 &1798561729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2012492385}
+  m_GameObject: {fileID: 1798561723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 568cc2b796be1de41a852cf135c938ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 75e73294daef9ea4e81ba86148b42380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1720087990}
-  staminaBar: {fileID: 1676407811}
+  healthBar: {fileID: 1460706736}
 --- !u!1001 &92734912845153116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1485,6 +1504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MovementTester
+      objectReference: {fileID: 0}
+    - target: {fileID: 92734912238738753, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 92734912238738754, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
         type: 3}
