@@ -186,23 +186,23 @@ public class Item
         {
             case ItemName.Sword:
                 {
-                    return "A Thracian's sword and shield \nPower + 5";
+                    return "A Thracian's sword and shield \nPower + 5\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
                 }
             case ItemName.Helmet:
                 {
-                    return "A Thracian's helmet \nDefense + 5";
+                    return "A Thracian's helmet \nDefense + 5\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
                 }
             case ItemName.Chestplate:
                 {
-                    return "A Thracian's chestplate \nDefense + 8";
+                    return "A Thracian's chestplate \nDefense + 8\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
                 }
             case ItemName.Pants:
                 {
-                    return "A Thracian's leggings \nDefense + 7";
+                    return "A Thracian's leggings \nDefense + 7\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
                 }
             case ItemName.Boots:
                 {
-                    return "A Thracian's footware \nDefense + 4";
+                    return "A Thracian's footware \nDefense + 4\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
                 }
             default:
                 return "";

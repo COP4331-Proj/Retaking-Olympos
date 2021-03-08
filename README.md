@@ -118,13 +118,13 @@ Xavier: Created enemy gladiator entity in battle scene and rudimentary attack me
 
 [Manual Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/artifacts/Manual%20Tests)
 
-[Demo Video](https://youtu.be/ETVU6teygLY)
+[Demo Video](https://youtu.be/Jpl4Qk0zJOk)
 
 ### Burndown Chart
-<img src="artifacts/Pictures/Charts/Burndown Chart Sprint 4.PNG">
+<img src="artifacts/Pictures/Charts/Burndown Chart Sprint 5.PNG">
 
 ### Velocity Chart
-<img src="artifacts/Pictures/Charts/Velocity Chart Sprint 4.PNG">
+<img src="artifacts/Pictures/Charts/Velocity Chart Sprint 5.PNG">
 
 ### Task Allocation
 
