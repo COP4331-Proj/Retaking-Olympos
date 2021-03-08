@@ -12,7 +12,7 @@ public class EnemyGladiator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        difficulty = PlayerPrefs.HasKey("DifficultyPreference") ? PlayerPrefs.GetFloat("DifficultyPreference") : 0f;
+        difficulty = PlayerPrefs.HasKey("DifficultyPreference") ? PlayerPrefs.GetFloat("DifficultyPreference") : 1f;
         setupEnemyGladiator();
     }
 

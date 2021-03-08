@@ -40,7 +40,7 @@ Timothy: Created class diagrams
 
 Tyler: Created the architecture document outside High level C4, classes, and UI
 
-Nathan: Created UI diagrams and refactered user stories 
+Nathan: Created UI diagrams and refactered user stories
 
 Xavier: Created High level C4 Architecture diagrams
 
@@ -128,12 +128,12 @@ Xavier: Created enemy gladiator entity in battle scene and rudimentary attack me
 
 ### Task Allocation
 
-Joshua: 
+Joshua:
 
-Timothy: 
+Timothy:
 
-Tyler: 
+Tyler: Created a general back button to complete navigation between scenes, implemented the difficulty setting, and fixed loading settings.
 
 Nathan: Created shop with ability to buy items from a shop inventory and sell items from the player inventory. Also created tooltips that display item information when an item is moused over.
 
-Xavier: 
+Xavier:
