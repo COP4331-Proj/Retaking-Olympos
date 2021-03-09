@@ -9,6 +9,14 @@ public class PauseMenu : MonoBehaviour
     static String previousClass;
     public bool isPaused;
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Resume();
+        }
+    }
+
     public void Resume()
     {
         isPaused = false;
