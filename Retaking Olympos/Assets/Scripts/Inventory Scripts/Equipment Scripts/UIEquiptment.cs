@@ -108,32 +108,56 @@ public class UIEquiptment : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-
         // Check if item is in each slot, if so display it
         Item weapon = gladiatorEquiptment.GetWeapon(gladiatorIndex);
         if (weapon != null)
         {
+            weaponSlot.transform.Find("DefaultSprite").gameObject.SetActive(false);
             SetEquipedItem(weapon, weaponSlot);
+        }
+        else 
+        {
+            weaponSlot.transform.Find("DefaultSprite").gameObject.SetActive(true);
         }
         Item chestplate = gladiatorEquiptment.GetChestplate(gladiatorIndex);
         if (chestplate != null)
         {
+            chestSlot.transform.Find("DefaultSprite").gameObject.SetActive(false);
             SetEquipedItem(chestplate, chestSlot);
+        }
+        else
+        {
+            chestSlot.transform.Find("DefaultSprite").gameObject.SetActive(true);
         }
         Item helmet = gladiatorEquiptment.GetHelmet(gladiatorIndex);
         if (helmet != null)
         {
+            helmetSlot.transform.Find("DefaultSprite").gameObject.SetActive(false);
             SetEquipedItem(helmet, helmetSlot);
+        }
+        else
+        {
+            helmetSlot.transform.Find("DefaultSprite").gameObject.SetActive(true);
         }
         Item legs = gladiatorEquiptment.GetLegs(gladiatorIndex);
         if (legs != null)
         {
+            legsSlot.transform.Find("DefaultSprite").gameObject.SetActive(false);
             SetEquipedItem(legs, legsSlot);
+        }
+        else
+        {
+            legsSlot.transform.Find("DefaultSprite").gameObject.SetActive(true);
         }
         Item boots = gladiatorEquiptment.GetBoots(gladiatorIndex);
         if (boots != null)
         {
+            bootsSlot.transform.Find("DefaultSprite").gameObject.SetActive(false);
             SetEquipedItem(boots, bootsSlot);
+        }
+        else
+        {
+            bootsSlot.transform.Find("DefaultSprite").gameObject.SetActive(true);
         }
     }
 
