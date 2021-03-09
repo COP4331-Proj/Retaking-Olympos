@@ -629,9 +629,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 92734912238738812, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 92734912238738812, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 92734912238738812, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8b42c6bdd2a8a26458ddf852d6f61cbd,
+      objectReference: {fileID: 21300000, guid: bafc65fb0e89c1c4bb64a04882940980,
         type: 3}
     - target: {fileID: 92734912238738812, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
         type: 3}
@@ -1243,7 +1253,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1472,7 +1482,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1537,9 +1547,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 92734912238738812, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
         type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 92734912238738812, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 92734912238738812, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
+        type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8b42c6bdd2a8a26458ddf852d6f61cbd,
+      objectReference: {fileID: 21300000, guid: bafc65fb0e89c1c4bb64a04882940980,
         type: 3}
     - target: {fileID: 92734912238738812, guid: 4b0b777ff54dca1458d3a1dc4f857d36,
         type: 3}
