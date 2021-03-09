@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordSprite: {fileID: 21300000, guid: 12962e6bb1d68ae48b0ebcc4e1494db8, type: 3}
-  helmetSprite: {fileID: 21300000, guid: c388b23217dbfbd4d98a2a7a0fdfc518, type: 3}
+  helmetSprite: {fileID: 21300000, guid: 8085677bb2f839744b6b6f5ee98c2e9c, type: 3}
   chestplateSprite: {fileID: 21300000, guid: 11cbc7528f559074aa494c8a99701b55, type: 3}
   pantsSprite: {fileID: 21300000, guid: 5104d4a273903434fb766e6287c08b4c, type: 3}
   bootsSprite: {fileID: 21300000, guid: 196a9fa954bdba242963256383b83375, type: 3}
