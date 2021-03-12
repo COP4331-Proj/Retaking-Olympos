@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyGladiator : MonoBehaviour
 {
     public static int currentHealth;
-    public HealthBar healthBar;
+    public EnemyBar healthBar;
     public Gladiator enemy;
     private float difficulty = 1f;
 

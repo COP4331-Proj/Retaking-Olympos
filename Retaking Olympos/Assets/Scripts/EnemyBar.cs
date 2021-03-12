@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class EnemyBar : MonoBehaviour
 {
     public Slider slider;
 
@@ -22,11 +22,10 @@ public class HealthBar : MonoBehaviour
 
     public void UpdateLabel()
     {
-        if (GameObject.Find("Canvas/HP Number") != null) 
+        if (GameObject.Find("Canvas/Enemy HP Number") != null) 
         {
-            Text hpNum = GameObject.Find("Canvas/HP Number").GetComponent<Text>();
-            Debug.Log(slider.value + " / " + slider.maxValue);
-            hpNum.text = slider.value + " / " + slider.maxValue;
+            Text enemyHPNum = GameObject.Find("Canvas/Enemy HP Number").GetComponent<Text>();
+            enemyHPNum.text = slider.value + " / " + slider.maxValue;
         }
     }
 }
