@@ -14,11 +14,15 @@ public class FightingMoves : MonoBehaviour
     public float enemyRange = 1.0f;
     public LayerMask playerLayers;
     public LayerMask enemyLayers;
+    public float playerAttackRate = 2f;
+    public float enemyAttackRate = 1f;
+    float nextPlayerAttackTime = 0f;
+    float nextEnemyAttackTime = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -36,7 +40,28 @@ public class FightingMoves : MonoBehaviour
             enemySwing();
             animator.SetBool("isAttacking", false);
         }
+
+        if (Time.time >= nextPlayerAttackTime)
+        {
+            // To test attacks, pressing J down will cause damage to the enemy if in range
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                playerSwing();
+                nextPlayerAttackTime = Time.time + 1f / playerAttackRate;
+            }
+        }
+
+        if (Time.time >= nextEnemyAttackTime)
+        {
+            // If in range, the enemy will start attacking the player
+            if (Vector2.Distance(enemyAttackPoint.position, playerAttackPoint.position) <= (enemyRange * 2))
+            {
+                enemySwing();
+                nextEnemyAttackTime = Time.time + 1f / enemyAttackRate;
+            }
+        }
     }
+
 
     public void playerHit(EnemyGladiator enemy)
     {
