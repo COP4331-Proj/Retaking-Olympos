@@ -69,4 +69,19 @@ public class PlayerGladiator : MonoBehaviour
         currentDefense = player.GetDefense();
         playerClass = player.GetClass();
     }
+
+    public void SavePlayerGladiatorData()
+    {
+        SaveManager.SavePlayerData(this);
+    }
+
+    public void LoadPlayerGladiatorData()
+    {
+        PlayerData data = SaveManager.LoadPlayerData();
+        currentHealth = data.health;
+        currentLevel = data.level;
+        currentDefense = data.defense;
+        currentStamina = data.stamina;
+        currentPower = data.power;
+    }
 }

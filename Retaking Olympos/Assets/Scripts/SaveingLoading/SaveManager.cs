@@ -6,8 +6,8 @@ public static class SaveManager
 {
     public static void SavePlayerData(PlayerGladiator player)
     {
-        string path = Application.persistentDataPath + "/game.RO";
         BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/game.RO";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         PlayerData data = new PlayerData(player);
@@ -27,8 +27,9 @@ public static class SaveManager
             return null;
         }
 
-        BinaryFormatter formatter= new BinaryFormatter();
+        BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = new FileStream(path, FileMode.Open);
+
         PlayerData data = formatter.Deserialize(stream) as PlayerData;
         stream.Close();
 
