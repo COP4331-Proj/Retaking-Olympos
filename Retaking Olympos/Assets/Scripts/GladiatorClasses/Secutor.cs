@@ -10,13 +10,25 @@ public class Secutor : Gladiator
     // The base stats will be changed if they are unbalanced
     public Secutor(string name, int level)
         : base(name, level, 0, 0, 0, 0)
-    {
-        // (level * 25) + 75 is the average stat that most classes will have
-        // Secutor has heavy armor. Therefore, it'll have less stamina than normal, but will have really high defense and health
+    { 
         SetClass("Secutor");
-        SetHealth((level * 30) + 75);
-        SetStamina((level * 15) + 65);
-        SetPower((level * 25) + 75);
-        SetDefense((level * 40) + 75);
+        UpdateStats();
+    }
+
+    // (level * 25) + 75 is the average stat that most classes will have
+    // Secutor has heavy armor. Therefore, it'll have less stamina than normal, but will have really high defense and health
+    private void UpdateStats()
+    {
+        SetHealth((GetLevel() * 30) + 75);
+        SetStamina((GetLevel() * 15) + 65);
+        SetPower((GetLevel() * 25) + 75);
+        SetDefense((GetLevel() * 40) + 75);
+        return;
+    }
+
+    public void LevelUp()
+    {
+        SetLevel(GetLevel() + 1);
+        UpdateStats();
     }
 }

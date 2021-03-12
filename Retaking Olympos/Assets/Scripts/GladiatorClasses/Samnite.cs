@@ -11,12 +11,24 @@ public class Samnite : Gladiator
     public Samnite(string name, int level)
         : base(name, level, 0, 0, 0, 0)
     {
-        // (level * 25) + 75 is the average stat that most classes will have
-        // Samnite is an all-rounder. Therefore, all of the stats should be pretty average
         SetClass("Samnite");
-        SetHealth((level * 25) + 75);
-        SetStamina((level * 25) + 75);
-        SetPower((level * 25) + 75);
-        SetDefense((level * 25) + 75);
+        UpdateStats();
+    }
+
+    // (level * 25) + 75 is the average stat that most classes will have
+    // Samnite is an all-rounder. Therefore, all of the stats should be pretty average
+    private void UpdateStats()
+    {
+        SetHealth((GetLevel() * 25) + 75);
+        SetStamina((GetLevel() * 25) + 75);
+        SetPower((GetLevel() * 25) + 75);
+        SetDefense((GetLevel() * 25) + 75);
+        return;
+    }
+
+    public void LevelUp()
+    {
+        SetLevel(GetLevel() + 1);
+        UpdateStats();
     }
 }

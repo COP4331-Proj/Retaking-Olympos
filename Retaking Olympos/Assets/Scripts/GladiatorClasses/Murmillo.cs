@@ -11,13 +11,25 @@ public class Murmillo : Gladiator
     public Murmillo(string name, int level)
         : base(name, level, 0, 0, 0, 0)
     {
-        // (level * 25) + 75 is the average stat that most classes will have
-        // Murmillo has a large sword but is susceptible to agile attacks. Therefore, its power level will be
-        // above average, but will have below average stamina to since it can't keep up with the more agile classes
         SetClass("Murmillo");
-        SetHealth((level * 25) + 75);
-        SetStamina((level * 15) + 65);
-        SetPower((level * 35) + 75);
-        SetDefense((level * 25) + 75);
+        UpdateStats();
+    }
+
+    // (level * 25) + 75 is the average stat that most classes will have
+    // Murmillo has a large sword but is susceptible to agile attacks. Therefore, its power level will be
+    // above average, but will have below average stamina to since it can't keep up with the more agile classes
+    private void UpdateStats()
+    {
+        SetHealth((GetLevel() * 25) + 75);
+        SetStamina((GetLevel() * 15) + 65);
+        SetPower((GetLevel() * 35) + 75);
+        SetDefense((GetLevel() * 25) + 75);
+        return;
+    }
+
+    public void LevelUp()
+    {
+        SetLevel(GetLevel() + 1);
+        UpdateStats();
     }
 }

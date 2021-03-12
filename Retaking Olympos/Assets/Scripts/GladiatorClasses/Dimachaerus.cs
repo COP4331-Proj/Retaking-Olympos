@@ -15,9 +15,21 @@ public class Dimachaerus : Gladiator
         // Dimachaerus has two swords, and is skilled in close quarters combat. However, it's lightly armored.
         // Therefore, it should be a glass cannon, meaning it has high power, but low defense and health.
         SetClass("Dimachaerus");
-        SetHealth((level * 15) + 65);
-        SetStamina((level * 25) + 75);
-        SetPower((level * 50) + 75);
-        SetDefense((level * 15) + 65);
+        UpdateStats();
+    }
+
+    private void UpdateStats()
+    {
+        SetHealth((GetLevel() * 15) + 65);
+        SetStamina((GetLevel() * 25) + 75);
+        SetPower((GetLevel() * 50) + 75);
+        SetDefense((GetLevel() * 15) + 65);
+        return;
+    }
+
+    public void LevelUp()
+    {
+        SetLevel(GetLevel() + 1);
+        UpdateStats();
     }
 }

@@ -64,6 +64,19 @@ namespace Tests
             Assert.AreEqual(expectedStamina, AdvancedTharcian.GetStamina());
             Assert.AreEqual(expectedPower, AdvancedTharcian.GetPower());
             Assert.AreEqual(expectedDefense, AdvancedTharcian.GetDefense());
+
+            // Test the level up function
+            AdvancedTharcian.LevelUp();
+            expectedLevel = 101;
+            expectedHealth = 2600;
+            expectedStamina = 4120;
+            expectedPower = 2600;
+            expectedDefense = 2600;
+            Assert.AreEqual(expectedLevel, AdvancedTharcian.GetLevel());
+            Assert.AreEqual(expectedHealth, AdvancedTharcian.GetHealth());
+            Assert.AreEqual(expectedStamina, AdvancedTharcian.GetStamina());
+            Assert.AreEqual(expectedPower, AdvancedTharcian.GetPower());
+            Assert.AreEqual(expectedDefense, AdvancedTharcian.GetDefense());
         }
 
         [Test]
@@ -118,6 +131,19 @@ namespace Tests
             expectedDefense = 4075;
 
             Assert.AreEqual(expectedName, AdvancedSecutor.GetName());
+            Assert.AreEqual(expectedLevel, AdvancedSecutor.GetLevel());
+            Assert.AreEqual(expectedHealth, AdvancedSecutor.GetHealth());
+            Assert.AreEqual(expectedStamina, AdvancedSecutor.GetStamina());
+            Assert.AreEqual(expectedPower, AdvancedSecutor.GetPower());
+            Assert.AreEqual(expectedDefense, AdvancedSecutor.GetDefense());
+
+            // Test the level up function
+            AdvancedSecutor.LevelUp();
+            expectedLevel = 101;
+            expectedHealth = 3105;
+            expectedStamina = 1580;
+            expectedPower = 2600;
+            expectedDefense = 4115;
             Assert.AreEqual(expectedLevel, AdvancedSecutor.GetLevel());
             Assert.AreEqual(expectedHealth, AdvancedSecutor.GetHealth());
             Assert.AreEqual(expectedStamina, AdvancedSecutor.GetStamina());
@@ -182,6 +208,19 @@ namespace Tests
             Assert.AreEqual(expectedStamina, Advanced.GetStamina());
             Assert.AreEqual(expectedPower, Advanced.GetPower());
             Assert.AreEqual(expectedDefense, Advanced.GetDefense());
+
+            // Test the level up function
+            Advanced.LevelUp();
+            expectedLevel = 101;
+            expectedHealth = 2600;
+            expectedStamina = 2600;
+            expectedPower = 2600;
+            expectedDefense = 2600;
+            Assert.AreEqual(expectedLevel, Advanced.GetLevel());
+            Assert.AreEqual(expectedHealth, Advanced.GetHealth());
+            Assert.AreEqual(expectedStamina, Advanced.GetStamina());
+            Assert.AreEqual(expectedPower, Advanced.GetPower());
+            Assert.AreEqual(expectedDefense, Advanced.GetDefense());
         }
 
         [Test]
@@ -241,6 +280,19 @@ namespace Tests
             Assert.AreEqual(expectedStamina, Advanced.GetStamina());
             Assert.AreEqual(expectedPower, Advanced.GetPower());
             Assert.AreEqual(expectedDefense, Advanced.GetDefense());
+
+            // Test the level up function
+            Advanced.LevelUp();
+            expectedLevel = 101;
+            expectedHealth = 2600;
+            expectedStamina = 1580;
+            expectedPower = 3610;
+            expectedDefense = 2600;
+            Assert.AreEqual(expectedLevel, Advanced.GetLevel());
+            Assert.AreEqual(expectedHealth, Advanced.GetHealth());
+            Assert.AreEqual(expectedStamina, Advanced.GetStamina());
+            Assert.AreEqual(expectedPower, Advanced.GetPower());
+            Assert.AreEqual(expectedDefense, Advanced.GetDefense());
         }
 
         [Test]
@@ -295,6 +347,19 @@ namespace Tests
             expectedDefense = 1565;
 
             Assert.AreEqual(expectedName, Advanced.GetName());
+            Assert.AreEqual(expectedLevel, Advanced.GetLevel());
+            Assert.AreEqual(expectedHealth, Advanced.GetHealth());
+            Assert.AreEqual(expectedStamina, Advanced.GetStamina());
+            Assert.AreEqual(expectedPower, Advanced.GetPower());
+            Assert.AreEqual(expectedDefense, Advanced.GetDefense());
+
+            // Test the level up function
+            Advanced.LevelUp();
+            expectedLevel = 101;
+            expectedHealth = 1580;
+            expectedStamina = 2600;
+            expectedPower = 5125;
+            expectedDefense = 1580;
             Assert.AreEqual(expectedLevel, Advanced.GetLevel());
             Assert.AreEqual(expectedHealth, Advanced.GetHealth());
             Assert.AreEqual(expectedStamina, Advanced.GetStamina());

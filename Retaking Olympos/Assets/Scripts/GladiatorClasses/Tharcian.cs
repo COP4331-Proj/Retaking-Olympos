@@ -11,12 +11,24 @@ public class Tharcian : Gladiator
     public Tharcian(string name, int level)
         :base(name, level, 0, 0, 0, 0)
     {
-        // (level * 25) + 75 is the average stat that most classes will have
-        // Tharcian is agile. Therefore, its stamina will be above average for more sprinting power.
         SetClass("Tharcian");
-        SetHealth((level * 25) + 75);
-        SetStamina((level * 40) + 80);
-        SetPower((level * 25) + 75);
-        SetDefense((level * 25) + 75);
+        UpdateStats();
+    }
+
+    // (level * 25) + 75 is the average stat that most classes will have
+    // Tharcian is agile. Therefore, its stamina will be above average for more sprinting power.
+    private void UpdateStats()
+    {
+        SetHealth((GetLevel() * 25) + 75);
+        SetStamina((GetLevel() * 40) + 80);
+        SetPower((GetLevel() * 25) + 75);
+        SetDefense((GetLevel() * 25) + 75);
+        return;
+    }
+
+    public void LevelUp()
+    {
+        SetLevel(GetLevel() + 1);
+        UpdateStats();
     }
 }
