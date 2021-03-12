@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerGladiator : MonoBehaviour
 {
-    public static int currentHealth;
-    public static int currentStamina;
+    public static int currentHealth, currentStamina, currentLevel;
+    public static int currentPower, currentDefense;
+    public static string playerClass;
     public Gladiator player = new Gladiator("Player", 1, 100, 100, 6, 14);
     
     public HealthBar healthBar;
@@ -56,9 +57,31 @@ public class PlayerGladiator : MonoBehaviour
 
     public void setupPlayerGladiator()
     {
+        // Sets up the health bar and stamina bar
         currentHealth = player.GetHealth();
         healthBar.setMaxHealth(player.GetHealth());
         currentStamina = player.GetStamina();
         staminaBar.setMaxStamina(player.GetStamina());
+
+        // Set up the rest of the stats
+        currentLevel = player.GetLevel();
+        currentPower = player.GetPower();
+        currentDefense = player.GetDefense();
+        playerClass = player.GetClass();
+    }
+
+    public void SavePlayerGladiatorData()
+    {
+        SaveManager.SavePlayerData(this);
+    }
+
+    public void LoadPlayerGladiatorData()
+    {
+        PlayerData data = SaveManager.LoadPlayerData();
+        currentHealth = data.health;
+        currentLevel = data.level;
+        currentDefense = data.defense;
+        currentStamina = data.stamina;
+        currentPower = data.power;
     }
 }

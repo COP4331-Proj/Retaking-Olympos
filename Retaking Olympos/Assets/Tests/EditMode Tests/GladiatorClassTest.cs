@@ -80,8 +80,8 @@ namespace Tests
             Assert.AreEqual(expectedClassName, IntermediateSecutor.GetClass());
             Assert.AreEqual(expectedClassName, AdvancedSecutor.GetClass());
 
-            // Get the expected stat values for the noob tharcian and test if they're the same as the actual values
-            // These values are calculated in the Tharcian class
+            // Get the expected stat values for the noob secutor and test if they're the same as the actual values
+            // These values are calculated in the secutor class
             string expectedName = "Billy";
             int expectedLevel = 1;
             int expectedHealth = 105;
@@ -95,7 +95,7 @@ namespace Tests
             Assert.AreEqual(expectedPower, NoobSecutor.GetPower());
             Assert.AreEqual(expectedDefense, NoobSecutor.GetDefense());
 
-            // Do the same with the intermediate tharcian
+            // Do the same with the intermediate secutor
             expectedName = "Joe";
             expectedLevel = 10;
             expectedHealth = 375;
@@ -109,7 +109,7 @@ namespace Tests
             Assert.AreEqual(expectedPower, IntermediateSecutor.GetPower());
             Assert.AreEqual(expectedDefense, IntermediateSecutor.GetDefense());
 
-            // Do the same with the advanced tharcian
+            // Do the same with the advanced secutor
             expectedName = "Oziach";
             expectedLevel = 100;
             expectedHealth = 3075;
@@ -139,8 +139,8 @@ namespace Tests
             Assert.AreEqual(expectedClassName, Intermediate.GetClass());
             Assert.AreEqual(expectedClassName, Advanced.GetClass());
 
-            // Get the expected stat values for the noob tharcian and test if they're the same as the actual values
-            // These values are calculated in the Tharcian class
+            // Get the expected stat values for the noob samnite and test if they're the same as the actual values
+            // These values are calculated in the Samnite class
             string expectedName = "Billy";
             int expectedLevel = 1;
             int expectedHealth = 100;
@@ -154,7 +154,7 @@ namespace Tests
             Assert.AreEqual(expectedPower, Noob.GetPower());
             Assert.AreEqual(expectedDefense, Noob.GetDefense());
 
-            // Do the same with the intermediate tharcian
+            // Do the same with the intermediate samnite
             expectedName = "Joe";
             expectedLevel = 10;
             expectedHealth = 325;
@@ -168,7 +168,7 @@ namespace Tests
             Assert.AreEqual(expectedPower, Intermediate.GetPower());
             Assert.AreEqual(expectedDefense, Intermediate.GetDefense());
 
-            // Do the same with the advanced tharcian
+            // Do the same with the advanced samnite
             expectedName = "Oziach";
             expectedLevel = 100;
             expectedHealth = 2575;
@@ -198,8 +198,8 @@ namespace Tests
             Assert.AreEqual(expectedClassName, Intermediate.GetClass());
             Assert.AreEqual(expectedClassName, Advanced.GetClass());
 
-            // Get the expected stat values for the noob tharcian and test if they're the same as the actual values
-            // These values are calculated in the Tharcian class
+            // Get the expected stat values for the noob murmillo and test if they're the same as the actual values
+            // These values are calculated in the Murmillo class
             string expectedName = "Billy";
             int expectedLevel = 1;
             int expectedHealth = 100;
@@ -213,7 +213,7 @@ namespace Tests
             Assert.AreEqual(expectedPower, Noob.GetPower());
             Assert.AreEqual(expectedDefense, Noob.GetDefense());
 
-            // Do the same with the intermediate tharcian
+            // Do the same with the intermediate murmillo
             expectedName = "Joe";
             expectedLevel = 10;
             expectedHealth = 325;
@@ -227,7 +227,7 @@ namespace Tests
             Assert.AreEqual(expectedPower, Intermediate.GetPower());
             Assert.AreEqual(expectedDefense, Intermediate.GetDefense());
 
-            // Do the same with the advanced tharcian
+            // Do the same with the advanced murmillo
             expectedName = "Oziach";
             expectedLevel = 100;
             expectedHealth = 2575;
@@ -257,8 +257,8 @@ namespace Tests
             Assert.AreEqual(expectedClassName, Intermediate.GetClass());
             Assert.AreEqual(expectedClassName, Advanced.GetClass());
 
-            // Get the expected stat values for the noob tharcian and test if they're the same as the actual values
-            // These values are calculated in the Tharcian class
+            // Get the expected stat values for the noob dimachaerus and test if they're the same as the actual values
+            // These values are calculated in the Dimachaerus class
             string expectedName = "Billy";
             int expectedLevel = 1;
             int expectedHealth = 80;
@@ -272,7 +272,7 @@ namespace Tests
             Assert.AreEqual(expectedPower, Noob.GetPower());
             Assert.AreEqual(expectedDefense, Noob.GetDefense());
 
-            // Do the same with the intermediate tharcian
+            // Do the same with the intermediate dimachaerus
             expectedName = "Joe";
             expectedLevel = 10;
             expectedHealth = 215;
@@ -286,7 +286,7 @@ namespace Tests
             Assert.AreEqual(expectedPower, Intermediate.GetPower());
             Assert.AreEqual(expectedDefense, Intermediate.GetDefense());
 
-            // Do the same with the advanced tharcian
+            // Do the same with the advanced dimachaerus
             expectedName = "Oziach";
             expectedLevel = 100;
             expectedHealth = 1565;
