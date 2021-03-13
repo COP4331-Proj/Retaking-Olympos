@@ -9,10 +9,11 @@ public class PausableScene : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
+        { 
             GameObject gameObject = new GameObject();
             gameObject.AddComponent<PauseMenu>();
             gameObject.GetComponent<PauseMenu>().ShowPauseMenu(SceneManager.GetActiveScene().name);
+            GameObject.Find("Player Gladiator").GetComponent<PlayerGladiator>().SavePlayerGladiatorData();
         }
     }
 }

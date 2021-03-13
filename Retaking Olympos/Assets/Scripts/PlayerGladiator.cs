@@ -15,7 +15,16 @@ public class PlayerGladiator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.HasKey("isSetUp"))
+            QuickLoadPlayerGladiator();
         setupPlayerGladiator();
+
+        if (PlayerPrefs.HasKey("isSetUp"))
+        {
+            takeDamage(PlayerPrefs.GetInt("damageTaken"));
+            useSkill(PlayerPrefs.GetInt("staminaUsed"));
+        }
+        //PlayerPrefs.DeleteKey("isSetUp");
     }
 
     // Update is called once per frame
@@ -26,9 +35,16 @@ public class PlayerGladiator : MonoBehaviour
         {
             takeDamage(10);
             useSkill(10);
+            PlayerPrefs.SetInt("damageTaken", (PlayerPrefs.GetInt("damageTaken") + 10));
+            PlayerPrefs.SetInt("staminaUsed", (PlayerPrefs.GetInt("staminaUsed") + 10));
         }
         healthBar.setHealth(currentHealth);
         staminaBar.setStamina(currentStamina);
+    }
+
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteKey("isSetUp");
     }
 
     // Method to test health bar change
@@ -68,6 +84,36 @@ public class PlayerGladiator : MonoBehaviour
         currentPower = player.GetPower();
         currentDefense = player.GetDefense();
         playerClass = player.GetClass();
+
+        // Set up PlayerPref stuff so that the player gladiator doesn't reset when switching to the pause menu
+        PlayerPrefs.SetInt("healthValue", currentHealth);
+        PlayerPrefs.SetInt("staminaValue", currentStamina);
+        PlayerPrefs.SetInt("level", currentLevel);
+        PlayerPrefs.SetInt("power", currentPower);
+        PlayerPrefs.SetInt("defense", currentDefense);
+        PlayerPrefs.SetString("playerClass", playerClass);
+
+        // Create PlayerPref data to keep track of how much damage was taken and stamina was used
+        if (!PlayerPrefs.HasKey("isSetUp"))
+        {
+            PlayerPrefs.SetInt("damageTaken", 0);
+            PlayerPrefs.SetInt("staminaUsed", 0);
+        }
+
+        // Use a PlayerPref flag to let the PlayerGladiator class know if the PlayerGladiator is set up
+        // The value doesn't actually matter because we can use PlayerPrefs.HasKey to check
+        PlayerPrefs.SetInt("isSetUp", 9001);
+    }
+
+    // This function is for loading playerpref values
+    public void QuickLoadPlayerGladiator()
+    {
+        player.SetHealth(PlayerPrefs.GetInt("healthValue"));
+        player.SetStamina(currentStamina = PlayerPrefs.GetInt("staminaValue"));
+        currentLevel = PlayerPrefs.GetInt("level");
+        currentPower = PlayerPrefs.GetInt("power");
+        currentDefense = PlayerPrefs.GetInt("defense");
+        playerClass = PlayerPrefs.GetString("playerClass");
     }
 
     public void SavePlayerGladiatorData()
