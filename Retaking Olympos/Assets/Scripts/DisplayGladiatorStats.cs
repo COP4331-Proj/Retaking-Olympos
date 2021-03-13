@@ -15,7 +15,7 @@ public class DisplayGladiatorStats : MonoBehaviour
     [SerializeField] TextMeshProUGUI staminaText;
     [SerializeField] TextMeshProUGUI powerText;
     [SerializeField] TextMeshProUGUI defenseText;
-
+    [SerializeField] TextMeshProUGUI classText;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +41,7 @@ public class DisplayGladiatorStats : MonoBehaviour
         staminaText.text = gladiatorList[gladiatorIndex].GetStamina().ToString();
         powerText.text = gladiatorList[gladiatorIndex].GetPower().ToString();
         defenseText.text = gladiatorList[gladiatorIndex].GetDefense().ToString();
+        classText.text = gladiatorList[gladiatorIndex].GetClass().ToString();
     }
 
     public void IncrementGladiatorIndex() 

@@ -11,6 +11,7 @@ public class HoldPlayerInformation : ScriptableObject
     public PlayerInventory shopInventory = new PlayerInventory();
     public PlayerInventory playerInventory = new PlayerInventory();
     public List<Gladiator> gladiatorList = new List<Gladiator>();
+    public List<Gladiator> shopGladiatorList = new List<Gladiator>();
     public List<IndividualGladiatorEquipment> individualGladiatorEquipment = new List<IndividualGladiatorEquipment>();
     private void OnEnable()
     {
