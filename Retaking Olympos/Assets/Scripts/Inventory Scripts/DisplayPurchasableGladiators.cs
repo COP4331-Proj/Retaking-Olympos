@@ -7,9 +7,9 @@ public class DisplayPurchasableGladiators : MonoBehaviour
 {
     public HoldPlayerInformation holdPlayerInformation;
     public ViewGladiator viewGladiator;
-    List<Gladiator> gladiatorList;
+    public List<Gladiator> gladiatorList;
 
-    [SerializeField] int purchaseableGladiatorIndex = 0;
+    public int purchaseableGladiatorIndex = 0;
     // Text fields for all 6 gladiator attributes 
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI levelText;
@@ -98,6 +98,7 @@ public class DisplayPurchasableGladiators : MonoBehaviour
 
     public void buyGladiator() 
     {
+        
         if (gladiatorList.Count > 0) 
         {
             Gladiator gladiator = holdPlayerInformation.shopGladiatorList[purchaseableGladiatorIndex];
@@ -112,7 +113,10 @@ public class DisplayPurchasableGladiators : MonoBehaviour
                 }
                 holdPlayerInformation.gladiatorList.Add(gladiator);
                 holdPlayerInformation.individualGladiatorEquipment.Add(new IndividualGladiatorEquipment());
-                audioSource.PlayOneShot(sounds[0]);
+                if (audioSource != null) 
+                {
+                    audioSource.PlayOneShot(sounds[0]);
+                }
             }
         }
     }

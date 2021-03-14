@@ -2472,6 +2472,12 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!82 &1233114552 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6009966516495849960, guid: 9091100fbfe765f438d5626c499d3fff,
+    type: 3}
+  m_PrefabInstance: {fileID: 2015050474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1289109395 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 784757018, guid: cd1232595ec6a9147b11a2a698b8b501,
@@ -2922,6 +2928,9 @@ MonoBehaviour:
   classText: {fileID: 1470845780}
   costText: {fileID: 351418567}
   soldOutText: {fileID: 1709115305}
+  audioSource: {fileID: 1233114552}
+  sounds:
+  - {fileID: 8300000, guid: 58bc7f5b5c539d34d87bc1c517dda8d7, type: 3}
 --- !u!4 &1713449008
 Transform:
   m_ObjectHideFlags: 0
