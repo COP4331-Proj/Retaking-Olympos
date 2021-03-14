@@ -11,6 +11,7 @@ public class Gladiator
     private int stamina;
     private int power;
     private int defense;
+    private int cost;
 
     // Gladiator constructor
     public Gladiator(string name, int level, int health, int stamina, int power, int defense) 
@@ -80,5 +81,14 @@ public class Gladiator
     public void SetDefense(int defense)
     {
         this.defense = defense;
+    }
+    public int GetCost() 
+    {
+        return this.cost;
+    }
+
+    public void SetCost(int cost) 
+    {
+        this.cost = cost;
     }
 }

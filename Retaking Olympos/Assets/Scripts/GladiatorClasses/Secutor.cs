@@ -23,6 +23,7 @@ public class Secutor : Gladiator
         SetStamina((GetLevel() * 15) + 65);
         SetPower((GetLevel() * 25) + 75);
         SetDefense((GetLevel() * 40) + 75);
+        SetCost((GetLevel() * 25) + 75);
         return;
     }
 

@@ -24,6 +24,7 @@ public class Dimachaerus : Gladiator
         SetStamina((GetLevel() * 25) + 75);
         SetPower((GetLevel() * 50) + 75);
         SetDefense((GetLevel() * 15) + 65);
+        SetCost((GetLevel() * 25) + 75);
         return;
     }
 

@@ -18,7 +18,11 @@ public class DisplayPurchasableGladiators : MonoBehaviour
     [SerializeField] TextMeshProUGUI powerText;
     [SerializeField] TextMeshProUGUI defenseText;
     [SerializeField] TextMeshProUGUI classText;
+    [SerializeField] TextMeshProUGUI costText;
     [SerializeField] TextMeshProUGUI soldOutText;
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] sounds;
     private void Start()
     {
         
@@ -50,6 +54,7 @@ public class DisplayPurchasableGladiators : MonoBehaviour
         powerText.gameObject.SetActive(false);
         defenseText.gameObject.SetActive(false);
         classText.gameObject.SetActive(false);
+        costText.gameObject.SetActive(false);
         soldOutText.gameObject.SetActive(true);
     }
 
@@ -64,6 +69,7 @@ public class DisplayPurchasableGladiators : MonoBehaviour
         powerText.text = gladiatorList[purchaseableGladiatorIndex].GetPower().ToString();
         defenseText.text = gladiatorList[purchaseableGladiatorIndex].GetDefense().ToString();
         classText.text = gladiatorList[purchaseableGladiatorIndex].GetClass().ToString();
+        costText.text = gladiatorList[purchaseableGladiatorIndex].GetCost().ToString();
     }
 
     public void IncrementGladiatorIndex()
@@ -95,14 +101,19 @@ public class DisplayPurchasableGladiators : MonoBehaviour
         if (gladiatorList.Count > 0) 
         {
             Gladiator gladiator = holdPlayerInformation.shopGladiatorList[purchaseableGladiatorIndex];
-            holdPlayerInformation.shopGladiatorList.RemoveAt(purchaseableGladiatorIndex);
-
-            if (purchaseableGladiatorIndex != 0)
+            if (gladiator.GetCost() <= holdPlayerInformation.gold) 
             {
-                purchaseableGladiatorIndex--;
+                holdPlayerInformation.gold -= gladiator.GetCost();
+                holdPlayerInformation.shopGladiatorList.RemoveAt(purchaseableGladiatorIndex);
+
+                if (purchaseableGladiatorIndex != 0)
+                {
+                    purchaseableGladiatorIndex--;
+                }
+                holdPlayerInformation.gladiatorList.Add(gladiator);
+                holdPlayerInformation.individualGladiatorEquipment.Add(new IndividualGladiatorEquipment());
+                audioSource.PlayOneShot(sounds[0]);
             }
-            holdPlayerInformation.gladiatorList.Add(gladiator);
-            holdPlayerInformation.individualGladiatorEquipment.Add(new IndividualGladiatorEquipment());
         }
     }
 }

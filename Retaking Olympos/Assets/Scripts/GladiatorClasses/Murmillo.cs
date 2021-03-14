@@ -24,6 +24,7 @@ public class Murmillo : Gladiator
         SetStamina((GetLevel() * 15) + 65);
         SetPower((GetLevel() * 35) + 75);
         SetDefense((GetLevel() * 25) + 75);
+        SetCost((GetLevel() * 25) + 75);
         return;
     }
 
