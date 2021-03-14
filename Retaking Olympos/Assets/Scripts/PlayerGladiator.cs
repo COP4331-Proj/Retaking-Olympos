@@ -23,6 +23,7 @@ public class PlayerGladiator : MonoBehaviour
         {
             takeDamage(PlayerPrefs.GetInt("damageTaken"));
             useSkill(PlayerPrefs.GetInt("staminaUsed"));
+            transform.position = new Vector2(PlayerPrefs.GetFloat("playerXPosition"), PlayerPrefs.GetFloat("playerYPosition"));
         }
     }
 
@@ -38,6 +39,9 @@ public class PlayerGladiator : MonoBehaviour
         healthBar.setHealth(currentHealth);
         staminaBar.setStamina(currentStamina);
         PlayerPrefs.SetInt("staminaUsed", (100 - currentStamina));
+
+        PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
+        PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
     }
 
     void OnApplicationQuit()
@@ -92,11 +96,14 @@ public class PlayerGladiator : MonoBehaviour
         PlayerPrefs.SetInt("defense", currentDefense);
         PlayerPrefs.SetString("playerClass", playerClass);
 
-        // Create PlayerPref data to keep track of how much damage was taken and stamina was used
+        // Create PlayerPref data to keep track of how much damage was taken and stamina was used and player position
         if (!PlayerPrefs.HasKey("isSetUp"))
         {
             PlayerPrefs.SetInt("damageTaken", 0);
             PlayerPrefs.SetInt("staminaUsed", 0);
+
+            PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
+            PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
         }
 
         // Use a PlayerPref flag to let the PlayerGladiator class know if the PlayerGladiator is set up
