@@ -169,4 +169,4 @@ Tyler:
 
 Nathan: Added default equipment icons aswell as created the ability to purchase gladiators
 
-Xavier: 
+Xavier: Added A.I. to enemy gladiator in battle scene for user story 43
