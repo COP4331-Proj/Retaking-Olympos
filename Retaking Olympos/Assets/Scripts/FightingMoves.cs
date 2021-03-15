@@ -28,27 +28,20 @@ public class FightingMoves : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // To test attacks, pressing Space down will cause damage to the enemy if in range
-        // Releasing Space will cause damage to the player if they are close to the enemy, simulating a counter-attack
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            playerSwing();
-            animator.SetBool("isAttacking", true);
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            enemySwing();
-            animator.SetBool("isAttacking", false);
-        }
-
         if (Time.time >= nextPlayerAttackTime)
         {
-            // To test attacks, pressing J down will cause damage to the enemy if in range
-            if (Input.GetKeyDown(KeyCode.J))
+            // To test attacks, pressing Space down will cause damage to the enemy if in range
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 playerSwing();
                 nextPlayerAttackTime = Time.time + 1f / playerAttackRate;
+                animator.SetBool("isAttacking", true);
             }
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetBool("isAttacking", false);
         }
 
         if (Time.time >= nextEnemyAttackTime)

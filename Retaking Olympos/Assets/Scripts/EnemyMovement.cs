@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerChar = GameObject.FindWithTag("Player Gladiator").GetComponent<Transform>();
+        playerChar = GameObject.Find("Player Gladiator").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -20,8 +20,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, playerChar.position) > attackRange)
         {
-            transform.position = Vector2.MoveTowards(transform.position, playerChar.position, movementSpeed * Time.deltaTime);
+            enemyChase();
         }
+    }
+
+    public void enemyChase()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, playerChar.position, movementSpeed * Time.deltaTime);
     }
 
 
