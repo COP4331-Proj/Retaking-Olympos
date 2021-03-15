@@ -164,8 +164,9 @@ Xavier: Added collision physics to gladiator models and environment in battle sc
 Joshua:
 
 Timothy: 
+
 Tyler: 
 
-Nathan: 
+Nathan: Added default equipment icons aswell as created the ability to purchase gladiators
 
 Xavier: 
