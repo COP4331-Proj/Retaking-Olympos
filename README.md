@@ -137,3 +137,35 @@ Tyler: Created a general back button to complete navigation between scenes, impl
 Nathan: Created shop with ability to buy items from a shop inventory and sell items from the player inventory. Also created tooltips that display item information when an item is moused over.
 
 Xavier: Added collision physics to gladiator models and environment in battle scene and implemented attack collision for user story 38.
+
+
+## Sprint 6
+
+[Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
+
+[System Architecture](https://github.com/COP4331-Proj/Retaking-Olympos/blob/main/artifacts/architecture.md)
+
+[Source Code](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Scripts)
+
+[Automated Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Tests)
+
+[Manual Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/artifacts/Manual%20Tests)
+
+[Demo Video](https://youtu.be/Q-jrVHz-Ab4)
+
+### Burndown Chart
+<img src="artifacts/Pictures/Charts/Burndown Chart Sprint 6.PNG">
+
+### Velocity Chart
+<img src="artifacts/Pictures/Charts/Velocity Chart Sprint 6.PNG">
+
+### Task Allocation
+
+Joshua:
+
+Timothy: 
+Tyler: 
+
+Nathan: 
+
+Xavier: 
