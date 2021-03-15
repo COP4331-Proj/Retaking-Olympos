@@ -26,11 +26,14 @@ namespace Tests
             controler.GetComponent<DisplayGold>().playerInformation.gold = 0;
             controler.GetComponent<DisplayGold>().goldText.text = controler.GetComponent<DisplayGold>().playerInformation.gold.ToString();
 
+            // Check that 0 gold is displayed
             Assert.AreEqual(controler.GetComponent<DisplayGold>().goldText.text, "0");
 
+            // give the player 100 gold
             controler.GetComponent<DisplayGold>().playerInformation.gold = 100;
             controler.GetComponent<DisplayGold>().goldText.text = controler.GetComponent<DisplayGold>().playerInformation.gold.ToString();
 
+            // check that 100 gold is displayed
             Assert.AreEqual(controler.GetComponent<DisplayGold>().goldText.text, "100");
         }
 
