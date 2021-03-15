@@ -151,7 +151,7 @@ Xavier: Added collision physics to gladiator models and environment in battle sc
 
 [Manual Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/artifacts/Manual%20Tests)
 
-[Demo Video](https://youtu.be/Jpl4Qk0zJOk)
+[Demo Video](https://youtu.be/Q-jrVHz-Ab4)
 
 ### Burndown Chart
 <img src="artifacts/Pictures/Charts/Burndown Chart Sprint 6.PNG">
