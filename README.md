@@ -163,7 +163,8 @@ Xavier: Added collision physics to gladiator models and environment in battle sc
 
 Joshua:
 
-Timothy: 
+Timothy: Added PlayerPrefs for the player and enemy gladiators so that they retain their health/stamina/position when switching to the pause menu and back; added save/load script for the player gladiator; added a LevelUp function
+to the gladiator class' scripts
 
 Tyler: 
 
