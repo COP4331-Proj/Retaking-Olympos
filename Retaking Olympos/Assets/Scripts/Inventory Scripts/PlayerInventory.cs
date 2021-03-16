@@ -55,6 +55,28 @@ public class PlayerInventory
         AddItem(new Item { itemName = Item.ItemName.Chestplate, amount = 1, isShop = true });
         AddItem(new Item { itemName = Item.ItemName.Pants, amount = 1, isShop = true });
         AddItem(new Item { itemName = Item.ItemName.Boots, amount = 1, isShop = true });
+
+        AddItem(new Item { itemName = Item.ItemName.Sword2, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Helmet2, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Boots2, amount = 1, isShop = true });
+
+        AddItem(new Item { itemName = Item.ItemName.Sword3, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Helmet3, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Chestplate3, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Pants3, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Boots3, amount = 1, isShop = true });
+
+        AddItem(new Item { itemName = Item.ItemName.Sword4, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Helmet4, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Chestplate4, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Pants4, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Boots4, amount = 1, isShop = true });
+
+        AddItem(new Item { itemName = Item.ItemName.Sword5, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Helmet5, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Chestplate5, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Pants5, amount = 1, isShop = true });
+        AddItem(new Item { itemName = Item.ItemName.Boots5, amount = 1, isShop = true });
     }
 
     // Add item to the inventory

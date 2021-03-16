@@ -48,3 +48,21 @@ MonoBehaviour:
   chestplateSprite: {fileID: 21300000, guid: 11cbc7528f559074aa494c8a99701b55, type: 3}
   pantsSprite: {fileID: 21300000, guid: 5104d4a273903434fb766e6287c08b4c, type: 3}
   bootsSprite: {fileID: 21300000, guid: 196a9fa954bdba242963256383b83375, type: 3}
+  swordSprite2: {fileID: 21300000, guid: 79602beb30101594b9c0fe34aec7f426, type: 3}
+  helmetSprite2: {fileID: 21300000, guid: 2967578e6d6f02f4586aa8b54a422316, type: 3}
+  bootsSprite2: {fileID: 21300000, guid: 10b538265ffe35543a344a5d5903f03f, type: 3}
+  swordSprite3: {fileID: 21300000, guid: 99f7de730561064428c616123a2325f5, type: 3}
+  helmetSprite3: {fileID: 21300000, guid: 53c76b335c15f9444b16437adad1df41, type: 3}
+  chestplateSprite3: {fileID: 21300000, guid: 5c9408c39d96cc24da9bc4163a40fae6, type: 3}
+  pantsSprite3: {fileID: 21300000, guid: 44dd19febf19a2e4f99aa6106231a79b, type: 3}
+  bootsSprite3: {fileID: 21300000, guid: 11ff278075e1c3e44b477698d1d0afb0, type: 3}
+  swordSprite4: {fileID: 21300000, guid: f4f0930ae3c127146b4f5824768f5715, type: 3}
+  helmetSprite4: {fileID: 21300000, guid: 8951a6a117348d14ca8c5955670301a5, type: 3}
+  chestplateSprite4: {fileID: 21300000, guid: ddcc2e630f375fa4c956d642bc25e230, type: 3}
+  pantsSprite4: {fileID: 21300000, guid: 8faefdda0e3fda648bc52c3ac15caa9f, type: 3}
+  bootsSprite4: {fileID: 21300000, guid: eb91ce7066bd25d41abd274998dc56f0, type: 3}
+  swordSprite5: {fileID: 21300000, guid: 102aa7ffaba6c3d47bf869ea2c1a05b1, type: 3}
+  helmetSprite5: {fileID: 21300000, guid: 4df528c7bfb72374795095a8cacb8f03, type: 3}
+  chestplateSprite5: {fileID: 21300000, guid: fd3cf554a13fb22459a5c82fcf6b4af8, type: 3}
+  pantsSprite5: {fileID: 21300000, guid: acc37566db9604845a8e41b374901f8b, type: 3}
+  bootsSprite5: {fileID: 21300000, guid: 7076ade271292ec4da94169ece5983aa, type: 3}
