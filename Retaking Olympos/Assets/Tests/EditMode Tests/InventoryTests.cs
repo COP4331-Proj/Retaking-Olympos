@@ -53,7 +53,7 @@ namespace Tests
             Item item = itemList[0];
             inventory.RemoveItem(item);
             holdPlayerInformation.gold += item.GetSellPrice();
-            Assert.AreEqual(100, holdPlayerInformation.gold);
+            Assert.AreEqual(75, holdPlayerInformation.gold);
 
         }
         [Test]
@@ -63,7 +63,7 @@ namespace Tests
             PlayerInventory inventory = holdPlayerInformation.shopInventory;
             inventory.PopulateWithShopItems();
             List<Item> itemList = inventory.GetItemList();
-            Assert.AreEqual(itemList.Count, 5);
+            Assert.AreEqual(itemList.Count, 23);
         }
 
         [Test]
