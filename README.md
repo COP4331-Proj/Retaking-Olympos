@@ -168,6 +168,6 @@ to the gladiator class' scripts
 
 Tyler: 
 
-Nathan: Added default equipment icons aswell as created the ability to purchase gladiators
+Nathan: Added default equipment icons, created the ability to purchase gladiators, and implemented previously created gladiator sub classes
 
 Xavier: Added A.I. to enemy gladiator in battle scene for user story 43
