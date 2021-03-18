@@ -20,7 +20,7 @@ namespace Tests
             // Add view gladiator component and create a new gladiator in the shop
             controler.AddComponent<ViewGladiator>();
             controler.GetComponent<ViewGladiator>().holdPlayerInformation = holdPlayerInformation;
-            controler.GetComponent<ViewGladiator>().createNewShopGladiator("Phil", 2, 1);
+            controler.GetComponent<ViewGladiator>().createNewShopGladiator("Phil", 2, "Secutor");
 
             // Create new DisplayPurchasableGladiators component and set it up
             DisplayPurchasableGladiators dpg = controler.AddComponent<DisplayPurchasableGladiators>();
@@ -50,7 +50,7 @@ namespace Tests
             // Add view gladiator component and create a new gladiator in the shop
             controler.AddComponent<ViewGladiator>();
             controler.GetComponent<ViewGladiator>().holdPlayerInformation = holdPlayerInformation;
-            controler.GetComponent<ViewGladiator>().createNewShopGladiator("Phil", 2, 1);
+            controler.GetComponent<ViewGladiator>().createNewShopGladiator("Phil", 2, "Secutor");
 
             // Create new DisplayPurchasableGladiators component and set it up
             DisplayPurchasableGladiators dpg = controler.AddComponent<DisplayPurchasableGladiators>();
@@ -84,7 +84,7 @@ namespace Tests
             // Add view gladiator component and create a new gladiator in the shop
             controler.AddComponent<ViewGladiator>();
             controler.GetComponent<ViewGladiator>().holdPlayerInformation = holdPlayerInformation;
-            controler.GetComponent<ViewGladiator>().createNewShopGladiator("Phil", 2, 1);
+            controler.GetComponent<ViewGladiator>().createNewShopGladiator("Phil", 2, "Secutor");
 
             // Create new DisplayPurchasableGladiators component and set it up
             DisplayPurchasableGladiators dpg = controler.AddComponent<DisplayPurchasableGladiators>();

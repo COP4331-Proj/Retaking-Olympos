@@ -505,26 +505,64 @@ public class Item
                 }
             case ItemName.Sword5:
                 {
-                    return "A dimachaerus's twin swords \nPower + 5\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
+                    return "A Dimachaerus's twin swords \nPower + 5\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
                 }
             case ItemName.Helmet5:
                 {
-                    return "A dimachaerus's helmet \nDefense + 5\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
+                    return "A Dimachaerus's helmet \nDefense + 5\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
                 }
             case ItemName.Chestplate5:
                 {
-                    return "A dimachaerus's chestplate \nDefense + 8\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
+                    return "A Dimachaerus's chestplate \nDefense + 8\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
                 }
             case ItemName.Pants5:
                 {
-                    return "A dimachaerus's leggings \nDefense + 7\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
+                    return "A Dimachaerus's leggings \nDefense + 7\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
                 }
             case ItemName.Boots5:
                 {
-                    return "A dimachaerus's footware \nDefense + 4\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
+                    return "A Dimachaerus's footware \nDefense + 4\nSell Price " + GetSellPrice() + "\nBuy Price " + GetBuyPrice();
                 }
             default:
                 return "";
+        }
+    }
+
+    public string getClass() 
+    {
+        // THIS IS SUPPOSED TO 
+        switch (itemName) 
+        {
+            case ItemName.Sword:
+            case ItemName.Helmet:
+            case ItemName.Chestplate:
+            case ItemName.Pants:
+            case ItemName.Boots:
+                return "Thracian";
+            case ItemName.Sword2:
+            case ItemName.Helmet2:
+            case ItemName.Boots2:
+                return "Samnite";
+            case ItemName.Sword3:
+            case ItemName.Helmet3:
+            case ItemName.Chestplate3:
+            case ItemName.Pants3:
+            case ItemName.Boots3:
+                return "Secutor";
+            case ItemName.Sword4:
+            case ItemName.Helmet4:
+            case ItemName.Chestplate4:
+            case ItemName.Pants4:
+            case ItemName.Boots4:
+                return "Murmillo";
+            case ItemName.Sword5:
+            case ItemName.Helmet5:
+            case ItemName.Chestplate5:
+            case ItemName.Pants5:
+            case ItemName.Boots5:
+                return "Dimachaerus";
+            default:
+                return "Error, you shouldnt ever see this!";
         }
     }
 

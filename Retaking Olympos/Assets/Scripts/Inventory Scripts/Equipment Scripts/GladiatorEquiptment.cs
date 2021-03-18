@@ -124,25 +124,28 @@ public class GladiatorEquiptment : MonoBehaviour
     {
         if (slotName == item.GetSlotName()) 
         {
-            uIInventory.inventory.RemoveItem(item);
-            switch (slotName) 
+            if (item.getClass() == playerInformation.gladiatorList[equipmentIndex].GetClass()) 
             {
-                default:
-                case SlotName.Sword:
-                    SetWeapon(item, equipmentIndex);
-                    break;
-                case SlotName.Helmet:
-                    SetHelmet(item, equipmentIndex);
-                    break;
-                case SlotName.Chestplate:
-                    SetChestplate(item, equipmentIndex);
-                    break;
-                case SlotName.Pants:
-                    SetLegs(item, equipmentIndex);
-                    break;
-                case SlotName.Boots:
-                    SetBoots(item, equipmentIndex);
-                    break;
+                uIInventory.inventory.RemoveItem(item);
+                switch (slotName)
+                {
+                    default:
+                    case SlotName.Sword:
+                        SetWeapon(item, equipmentIndex);
+                        break;
+                    case SlotName.Helmet:
+                        SetHelmet(item, equipmentIndex);
+                        break;
+                    case SlotName.Chestplate:
+                        SetChestplate(item, equipmentIndex);
+                        break;
+                    case SlotName.Pants:
+                        SetLegs(item, equipmentIndex);
+                        break;
+                    case SlotName.Boots:
+                        SetBoots(item, equipmentIndex);
+                        break;
+                }
             }
         }
     }

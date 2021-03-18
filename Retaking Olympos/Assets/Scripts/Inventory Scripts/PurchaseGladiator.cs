@@ -25,8 +25,9 @@ public class PurchaseGladiator : MonoBehaviour
         if (holdPlayerInformation.shopGladiatorList.Count == 0 && flag)
         {
             flag = false;
-            viewGladiator.createNewShopGladiator("Cicero", 7, 2);
-            viewGladiator.createNewShopGladiator("Sulla", 1, 3);
+            viewGladiator.createNewShopGladiator("Cicero", 7, "Samnite");
+            viewGladiator.createNewShopGladiator("Sulla", 1, "Murmillo");
+            viewGladiator.createNewShopGladiator("Pompey", 3, "Dimachaerus");
         }
         
     }
