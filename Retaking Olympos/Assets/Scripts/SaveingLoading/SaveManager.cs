@@ -13,6 +13,9 @@ public static class SaveManager
         PlayerData data = new PlayerData(player);
 
         formatter.Serialize(stream, data);
+
+        Debug.Log(data.health);
+
         stream.Close();
     }
 
@@ -32,6 +35,8 @@ public static class SaveManager
 
         PlayerData data = formatter.Deserialize(stream) as PlayerData;
         stream.Close();
+
+        Debug.Log(data.health);
 
         return data;
     }

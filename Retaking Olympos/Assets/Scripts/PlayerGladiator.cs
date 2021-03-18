@@ -135,5 +135,11 @@ public class PlayerGladiator : MonoBehaviour
         currentDefense = data.defense;
         currentStamina = data.stamina;
         currentPower = data.power;
+
+        PlayerPrefs.SetInt("damageTaken", 100 - currentHealth);
+        PlayerPrefs.SetInt("staminaUsed", 100 - currentStamina);
+        PlayerPrefs.SetInt("level", currentLevel);
+        PlayerPrefs.SetInt("power", currentPower);
+        PlayerPrefs.SetInt("defense", currentDefense);
     }
 }
