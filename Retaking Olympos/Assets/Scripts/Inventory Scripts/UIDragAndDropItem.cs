@@ -21,6 +21,11 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     bool dragable = true;
     bool beingDragged = false;
 
+
+    float clicked = 0;
+    float clicktime = 0;
+    float clickdelay = 0.5f;
+
     private void Awake()
     {
         instance = this;
@@ -78,6 +83,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     // When mouse is pressed
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
+
         if (!dragable)
         {
             // unequip Item
@@ -94,6 +100,39 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
                     Destroy(gameObject);
                 }
             };
+            GetComponent<ItemClickable>().onLeftClick = () =>
+            {
+                // Do nothing
+            };
+            }
+        else 
+        {
+            // Check for double click
+            clicked++;
+
+            if (clicked == 1) 
+            {
+                clicktime = Time.time;
+            }
+            // Double click detected
+            if (clicked > 1 && Time.time - clicktime < clickdelay)
+            {
+                
+                clicked = 0;
+                clicktime = 0;
+                item = eventData.pointerCurrentRaycast.gameObject.transform.parent.gameObject.GetComponent<ItemClickable>().item;
+                instance.SetItem(item);
+                if (uIEquiptment == null)
+                {
+                    uIEquiptment = FindObjectOfType<UIEquiptment>();
+                }
+                uIEquiptment.gladiatorEquiptment.testEquip(item.GetSlotName(), item, uIEquiptment.gladiatorIndex);
+            }
+            else if (clicked > 2 || Time.time - clicktime > 1) 
+            {
+                clicked = 0;
+            }
+                
         }
     }
 

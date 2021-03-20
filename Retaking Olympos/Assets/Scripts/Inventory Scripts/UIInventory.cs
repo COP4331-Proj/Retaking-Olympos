@@ -99,9 +99,13 @@ public class UIInventory : MonoBehaviour
             // On left click
             itemSlotRectTransform.GetComponent<ItemClickable>().onLeftClick = () =>
             {
-                if (item.isShop) 
+                if (item.isShop)
                 {
                     TestBuy(item);
+                }
+                else 
+                {
+                    Debug.Log("HERE");
                 }
             };
 

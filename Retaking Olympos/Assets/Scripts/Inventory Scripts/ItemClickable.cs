@@ -16,7 +16,6 @@ public class ItemClickable : MonoBehaviour, IPointerClickHandler
     {
         if (eventData.button == 0)
         {
-            
             onLeftClick();
         }
         else

@@ -120,8 +120,44 @@ public class GladiatorEquiptment : MonoBehaviour
     }
 
     // Takes an item and equips it if it was dragged on the proper slot
-    public void testEquip(SlotName slotName, Item item, int equipmentIndex) 
+    public int testEquip(SlotName slotName, Item item, int equipmentIndex) 
     {
+        switch (slotName) 
+        {
+            case SlotName.Sword:
+                if (GetWeapon(equipmentIndex) != null) 
+                {
+                    return -1;
+                }
+                break;
+            case SlotName.Helmet:
+                if (GetHelmet(equipmentIndex) != null)
+                {
+                    return -1;
+                }
+                break;
+            case SlotName.Chestplate:
+                if (GetChestplate(equipmentIndex) != null)
+                {
+                    return -1;
+                }
+                break;
+            case SlotName.Pants:
+                if (GetLegs(equipmentIndex) != null)
+                {
+                    return -1;
+                }
+                break;
+            case SlotName.Boots:
+                if (GetBoots(equipmentIndex) != null)
+                {
+                    return -1;
+                }
+                break;
+            default:
+                break;
+        }
+
         if (slotName == item.GetSlotName()) 
         {
             if (item.getClass() == playerInformation.gladiatorList[equipmentIndex].GetClass()) 
@@ -148,6 +184,7 @@ public class GladiatorEquiptment : MonoBehaviour
                 }
             }
         }
+        return 0;
     }
     // Unequips an item by setting it to null
     public void Unequip(Item item, int equipmentIndex) 
