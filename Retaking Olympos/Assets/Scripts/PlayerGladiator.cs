@@ -12,6 +12,9 @@ public class PlayerGladiator : MonoBehaviour
     public HealthBar healthBar;
     public StaminaBar staminaBar;
 
+    // These variables work with the save system to save and load the old player position
+    private static float xPosToBeLoaded, yPosToBeLoaded;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +42,16 @@ public class PlayerGladiator : MonoBehaviour
         healthBar.setHealth(currentHealth);
         staminaBar.setStamina(currentStamina);
         PlayerPrefs.SetInt("staminaUsed", (100 - currentStamina));
-
         PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
         PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
+
+        if (PlayerPrefs.HasKey("playerBeingLoaded"))
+            transform.position = new Vector2(xPosToBeLoaded, yPosToBeLoaded);
+    }
+
+    void OnDestroy()
+    {
+        PlayerPrefs.DeleteKey("playerBeingLoaded");
     }
 
     void OnApplicationQuit()
@@ -129,6 +139,7 @@ public class PlayerGladiator : MonoBehaviour
 
     public void LoadPlayerGladiatorData()
     {
+        // Load the stats
         PlayerData data = SaveManager.LoadPlayerData();
         currentHealth = data.health;
         currentLevel = data.level;
@@ -136,10 +147,18 @@ public class PlayerGladiator : MonoBehaviour
         currentStamina = data.stamina;
         currentPower = data.power;
 
+        // The save the stats to PlayerPrefs so that it doesn't disappear on switching off the pause menu
         PlayerPrefs.SetInt("damageTaken", 100 - currentHealth);
         PlayerPrefs.SetInt("staminaUsed", 100 - currentStamina);
         PlayerPrefs.SetInt("level", currentLevel);
         PlayerPrefs.SetInt("power", currentPower);
         PlayerPrefs.SetInt("defense", currentDefense);
+
+        // Load the position
+        xPosToBeLoaded = data.xPos;
+        yPosToBeLoaded = data.yPos;
+        
+        // Set a flag for the player being loaded
+        PlayerPrefs.SetInt("playerBeingLoaded", 1);
     }
 }
