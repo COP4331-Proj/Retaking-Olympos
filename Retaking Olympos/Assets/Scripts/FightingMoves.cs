@@ -47,10 +47,15 @@ public class FightingMoves : MonoBehaviour
         if (Time.time >= nextEnemyAttackTime)
         {
             // If in range, the enemy will start attacking the player
-            if (Vector2.Distance(enemyAttackPoint.position, playerAttackPoint.position) <= (enemyRange * 2))
+            if (Vector2.Distance(enemyAttackPoint.position, playerAttackPoint.position) <= (enemyRange * 1.25))
             {
                 enemySwing();
                 nextEnemyAttackTime = Time.time + 1f / enemyAttackRate;
+                animator.SetBool("EnemyAttacking", true);
+            }
+            else
+            {
+                animator.SetBool("EnemyAttacking", false);
             }
         }
     }
