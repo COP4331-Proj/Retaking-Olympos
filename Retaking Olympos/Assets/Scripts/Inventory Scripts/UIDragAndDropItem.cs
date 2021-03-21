@@ -83,7 +83,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
     // When mouse is pressed
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
-
+        
         if (!dragable)
         {
             // unequip Item
@@ -92,18 +92,23 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
             {
                 Item item = new Item();
                 item = eventData.pointerCurrentRaycast.gameObject.transform.parent.gameObject.GetComponent<ItemClickable>().item;
-
+                Debug.Log("HERE");
                 if (!item.isShop)
                 {
                     uIEquiptment.playerInformation.playerInventory.AddItem(new Item { itemName = item.itemName, amount = 1 });
                     uIEquiptment.gladiatorEquiptment.Unequip(item, uIEquiptment.gladiatorIndex);
                     Destroy(gameObject);
+
                 }
             };
-            GetComponent<ItemClickable>().onLeftClick = () =>
+            // Prevents a null ref error when left clicking equipped items
+            if (!item.isShop) 
             {
-                // Do nothing
-            };
+                GetComponent<ItemClickable>().onLeftClick = () =>
+                {
+                    // Do nothing
+                };
+            }
             }
         else 
         {
