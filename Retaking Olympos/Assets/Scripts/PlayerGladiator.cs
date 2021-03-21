@@ -12,9 +12,6 @@ public class PlayerGladiator : MonoBehaviour
     public HealthBar healthBar;
     public StaminaBar staminaBar;
 
-    // These variables work with the save system to save and load the old player position
-    private static float xPosToBeLoaded, yPosToBeLoaded;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,14 +41,6 @@ public class PlayerGladiator : MonoBehaviour
         PlayerPrefs.SetInt("staminaUsed", (100 - currentStamina));
         PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
         PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
-
-        if (PlayerPrefs.HasKey("playerBeingLoaded"))
-            transform.position = new Vector2(xPosToBeLoaded, yPosToBeLoaded);
-    }
-
-    void OnDestroy()
-    {
-        PlayerPrefs.DeleteKey("playerBeingLoaded");
     }
 
     void OnApplicationQuit()
@@ -155,10 +144,6 @@ public class PlayerGladiator : MonoBehaviour
         PlayerPrefs.SetInt("defense", currentDefense);
 
         // Load the position
-        xPosToBeLoaded = data.xPos;
-        yPosToBeLoaded = data.yPos;
-        
-        // Set a flag for the player being loaded
-        PlayerPrefs.SetInt("playerBeingLoaded", 1);
+        transform.position = new Vector2(data.xPos, data.yPos);
     }
 }

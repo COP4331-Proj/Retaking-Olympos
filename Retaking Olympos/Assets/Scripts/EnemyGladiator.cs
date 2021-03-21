@@ -21,7 +21,6 @@ public class EnemyGladiator : MonoBehaviour
             takeDamage(PlayerPrefs.GetInt("enemyDamageTaken"));
             transform.position = new Vector2(PlayerPrefs.GetFloat("enemyXPosition"), PlayerPrefs.GetFloat("enemyYPosition"));
         }
-
     }
 
     // Update is called once per frame
@@ -89,5 +88,23 @@ public class EnemyGladiator : MonoBehaviour
             PlayerPrefs.SetInt("enemyDamageTaken", 0);
 
         PlayerPrefs.SetInt("enemySetUp", 1);
+    }
+
+    public void SaveEnemyGladiatorData()
+    {
+        SaveManager.SaveEnemyData(this);
+    }
+
+    public void LoadEnemyGladiatorData()
+    {
+        // Load the stats
+        EnemyData data = SaveManager.LoadEnemyData();
+        currentHealth = data.health;
+
+        // The save the stats to PlayerPrefs so that it doesn't disappear on switching off the pause menu
+        PlayerPrefs.SetInt("enemyDamageTaken", (int)(100 * difficulty) - currentHealth);
+
+        // Load the position
+        transform.position = new Vector2(data.xPos, data.yPos);
     }
 }
