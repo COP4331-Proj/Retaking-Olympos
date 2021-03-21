@@ -18,6 +18,9 @@ public class FightingMoves : MonoBehaviour
     public float enemyAttackRate = 1f;
     float nextPlayerAttackTime = 0f;
     float nextEnemyAttackTime = 0f;
+    public float playerDodgeRate = .2f;
+    public float playerBlockPenalty = 1000f;
+    float nextPlayerDodgeTime = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,7 @@ public class FightingMoves : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Limits player to certain number of attacks per second
         if (Time.time >= nextPlayerAttackTime)
         {
             // To test attacks, pressing Space down will cause damage to the enemy if in range
@@ -44,6 +48,7 @@ public class FightingMoves : MonoBehaviour
             animator.SetBool("isAttacking", false);
         }
 
+        // Limits enemy to certain number of attacks per second
         if (Time.time >= nextEnemyAttackTime)
         {
             // If in range, the enemy will start attacking the player
@@ -57,6 +62,32 @@ public class FightingMoves : MonoBehaviour
             {
                 animator.SetBool("EnemyAttacking", false);
             }
+        }
+
+        // Limits rate of player dodging
+        if (Time.time >= nextPlayerDodgeTime)
+        {
+            playerDodgeEnd();
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                playerDodgeStart();
+                nextPlayerAttackTime = Time.time + 1f / playerDodgeRate;
+                nextPlayerDodgeTime = Time.time + 1f / playerDodgeRate;
+            }
+        }
+
+        // While blocking, player cannot attack or dodge
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            playerBlockStart();
+            nextPlayerAttackTime = Time.time + playerBlockPenalty;
+            nextPlayerDodgeTime = Time.time + playerBlockPenalty;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            playerBlockEnd();
+            nextPlayerAttackTime = Time.time;
+            nextPlayerDodgeTime = Time.time;
         }
     }
 
@@ -91,6 +122,26 @@ public class FightingMoves : MonoBehaviour
             if (player != null)
                 enemyHit(player.GetComponent<PlayerGladiator>());
         }
+    }
+
+    public void playerDodgeStart()
+    {
+        playerLayers = LayerMask.GetMask("Default");
+    }
+
+    public void playerDodgeEnd()
+    {
+        playerLayers = LayerMask.GetMask("Player");
+    }
+
+    public void playerBlockStart()
+    {
+        playerLayers = LayerMask.GetMask("Default");
+    }
+
+    public void playerBlockEnd()
+    {
+        playerLayers = LayerMask.GetMask("Player");
     }
 
     void OnDrawGizmosSelected()

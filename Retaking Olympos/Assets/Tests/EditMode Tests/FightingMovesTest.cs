@@ -38,6 +38,28 @@ namespace Tests
             Assert.AreEqual(80, playerGlad.getCurrentHealth());
         }
 
+        [Test]
+        public void playerDodgingTest()
+        {
+            GameObject combat = new GameObject();
+            FightingMoves dodging = combat.AddComponent<FightingMoves>();
+            dodging.playerDodgeStart();
+            Assert.AreEqual(dodging.playerLayers.value, LayerMask.GetMask("Default"));
+            dodging.playerDodgeEnd();
+            Assert.AreEqual(dodging.playerLayers.value, LayerMask.GetMask("Player"));
+        }
+
+        [Test]
+        public void playerBlockingTest()
+        {
+            GameObject combat = new GameObject();
+            FightingMoves dodging = combat.AddComponent<FightingMoves>();
+            dodging.playerBlockStart();
+            Assert.AreEqual(dodging.playerLayers.value, LayerMask.GetMask("Default"));
+            dodging.playerBlockEnd();
+            Assert.AreEqual(dodging.playerLayers.value, LayerMask.GetMask("Player"));
+        }
+
         /* Work in Progress
         [Test]
         public void playerSwingTest()

@@ -30,12 +30,6 @@ public class PlayerGladiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Pressing space will modify size of bars
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            takeDamage(10);
-            useSkill(10);
-        }
         healthBar.setHealth(currentHealth);
         staminaBar.setStamina(currentStamina);
         PlayerPrefs.SetInt("staminaUsed", (100 - currentStamina));
