@@ -27,11 +27,10 @@ public class EnemyMovement : MonoBehaviour
     public void enemyChase()
     {
         transform.position = Vector2.MoveTowards(transform.position, playerChar.position, movementSpeed * Time.deltaTime);
-        //Debug.Log("Player" + playerChar.position.x + "enem" + transform.position.x);
         
         if (playerChar.position.x > transform.position.x)
         {
-            Debug.Log("true");
+            
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         else 
