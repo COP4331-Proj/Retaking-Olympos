@@ -24,5 +24,24 @@ namespace Tests
             Assert.AreEqual(PlayerGladiator.currentPower, 9001);
 
         }
+
+        [Test]
+        public void SaveLoadEnemyGladiatorTest()
+        {
+            int startingHealth;
+
+            GameObject enemy = new GameObject();
+            enemy.AddComponent<EnemyGladiator>();
+            EnemyGladiator dummyEnemy = enemy.GetComponent<EnemyGladiator>();
+
+            // We will test the save/loading scripts by modifying the health, saving, changing it again, then loading.
+            startingHealth = EnemyGladiator.currentHealth = 150;
+            dummyEnemy.SaveEnemyGladiatorData();
+            EnemyGladiator.currentHealth = 0;
+
+            dummyEnemy.LoadEnemyGladiatorData();
+            Assert.IsTrue(startingHealth > 0);
+            Assert.AreEqual(EnemyGladiator.currentHealth, startingHealth);
+        }
     }
 }
