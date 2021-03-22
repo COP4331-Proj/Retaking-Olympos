@@ -48,6 +48,8 @@ public class EnemyGladiator : MonoBehaviour
     // Method to test health bar change
     public void takeDamage(int damage)
     {
+        currentHealth -= damage;
+
         if (currentHealth <= 0)
         {
             // NUMBER ONE VICTORY ROYALE
@@ -75,7 +77,6 @@ public class EnemyGladiator : MonoBehaviour
             gameObject.GetComponent<SceneLoader>().GoToScene("FightChooser");
         }
 
-        currentHealth -= damage;
         PlayerPrefs.SetInt("enemyDamageTaken", (int)(100 * difficulty) - currentHealth);
         PlayerPrefs.SetInt("FightStatus", 1);
     }
