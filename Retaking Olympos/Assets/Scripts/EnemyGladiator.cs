@@ -8,6 +8,7 @@ public class EnemyGladiator : MonoBehaviour
     public EnemyBar healthBar;
     public Gladiator enemy;
     private float difficulty = 1f;
+    private int startingHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -40,11 +41,6 @@ public class EnemyGladiator : MonoBehaviour
         PlayerPrefs.SetFloat("enemyYPosition", this.transform.position.y);
     }
 
-    void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteKey("enemySetUp");
-    }
-
     // Method to test health bar change
     public void takeDamage(int damage)
     {
@@ -75,9 +71,12 @@ public class EnemyGladiator : MonoBehaviour
             GameObject gameObject = new GameObject();
             gameObject.AddComponent<SceneLoader>();
             gameObject.GetComponent<SceneLoader>().GoToScene("FightChooser");
+
+            // We're going to need to set up a new enemy gladiator because we've defeated this one
+            PlayerPrefs.DeleteKey("enemySetUp");
         }
 
-        PlayerPrefs.SetInt("enemyDamageTaken", (int)(100 * difficulty) - currentHealth);
+        PlayerPrefs.SetInt("enemyDamageTaken", startingHealth - currentHealth);
         PlayerPrefs.SetInt("FightStatus", 1);
     }
 
@@ -125,6 +124,8 @@ public class EnemyGladiator : MonoBehaviour
             healthBar.setMaxHealth(enemy.GetHealth());
         }
 
+        startingHealth = currentHealth;
+
         // Set up PlayerPref stuff so that the enemy gladiator doesn't reset when switching to the pause menu
         PlayerPrefs.SetString("enemyName", enemy.GetName());
         PlayerPrefs.SetInt("enemyHealth", enemy.GetHealth());
@@ -160,7 +161,7 @@ public class EnemyGladiator : MonoBehaviour
         currentHealth = data.health;
 
         // The save the stats to PlayerPrefs so that it doesn't disappear on switching off the pause menu
-        PlayerPrefs.SetInt("enemyDamageTaken", (int)(100 * difficulty) - currentHealth);
+        PlayerPrefs.SetInt("enemyDamageTaken", startingHealth - currentHealth);
 
         // Load the position
         transform.position = new Vector2(data.xPos, data.yPos);

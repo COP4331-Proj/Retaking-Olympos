@@ -18,7 +18,7 @@ public class PlayerGladiator : MonoBehaviour
         setupPlayerGladiator();
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {
-            if (PlayerPrefs.HasKey("isSetUp")) {
+            if (PlayerPrefs.HasKey("playerSetUp")) {
                 QuickLoadPlayerGladiator();
                 takeDamage(PlayerPrefs.GetInt("damageTaken"));
                 useSkill(PlayerPrefs.GetInt("staminaUsed"));
@@ -37,11 +37,6 @@ public class PlayerGladiator : MonoBehaviour
         PlayerPrefs.SetInt("staminaUsed", (100 - currentStamina));
         PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
         PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
-    }
-
-    void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteKey("isSetUp");
     }
 
     // Method to test health bar change
@@ -92,7 +87,7 @@ public class PlayerGladiator : MonoBehaviour
         PlayerPrefs.SetString("playerClass", playerClass);
 
         // Create PlayerPref data to keep track of how much damage was taken and stamina was used and player position
-        if (!PlayerPrefs.HasKey("isSetUp"))
+        if (!PlayerPrefs.HasKey("playerSetUp"))
         {
             PlayerPrefs.SetInt("damageTaken", 0);
             PlayerPrefs.SetInt("staminaUsed", 0);
@@ -103,7 +98,7 @@ public class PlayerGladiator : MonoBehaviour
 
         // Use a PlayerPref flag to let the PlayerGladiator class know if the PlayerGladiator is set up
         // The value doesn't actually matter because we can use PlayerPrefs.HasKey to check if the key is present
-        PlayerPrefs.SetInt("isSetUp", 1);
+        PlayerPrefs.SetInt("playerSetUp", 1);
     }
 
     // This function is for loading playerpref values
