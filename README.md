@@ -203,4 +203,4 @@ Tyler: Added a new scene to pick enemy gladiators, added tooltips to each gladia
 
 Nathan: Implemented the rest of gladiator items, added items locked to spicific classes, implemented double left click to equip
 
-Xavier:
+Xavier: Added the ability to block and dodge attacks in battle scene for user story 50
