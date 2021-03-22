@@ -166,7 +166,7 @@ Joshua:
 Timothy: Added PlayerPrefs for the player and enemy gladiators so that they retain their health/stamina/position when switching to the pause menu and back; added save/load script for the player gladiator; added a LevelUp function
 to the gladiator class' scripts
 
-Tyler: 
+Tyler: Added text representations for enemy HP, player HP and stamina. Also added the ability to press escape a second time to escape the pause menu.
 
 Nathan: Added default equipment icons, created the ability to purchase gladiators, and implemented previously created gladiator sub classes
 
