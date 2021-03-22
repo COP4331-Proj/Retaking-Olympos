@@ -22,10 +22,11 @@ public class EnemyGladiator : MonoBehaviour
             if (PlayerPrefs.HasKey("enemySetUp"))
             {
                 takeDamage(PlayerPrefs.GetInt("enemyDamageTaken"));
-                transform.position = new Vector2(PlayerPrefs.GetFloat("enemyXPosition"),
-                    PlayerPrefs.GetFloat("enemyYPosition"));
             }
         }
+
+        if (PlayerPrefs.HasKey("enemySetUp"))
+            transform.position = new Vector2(PlayerPrefs.GetFloat("enemyXPosition"), PlayerPrefs.GetFloat("enemyYPosition"));
 
         PlayerPrefs.SetInt("FightStatus", 0);
     }
@@ -136,11 +137,11 @@ public class EnemyGladiator : MonoBehaviour
         PlayerPrefs.SetString("enemyClass", enemy.GetClass());
 
         // Set up PlayerPref stuff for enemy gladiator positions
-        //if (!PlayerPrefs.HasKey("enemySetUp"))
-        //{
+        if (!PlayerPrefs.HasKey("enemySetUp"))
+        {
             PlayerPrefs.SetFloat("enemyXPosition", this.transform.position.x);
             PlayerPrefs.SetFloat("enemyYPosition", this.transform.position.y);
-        //}
+        }
 
         // Create PlayerPref data to keep track of how much damage was taken
         if (!PlayerPrefs.HasKey("enemySetUp"))
