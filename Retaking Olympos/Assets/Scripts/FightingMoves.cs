@@ -6,8 +6,8 @@ public class FightingMoves : MonoBehaviour
 {
     public PlayerGladiator player;
     public EnemyGladiator enemy;
-    public Animator animator;
-
+    public Animator playerAnimator;
+    public Animator enemyAnimator;
     public Transform playerAttackPoint;
     public Transform enemyAttackPoint;
     public float playerRange = 1.0f;
@@ -18,10 +18,10 @@ public class FightingMoves : MonoBehaviour
     public float enemyAttackRate = 1f;
     float nextPlayerAttackTime = 0f;
     float nextEnemyAttackTime = 0f;
-    public float playerDodgeRate = .2f;
+    public float playerDodgeRate = 1f;
     public float playerBlockPenalty = 1000f;
     float nextPlayerDodgeTime = 0f;
-
+    float attackTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +31,7 @@ public class FightingMoves : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         // Limits player to certain number of attacks per second
         if (Time.time >= nextPlayerAttackTime)
         {
@@ -39,34 +40,46 @@ public class FightingMoves : MonoBehaviour
             {
                 playerSwing();
                 nextPlayerAttackTime = Time.time + 1f / playerAttackRate;
-                animator.SetBool("isAttacking", true);
+                playerAnimator.SetBool("isAttacking", true);
             }
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            animator.SetBool("isAttacking", false);
+            playerAnimator.SetBool("isAttacking", false);
         }
 
         // Limits enemy to certain number of attacks per second
         if (Time.time >= nextEnemyAttackTime)
         {
+
+            attackTime = Time.time;
             // If in range, the enemy will start attacking the player
             if (Vector2.Distance(enemyAttackPoint.position, playerAttackPoint.position) <= (enemyRange * 1.25))
             {
+                Debug.Log("HERE");
                 enemySwing();
                 nextEnemyAttackTime = Time.time + 1f / enemyAttackRate;
-                animator.SetBool("EnemyAttacking", true);
+                
+                enemyAnimator.SetBool("EnemyAttacking", true);
             }
             else
             {
-                animator.SetBool("EnemyAttacking", false);
+                Debug.Log("HERE2");
+
+                enemyAnimator.SetBool("EnemyAttacking", false);
             }
+        }
+
+        if (Time.time - attackTime > 0.3f) 
+        {
+            enemyAnimator.SetBool("EnemyAttacking", false);
         }
 
         // Limits rate of player dodging
         if (Time.time >= nextPlayerDodgeTime)
         {
+            
             playerDodgeEnd();
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -99,6 +112,7 @@ public class FightingMoves : MonoBehaviour
 
     public void enemyHit(PlayerGladiator player)
     {
+       
        player.takeDamage(20);
     }
 
@@ -127,21 +141,37 @@ public class FightingMoves : MonoBehaviour
     public void playerDodgeStart()
     {
         playerLayers = LayerMask.GetMask("Default");
+        if (player != null)
+        {
+            player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
+        }
     }
 
     public void playerDodgeEnd()
     {
         playerLayers = LayerMask.GetMask("Player");
+        if (player != null)
+        {
+            player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        }
     }
 
     public void playerBlockStart()
     {
         playerLayers = LayerMask.GetMask("Default");
+        if (player!= null) 
+        {
+            player.GetComponent<SpriteRenderer>().color = new Color(.5f, .5f, .5f, 1f);
+        }
     }
 
     public void playerBlockEnd()
     {
         playerLayers = LayerMask.GetMask("Player");
+        if (player != null)
+        {
+            player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        }
     }
 
     void OnDrawGizmosSelected()

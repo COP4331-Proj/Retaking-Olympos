@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
         if (GameObject.Find("Canvas/HP Number") != null) 
         {
             Text hpNum = GameObject.Find("Canvas/HP Number").GetComponent<Text>();
-            Debug.Log(slider.value + " / " + slider.maxValue);
+            //Debug.Log(slider.value + " / " + slider.maxValue);
             hpNum.text = slider.value + " / " + slider.maxValue;
         }
     }

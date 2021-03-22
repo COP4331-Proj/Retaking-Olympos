@@ -34,7 +34,7 @@ public class EnemyGladiator : MonoBehaviour
     {
         // Pressing space will modify size of bars
         healthBar.setHealth(currentHealth);
-
+        
         // Create PlayerPref stuff for enemy position
         PlayerPrefs.SetFloat("enemyXPosition", this.transform.position.x);
         PlayerPrefs.SetFloat("enemyYPosition", this.transform.position.y);
@@ -135,14 +135,14 @@ public class EnemyGladiator : MonoBehaviour
         PlayerPrefs.SetString("enemyClass", enemy.GetClass());
 
         // Set up PlayerPref stuff for enemy gladiator positions
-        if (!PlayerPrefs.HasKey("enemySetUp"))
-        {
+        //if (!PlayerPrefs.HasKey("enemySetUp"))
+        //{
             PlayerPrefs.SetFloat("enemyXPosition", this.transform.position.x);
             PlayerPrefs.SetFloat("enemyYPosition", this.transform.position.y);
-        }
+        //}
 
         // Create PlayerPref data to keep track of how much damage was taken
-        if (!PlayerPrefs.HasKey("enemySetUp"))
+        //if (!PlayerPrefs.HasKey("enemySetUp"))
             PlayerPrefs.SetInt("enemyDamageTaken", 0);
 
         PlayerPrefs.SetInt("enemySetUp", 1);

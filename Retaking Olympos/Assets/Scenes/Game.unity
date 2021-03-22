@@ -235,7 +235,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1555567057}
   enemy: {fileID: 1798561729}
-  animator: {fileID: 1555567054}
+  playerAnimator: {fileID: 1555567054}
+  enemyAnimator: {fileID: 1798561730}
   playerAttackPoint: {fileID: 1555567052}
   enemyAttackPoint: {fileID: 1798561724}
   playerRange: 1
@@ -248,6 +249,8 @@ MonoBehaviour:
     m_Bits: 1024
   playerAttackRate: 2
   enemyAttackRate: 1
+  playerDodgeRate: 2
+  playerBlockPenalty: 1000
 --- !u!4 &282281967
 Transform:
   m_ObjectHideFlags: 0
@@ -1375,33 +1378,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1555567055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1555567051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c39741b4c95d90498f0071f1e16e79c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1555567057}
-  enemy: {fileID: 1798561729}
-  animator: {fileID: 1555567054}
-  playerAttackPoint: {fileID: 1555567052}
-  enemyAttackPoint: {fileID: 1798561724}
-  playerRange: 1
-  enemyRange: 1
-  playerLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  playerAttackRate: 2
-  enemyAttackRate: 1
 --- !u!114 &1555567057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1726,33 +1702,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1798561731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798561723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c39741b4c95d90498f0071f1e16e79c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1555567057}
-  enemy: {fileID: 1798561729}
-  animator: {fileID: 1798561730}
-  playerAttackPoint: {fileID: 1555567052}
-  enemyAttackPoint: {fileID: 1798561724}
-  playerRange: 1
-  enemyRange: 1
-  playerLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  playerAttackRate: 2
-  enemyAttackRate: 1
 --- !u!1 &1855956422
 GameObject:
   m_ObjectHideFlags: 0
