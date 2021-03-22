@@ -197,7 +197,7 @@ Xavier: Added A.I. to enemy gladiator in battle scene for user story 43
 
 Joshua:
 
-Timothy:
+Timothy: Updated scripts to save enemy status in the arena/save gladiator positions, got the save/load buttons working
 
 Tyler: Added a new scene to pick enemy gladiators, added tooltips to each gladiator choice and fixed restoring health.
 
