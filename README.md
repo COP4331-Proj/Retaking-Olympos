@@ -171,3 +171,35 @@ Tyler: Added text representations for enemy HP, player HP and stamina. Also adde
 Nathan: Added default equipment icons, created the ability to purchase gladiators, and implemented previously created gladiator sub classes
 
 Xavier: Added A.I. to enemy gladiator in battle scene for user story 43
+
+## Sprint 7
+
+[Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
+
+[System Architecture](https://github.com/COP4331-Proj/Retaking-Olympos/blob/main/artifacts/architecture.md)
+
+[Source Code](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Scripts)
+
+[Automated Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Tests)
+
+[Manual Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/artifacts/Manual%20Tests)
+
+[Demo Video]()
+
+### Burndown Chart
+
+
+### Velocity Chart
+
+
+### Task Allocation
+
+Joshua:
+
+Timothy:
+
+Tyler: Added a new scene to pick enemy gladiators, added tooltips to each gladiator choice and fixed restoring health.
+
+Nathan:
+
+Xavier:
