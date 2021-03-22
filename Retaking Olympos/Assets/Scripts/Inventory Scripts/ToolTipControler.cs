@@ -42,6 +42,19 @@ public class ToolTipControler : MonoBehaviour
         toolTipPos = position;
     }
 
+    public void ShowToolTip(Vector3 position, Gladiator gladiator)
+    {
+        if (toolTip == null)
+        {
+            toolTip = GameObject.FindWithTag("ToolTip");
+        }
+        toolTip.SetActive(true);
+
+        toolTip.GetComponentInChildren<TextMeshProUGUI>().text = gladiator.GetDescription();
+        toolTip.transform.position = position;
+        toolTipPos = position;
+    }
+
     public void HideToolTip()
     {
         if (toolTip == null)

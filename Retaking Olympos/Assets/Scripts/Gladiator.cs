@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -90,5 +91,10 @@ public class Gladiator
     public void SetCost(int cost) 
     {
         this.cost = cost;
+    }
+
+    public String GetDescription()
+    {
+        return "Name: " + this.gladiatorName + "\nHealth: " + this.health + "\nLevel: " + this.level + "\nPower: " + this.power + "\nDefense: " + this.defense + "\nClass: " + this.gladiatorClass;
     }
 }

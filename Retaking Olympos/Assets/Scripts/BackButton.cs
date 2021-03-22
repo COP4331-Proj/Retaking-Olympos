@@ -17,7 +17,11 @@ public class BackButton : MonoBehaviour
         if (currentClass == "Shop")
         {
             gameObject.GetComponent<SceneLoader>().GoToScene("View Gladiator");
-        } 
+        }
+        else if (currentClass == "FightChooser")
+        {
+            gameObject.GetComponent<SceneLoader>().GoToScene("Main Scene");
+        }
         else if (currentClass == "Main Scene")
         {
             gameObject.GetComponent<SceneLoader>().GoToScene("Title Screen");

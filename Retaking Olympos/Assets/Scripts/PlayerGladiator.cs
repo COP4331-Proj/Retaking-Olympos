@@ -15,16 +15,18 @@ public class PlayerGladiator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.HasKey("isSetUp"))
-            QuickLoadPlayerGladiator();
         setupPlayerGladiator();
-
-        if (PlayerPrefs.HasKey("isSetUp"))
+        if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {
-            takeDamage(PlayerPrefs.GetInt("damageTaken"));
-            useSkill(PlayerPrefs.GetInt("staminaUsed"));
-            transform.position = new Vector2(PlayerPrefs.GetFloat("playerXPosition"), PlayerPrefs.GetFloat("playerYPosition"));
+            if (PlayerPrefs.HasKey("isSetUp")) {
+                QuickLoadPlayerGladiator();
+                takeDamage(PlayerPrefs.GetInt("damageTaken"));
+                useSkill(PlayerPrefs.GetInt("staminaUsed"));
+                transform.position = new Vector2(PlayerPrefs.GetFloat("playerXPosition"),
+                    PlayerPrefs.GetFloat("playerYPosition"));
+            }
         }
+
     }
 
     // Update is called once per frame

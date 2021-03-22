@@ -16,11 +16,17 @@ public class EnemyGladiator : MonoBehaviour
 
         setupEnemyGladiator();
 
-        if (PlayerPrefs.HasKey("enemySetUp"))
+        if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {
-            takeDamage(PlayerPrefs.GetInt("enemyDamageTaken"));
-            transform.position = new Vector2(PlayerPrefs.GetFloat("enemyXPosition"), PlayerPrefs.GetFloat("enemyYPosition"));
+            if (PlayerPrefs.HasKey("enemySetUp"))
+            {
+                takeDamage(PlayerPrefs.GetInt("enemyDamageTaken"));
+                transform.position = new Vector2(PlayerPrefs.GetFloat("enemyXPosition"),
+                    PlayerPrefs.GetFloat("enemyYPosition"));
+            }
         }
+
+        PlayerPrefs.SetInt("FightStatus", 0);
     }
 
     // Update is called once per frame
@@ -43,10 +49,35 @@ public class EnemyGladiator : MonoBehaviour
     public void takeDamage(int damage)
     {
         if (currentHealth <= 0)
-            return;
+        {
+            // NUMBER ONE VICTORY ROYALE
+            switch (PlayerPrefs.GetString("CurrentEnemy"))
+            {
+                case "Carpophorus":
+                    PlayerPrefs.SetInt("CarpophorusBeat", 1);
+                    break;
+                case "Commodus":
+                    PlayerPrefs.SetInt("CommodusBeat", 1);
+                    break;
+                case "Crixus":
+                    PlayerPrefs.SetInt("CrixusBeat", 1);
+                    break;
+                case "Flamma":
+                    PlayerPrefs.SetInt("FlammaBeat", 1);
+                    break;
+                case "Spartacus":
+                    PlayerPrefs.SetInt("SpartacusBeat", 1);
+                    break;
+            }
+
+            GameObject gameObject = new GameObject();
+            gameObject.AddComponent<SceneLoader>();
+            gameObject.GetComponent<SceneLoader>().GoToScene("FightChooser");
+        }
 
         currentHealth -= damage;
         PlayerPrefs.SetInt("enemyDamageTaken", (int)(100 * difficulty) - currentHealth);
+        PlayerPrefs.SetInt("FightStatus", 1);
     }
 
     public int getCurrentHealth()
@@ -56,11 +87,36 @@ public class EnemyGladiator : MonoBehaviour
 
     public void setupEnemyGladiator()
     {
-        if (!PlayerPrefs.HasKey("enemySetUp"))
-            enemy = new Gladiator("Enemy", 1, (int)(100 * difficulty), 100, 6, 14);
+        if (!PlayerPrefs.HasKey("CurrentEnemy"))
+        {
+            if (PlayerPrefs.HasKey("enemySetUp"))
+            {
+                enemy = new Gladiator(PlayerPrefs.GetString("enemyName"), PlayerPrefs.GetInt("enemyLevel"), PlayerPrefs.GetInt("enemyHealth"),
+                    PlayerPrefs.GetInt("enemyStamina"), PlayerPrefs.GetInt("enemyPower"),
+                    PlayerPrefs.GetInt("enemyDefense"));
+            }
+        }
         else
-            enemy = new Gladiator("Enemy", PlayerPrefs.GetInt("enemyLevel"), PlayerPrefs.GetInt("enemyHealth"), 
-                                  PlayerPrefs.GetInt("enemyStamina"), PlayerPrefs.GetInt("enemyPower"), PlayerPrefs.GetInt("enemyDefense"));
+        {
+            switch (PlayerPrefs.GetString("CurrentEnemy"))
+            {
+                case "Carpophorus":
+                    enemy = new Gladiator("Carpophorus", 1, 100, 100, 5, 5);
+                    break;
+                case "Commodus":
+                    enemy = new Gladiator("Commodus", 4, 150, 100, 7, 7);
+                    break;
+                case "Crixus":
+                    enemy = new Gladiator("Crixus", 2, 110, 100, 6, 6);
+                    break;
+                case "Flamma":
+                    enemy = new Gladiator("Flamma", 6, 200, 100, 10, 8);
+                    break;
+                case "Spartacus":
+                    enemy = new Gladiator("Spartacus", 10, 300, 100, 20, 10);
+                    break;
+            }
+        }
 
         currentHealth = enemy.GetHealth();
         if (healthBar != null) 
@@ -69,6 +125,7 @@ public class EnemyGladiator : MonoBehaviour
         }
 
         // Set up PlayerPref stuff so that the enemy gladiator doesn't reset when switching to the pause menu
+        PlayerPrefs.SetString("enemyName", enemy.GetName());
         PlayerPrefs.SetInt("enemyHealth", enemy.GetHealth());
         PlayerPrefs.SetInt("enemyStamina", enemy.GetStamina());
         PlayerPrefs.SetInt("enemyLevel", enemy.GetLevel());

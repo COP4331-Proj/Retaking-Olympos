@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Purchase Gladiator.unity
     guid: b6c55421f26c69c46bd011bf8f26975c
+  - enabled: 1
+    path: Assets/Scenes/FightChooser.unity
+    guid: c370b73fb0bd5ee4d98fe637afde0145
   m_configObjects: {}
