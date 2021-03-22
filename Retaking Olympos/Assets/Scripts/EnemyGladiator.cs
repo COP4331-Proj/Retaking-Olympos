@@ -142,7 +142,7 @@ public class EnemyGladiator : MonoBehaviour
         //}
 
         // Create PlayerPref data to keep track of how much damage was taken
-        //if (!PlayerPrefs.HasKey("enemySetUp"))
+        if (!PlayerPrefs.HasKey("enemySetUp"))
             PlayerPrefs.SetInt("enemyDamageTaken", 0);
 
         PlayerPrefs.SetInt("enemySetUp", 1);
