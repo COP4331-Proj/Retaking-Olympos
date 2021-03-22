@@ -184,12 +184,13 @@ Xavier: Added A.I. to enemy gladiator in battle scene for user story 43
 
 [Manual Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/artifacts/Manual%20Tests)
 
-[Demo Video]()
+[Demo Video](https://youtu.be/8fNfiPI1mkk)
 
 ### Burndown Chart
-
+<img src="artifacts/Pictures/Charts/Burndown Chart Sprint 7.PNG">
 
 ### Velocity Chart
+<img src="artifacts/Pictures/Charts/Velocity Chart Sprint 7.PNG">
 
 
 ### Task Allocation
@@ -200,6 +201,6 @@ Timothy:
 
 Tyler: Added a new scene to pick enemy gladiators, added tooltips to each gladiator choice and fixed restoring health.
 
-Nathan:
+Nathan: Implemented the rest of gladiator items, added items locked to spicific classes, implemented double left click to equip
 
 Xavier:
