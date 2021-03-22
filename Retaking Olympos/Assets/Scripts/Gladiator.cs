@@ -95,6 +95,6 @@ public class Gladiator
 
     public String GetDescription()
     {
-        return "Name: " + this.gladiatorName + "\nHealth: " + this.health + "\nLevel: " + this.level + "\nPower: " + this.power + "\nDefense: " + this.defense + "\nClass: " + this.gladiatorClass;
+        return "Name: " + this.gladiatorName + "\nHealth: " + this.health + "\nLevel: " + this.level + "\nPower: " + this.power + "\nDefense: " + this.defense;
     }
 }
