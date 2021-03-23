@@ -15,7 +15,10 @@ public class PlayerGladiator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = holdPlayerInformation.gladiatorList[holdPlayerInformation.index];
+        if (holdPlayerInformation == null) 
+        {
+            player = holdPlayerInformation.gladiatorList[holdPlayerInformation.index];
+        }
         setupPlayerGladiator();
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {
