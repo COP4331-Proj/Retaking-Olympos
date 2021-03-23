@@ -49,6 +49,25 @@ public class EnemyGladiator : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            // NUMBER ONE VICTORY ROYALE
+            switch (PlayerPrefs.GetString("CurrentEnemy"))
+            {
+                case "Carpophorus":
+                    PlayerPrefs.SetInt("CarpophorusBeat", 1);
+                    break;
+                case "Commodus":
+                    PlayerPrefs.SetInt("CommodusBeat", 1);
+                    break;
+                case "Crixus":
+                    PlayerPrefs.SetInt("CrixusBeat", 1);
+                    break;
+                case "Flamma":
+                    PlayerPrefs.SetInt("FlammaBeat", 1);
+                    break;
+                case "Spartacus":
+                    PlayerPrefs.SetInt("SpartacusBeat", 1);
+                    break;
+            }
             GameObject gameObject = new GameObject();
             gameObject.AddComponent<SceneLoader>();
             gameObject.GetComponent<SceneLoader>().GoToScene("Victory Scene");

@@ -8,13 +8,14 @@ public class PlayerGladiator : MonoBehaviour
     public static int currentPower, currentDefense;
     public static string playerClass;
     public Gladiator player = new Gladiator("Player", 1, 100, 100, 6, 14);
-    
+    public HoldPlayerInformation holdPlayerInformation;
     public HealthBar healthBar;
     public StaminaBar staminaBar;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = holdPlayerInformation.gladiatorList[holdPlayerInformation.index];
         setupPlayerGladiator();
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {

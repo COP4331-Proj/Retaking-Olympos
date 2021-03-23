@@ -1433,6 +1433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568cc2b796be1de41a852cf135c938ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holdPlayerInformation: {fileID: 11400000, guid: b40ba94ac0f59f44082dd4eb50a74823,
+    type: 2}
   healthBar: {fileID: 1528991202}
   staminaBar: {fileID: 1676407811}
 --- !u!1 &1574620597

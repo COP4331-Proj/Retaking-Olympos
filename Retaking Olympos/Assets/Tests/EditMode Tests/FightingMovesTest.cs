@@ -19,9 +19,10 @@ namespace Tests
             EnemyGladiator enemyGlad = enemy.AddComponent<EnemyGladiator>();
             FightingMoves attacks = moves.AddComponent<FightingMoves>();
             enemyGlad.setupEnemyGladiator();
+            int previousHealth = EnemyGladiator.currentHealth;
             EnemyGladiator.currentHealth = enemyGlad.enemy.GetHealth();
             attacks.playerHit(enemyGlad);
-            Assert.AreEqual(80, enemyGlad.getCurrentHealth());
+            Assert.AreEqual(previousHealth - 20, enemyGlad.getCurrentHealth());
         }
 
         [Test]
