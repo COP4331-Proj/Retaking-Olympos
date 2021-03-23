@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FightChooser.unity
     guid: c370b73fb0bd5ee4d98fe637afde0145
+  - enabled: 1
+    path: Assets/Scenes/Victory Scene.unity
+    guid: c33de548c6ad33e4e9943813140ab115
+  - enabled: 1
+    path: Assets/Scenes/Defeat Screen.unity
+    guid: e9113f8cd0875ba47a7141ea4ee8885a
   m_configObjects: {}
