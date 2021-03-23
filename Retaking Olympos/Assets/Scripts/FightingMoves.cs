@@ -22,6 +22,7 @@ public class FightingMoves : MonoBehaviour
     public float playerBlockPenalty = 1000f;
     float nextPlayerDodgeTime = 0f;
     float attackTime = 0f;
+
     // Start is called before the first frame update
     void Start()
     {

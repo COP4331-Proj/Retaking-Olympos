@@ -42,10 +42,17 @@ public class PlayerGladiator : MonoBehaviour
     // Method to test health bar change
     public void takeDamage(int damage)
     {
-        if (currentHealth <= 0)
-            return;
-
         currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            PlayerPrefs.DeleteKey("playerSetUp");
+
+            GameObject gameObject = new GameObject();
+            gameObject.AddComponent<SceneLoader>();
+            gameObject.GetComponent<SceneLoader>().GoToScene("Defeat Screen");
+        }
+
         PlayerPrefs.SetInt("damageTaken", (100 - currentHealth));
     }
 
