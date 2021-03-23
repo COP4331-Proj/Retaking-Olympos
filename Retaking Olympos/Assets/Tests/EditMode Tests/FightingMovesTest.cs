@@ -22,7 +22,7 @@ namespace Tests
             int previousHealth = EnemyGladiator.currentHealth;
             EnemyGladiator.currentHealth = enemyGlad.enemy.GetHealth();
             attacks.playerHit(enemyGlad);
-            Assert.AreEqual(previousHealth - 20, enemyGlad.getCurrentHealth());
+            Assert.AreEqual(previousHealth - 10, enemyGlad.getCurrentHealth());
         }
 
         [Test]
@@ -34,9 +34,12 @@ namespace Tests
             PlayerGladiator playerGlad = player.AddComponent<PlayerGladiator>();
             EnemyGladiator enemyGlad = enemy.AddComponent<EnemyGladiator>();
             FightingMoves attacks = moves.AddComponent<FightingMoves>();
+            attacks.enemy = enemyGlad;
+            attacks.enemy.enemy = new Gladiator("Enemy", 1, 100, 100, 6, 14);
             PlayerGladiator.currentHealth = playerGlad.player.GetHealth();
+            int previousHealth = PlayerGladiator.currentHealth;
             attacks.enemyHit(playerGlad);
-            Assert.AreEqual(80, playerGlad.getCurrentHealth());
+            Assert.AreEqual(previousHealth - 10, playerGlad.getCurrentHealth());
         }
 
         [Test]

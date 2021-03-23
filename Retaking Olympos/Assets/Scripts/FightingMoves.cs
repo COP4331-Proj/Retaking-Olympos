@@ -108,13 +108,32 @@ public class FightingMoves : MonoBehaviour
 
     public void playerHit(EnemyGladiator enemy)
     {
-       enemy.takeDamage(20);
+        int damage = PlayerGladiator.currentPower - enemy.enemy.GetDefense();
+
+        // 10 is the minimum amount of damage that can be done no matter what.
+        if (damage < 10)
+        {
+            enemy.takeDamage(10);
+        }
+        else
+        {
+            enemy.takeDamage(damage);
+        }
     }
 
     public void enemyHit(PlayerGladiator player)
     {
-       
-       player.takeDamage(20);
+        int damage = enemy.enemy.GetPower() - PlayerGladiator.currentDefense;
+
+        // 10 is the minimum amount of damage that can be done no matter what.
+        if (damage < 10)
+        {
+            player.takeDamage(10);
+        }
+        else
+        {
+            player.takeDamage(damage);
+        }
     }
 
     public void playerSwing()
