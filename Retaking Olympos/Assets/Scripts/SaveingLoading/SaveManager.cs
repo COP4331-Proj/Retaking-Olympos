@@ -69,4 +69,38 @@ public static class SaveManager
 
         return data;
     }
+
+    public static void SaveEnemiesDefeated()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/enemiesDefeated.RO";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        EnemiesDefeatedData data = new EnemiesDefeatedData();
+
+        formatter.Serialize(stream, data);
+
+        stream.Close();
+    }
+
+    public static EnemiesDefeatedData LoadEnemiesDefeated()
+    {
+        string path = Application.persistentDataPath + "/enemiesDefeated.RO";
+
+        // Gaurds against missing save
+        if (!File.Exists(path))
+        {
+            Debug.LogError("Save file not found in: " + path);
+            return null;
+        }
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(path, FileMode.Open);
+
+        EnemiesDefeatedData data = formatter.Deserialize(stream) as EnemiesDefeatedData;
+        stream.Close();
+
+        return data;
+    }
 }
+

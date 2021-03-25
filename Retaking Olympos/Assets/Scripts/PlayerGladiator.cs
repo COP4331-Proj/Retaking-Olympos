@@ -19,18 +19,17 @@ public class PlayerGladiator : MonoBehaviour
         {
             player = holdPlayerInformation.gladiatorList[holdPlayerInformation.index];
         }
+
         setupPlayerGladiator();
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {
-            if (PlayerPrefs.HasKey("playerSetUp")) {
+            if (PlayerPrefs.HasKey("playerSetUp")) 
+            {
                 QuickLoadPlayerGladiator();
                 takeDamage(PlayerPrefs.GetInt("damageTaken"));
                 useSkill(PlayerPrefs.GetInt("staminaUsed"));
-                transform.position = new Vector2(PlayerPrefs.GetFloat("playerXPosition"),
-                    PlayerPrefs.GetFloat("playerYPosition"));
             }
         }
-
     }
 
     // Update is called once per frame
@@ -39,8 +38,12 @@ public class PlayerGladiator : MonoBehaviour
         healthBar.setHealth(currentHealth);
         staminaBar.setStamina(currentStamina);
         PlayerPrefs.SetInt("staminaUsed", (100 - currentStamina));
-        PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
-        PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
+
+        if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
+        {
+            PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
+            PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
+        }
     }
 
     // Method to test health bar change
@@ -50,7 +53,8 @@ public class PlayerGladiator : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            PlayerPrefs.DeleteKey("playerSetUp");
+            if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
+                PlayerPrefs.DeleteKey("playerSetUp");
 
             GameObject gameObject = new GameObject();
             gameObject.AddComponent<SceneLoader>();
@@ -102,7 +106,6 @@ public class PlayerGladiator : MonoBehaviour
         {
             PlayerPrefs.SetInt("damageTaken", 0);
             PlayerPrefs.SetInt("staminaUsed", 0);
-
             PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
             PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
         }
@@ -121,6 +124,9 @@ public class PlayerGladiator : MonoBehaviour
         currentPower = PlayerPrefs.GetInt("power");
         currentDefense = PlayerPrefs.GetInt("defense");
         playerClass = PlayerPrefs.GetString("playerClass");
+
+        transform.position = new Vector2(PlayerPrefs.GetFloat("playerXPosition"),
+        PlayerPrefs.GetFloat("playerYPosition"));
     }
 
     public void SavePlayerGladiatorData()
