@@ -15,7 +15,7 @@ public class PlayerGladiator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (holdPlayerInformation == null) 
+        if (holdPlayerInformation != null) 
         {
             player = holdPlayerInformation.gladiatorList[holdPlayerInformation.index];
         }
