@@ -550,6 +550,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1098350284}
+        m_MethodName: SaveEnemiesDefeated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &160854445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,6 +919,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 549134871}
         m_MethodName: LoadEnemyGladiatorData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1098350284}
+        m_MethodName: LoadEnemiesDefeated
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2337,6 +2359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568cc2b796be1de41a852cf135c938ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holdPlayerInformation: {fileID: 0}
   healthBar: {fileID: 683443284}
   staminaBar: {fileID: 1894941409}
 --- !u!4 &2057306451

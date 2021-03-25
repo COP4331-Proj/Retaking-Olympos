@@ -15,7 +15,8 @@ public class EnemyGladiator : MonoBehaviour
     {
         difficulty = PlayerPrefs.HasKey("DifficultyPreference") ? PlayerPrefs.GetFloat("DifficultyPreference") : 1f;
 
-        setupEnemyGladiator();
+        if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
+            setupEnemyGladiator();
 
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {
@@ -36,10 +37,13 @@ public class EnemyGladiator : MonoBehaviour
     {
         // Pressing space will modify size of bars
         healthBar.setHealth(currentHealth);
-        
+
         // Create PlayerPref stuff for enemy position
-        PlayerPrefs.SetFloat("enemyXPosition", this.transform.position.x);
-        PlayerPrefs.SetFloat("enemyYPosition", this.transform.position.y);
+        if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
+        {
+            PlayerPrefs.SetFloat("enemyXPosition", this.transform.position.x);
+            PlayerPrefs.SetFloat("enemyYPosition", this.transform.position.y);
+        }
     }
 
     // Method to test health bar change
@@ -72,8 +76,12 @@ public class EnemyGladiator : MonoBehaviour
             gameObject.AddComponent<SceneLoader>();
             gameObject.GetComponent<SceneLoader>().GoToScene("Victory Scene");
 
-            // We're going to need to set up a new enemy gladiator because we've defeated this one
-            PlayerPrefs.DeleteKey("enemySetUp");
+            // If the enemy dies, we need to reset both player and enemy gladiators for the next fight
+            if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
+            {
+                PlayerPrefs.DeleteKey("enemySetUp");
+                PlayerPrefs.DeleteKey("playerSetUp");
+            }
         }
 
         PlayerPrefs.SetInt("enemyDamageTaken", startingHealth - currentHealth);

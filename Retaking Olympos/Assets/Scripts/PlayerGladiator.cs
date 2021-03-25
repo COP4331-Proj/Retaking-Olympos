@@ -20,7 +20,9 @@ public class PlayerGladiator : MonoBehaviour
             player = holdPlayerInformation.gladiatorList[holdPlayerInformation.index];
         }
 
-        setupPlayerGladiator();
+        if (PlayerPrefs.HasKey("GameSceneIsLoaded")) 
+            setupPlayerGladiator();
+
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {
             if (PlayerPrefs.HasKey("playerSetUp")) 
@@ -53,8 +55,12 @@ public class PlayerGladiator : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            // If the player dies, we need to reset both player and enemy gladiators for the next fight
             if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
+            {
                 PlayerPrefs.DeleteKey("playerSetUp");
+                PlayerPrefs.DeleteKey("enemySetUp");
+            }
 
             GameObject gameObject = new GameObject();
             gameObject.AddComponent<SceneLoader>();
