@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BackButton : MonoBehaviour
+public class Navigation : MonoBehaviour
 {
     private static String currentClass;
 
@@ -26,5 +26,28 @@ public class BackButton : MonoBehaviour
         {
             gameObject.GetComponent<SceneLoader>().GoToScene("Title Screen");
         }
+    }
+
+    public void StartGame()
+    {
+        GameObject gameObject = new GameObject();
+        gameObject.AddComponent<SceneLoader>();
+
+        if (!PlayerPrefs.HasKey("FirstLaunch"))
+        {
+            gameObject.GetComponent<SceneLoader>().GoToScene("Welcome");
+            PlayerPrefs.SetInt("FirstLaunch", 1);
+        }
+        else
+        {
+            gameObject.GetComponent<SceneLoader>().GoToScene("Main Scene");
+        }
+    }
+
+    public void Continue()
+    {
+        GameObject gameObject = new GameObject();
+        gameObject.AddComponent<SceneLoader>();
+        gameObject.GetComponent<SceneLoader>().GoToScene("Main Scene");
     }
 }
