@@ -23,7 +23,7 @@ namespace Tests
             GameObject attacks = GameObject.Find("FightingMoves");
             enemy.transform.position = new Vector2(player.transform.position.x, player.transform.position.y) + new Vector2(1, 0);
             yield return null;
-            Assert.AreEqual(player.GetComponent<PlayerGladiator>().player.GetHealth() - 20, PlayerGladiator.currentHealth);
+            Assert.AreEqual(player.GetComponent<PlayerGladiator>().player.GetHealth() - 10, PlayerGladiator.currentHealth);
         }
 
     }

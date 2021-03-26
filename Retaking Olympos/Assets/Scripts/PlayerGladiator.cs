@@ -11,6 +11,7 @@ public class PlayerGladiator : MonoBehaviour
     public HoldPlayerInformation holdPlayerInformation;
     public HealthBar healthBar;
     public StaminaBar staminaBar;
+    public float staminaRegenTimer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,11 +33,21 @@ public class PlayerGladiator : MonoBehaviour
                 useSkill(PlayerPrefs.GetInt("staminaUsed"));
             }
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (currentStamina < player.GetStamina())
+        {
+            if (Time.time >= staminaRegenTimer)
+            {
+                staminaRegen();
+                staminaRegenTimer = Time.time + .1f;
+            }
+        }
+
         healthBar.setHealth(currentHealth);
         staminaBar.setStamina(currentStamina);
         PlayerPrefs.SetInt("staminaUsed", (100 - currentStamina));
@@ -160,4 +171,10 @@ public class PlayerGladiator : MonoBehaviour
         // Load the position
         transform.position = new Vector2(data.xPos, data.yPos);
     }
+
+    public void staminaRegen()
+    {
+        currentStamina++;
+    }
+
 }
