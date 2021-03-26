@@ -21,8 +21,8 @@ public class Tharcian : Gladiator
     {
         SetHealth((GetLevel() * 25) + 75);
         SetStamina((GetLevel() * 40) + 80);
-        SetPower((GetLevel() * 25) + 75);
-        SetDefense((GetLevel() * 25) + 75);
+        SetPower((GetLevel() * 5) + 12);
+        SetDefense((GetLevel() * 2) + 6);
         SetCost((GetLevel() * 25) + 75);
         return;
     }

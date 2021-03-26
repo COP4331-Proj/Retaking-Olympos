@@ -109,19 +109,24 @@ public class EnemyGladiator : MonoBehaviour
             switch (PlayerPrefs.GetString("CurrentEnemy"))
             {
                 case "Carpophorus":
-                    enemy = new Gladiator("Carpophorus", 1, 100, 100, 5, 5);
+                    // Thracian
+                    enemy = new Gladiator("Carpophorus", 1, 100, 100, 17, 8);
                     break;
                 case "Commodus":
-                    enemy = new Gladiator("Commodus", 4, 150, 100, 7, 7);
+                    // Samnite
+                    enemy = new Gladiator("Commodus", 4, 150, 100, 24, 18);
                     break;
                 case "Crixus":
-                    enemy = new Gladiator("Crixus", 2, 110, 100, 6, 6);
+                    // Secutor
+                    enemy = new Gladiator("Crixus", 5, 110, 100, 28, 25);
                     break;
                 case "Flamma":
-                    enemy = new Gladiator("Flamma", 6, 200, 100, 10, 8);
+                    // Murmillo
+                    enemy = new Gladiator("Flamma", 6, 200, 100, 21, 34);
                     break;
                 case "Spartacus":
-                    enemy = new Gladiator("Spartacus", 10, 300, 100, 20, 10);
+                    // Dimachaerus
+                    enemy = new Gladiator("Spartacus", 10, 300, 100, 76, 24);
                     break;
             }
         }

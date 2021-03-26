@@ -21,8 +21,8 @@ public class Secutor : Gladiator
     {
         SetHealth((GetLevel() * 30) + 75);
         SetStamina((GetLevel() * 15) + 65);
-        SetPower((GetLevel() * 25) + 75);
-        SetDefense((GetLevel() * 40) + 75);
+        SetPower((GetLevel() * 4) + 8);
+        SetDefense((GetLevel() * 3) + 10);
         SetCost((GetLevel() * 25) + 75);
         return;
     }

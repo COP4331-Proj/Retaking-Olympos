@@ -5,6 +5,12 @@ using UnityEngine;
 // Definition of what an item object entails
 public class Item
 {
+    // 1 = Thracian
+    // 2 = Samnite
+    // 3 = Secutor
+    // 4 = Murmillo
+    // 5 = Dimachaerus
+
     public enum ItemName 
     {
         Sword,
@@ -220,15 +226,15 @@ public class Item
                 }
             case ItemName.Sword3:
                 {
-                    return 5;
+                    return 4;
                 }
             case ItemName.Sword4:
                 {
-                    return 5;
+                    return 4;
                 }
             case ItemName.Sword5:
                 {
-                    return 5;
+                    return 9;
                 }
             default:
                 return 0;
@@ -261,11 +267,11 @@ public class Item
                 }
             case ItemName.Helmet2:
                 {
-                    return 5;
+                    return 6;
                 }
             case ItemName.Boots2:
                 {
-                    return 4;
+                    return 6;
                 }
             case ItemName.Helmet3:
                 {
@@ -273,43 +279,43 @@ public class Item
                 }
             case ItemName.Chestplate3:
                 {
-                    return 8;
+                    return 9;
                 }
             case ItemName.Pants3:
                 {
-                    return 7;
+                    return 5;
                 }
             case ItemName.Boots3:
                 {
-                    return 4;
+                    return 2;
                 }
             case ItemName.Helmet4:
                 {
-                    return 5;
+                    return 6;
                 }
             case ItemName.Chestplate4:
                 {
-                    return 8;
+                    return 10;
                 }
             case ItemName.Pants4:
                 {
-                    return 7;
+                    return 8;
                 }
             case ItemName.Boots4:
                 {
-                    return 4;
+                    return 6;
                 }
             case ItemName.Helmet5:
                 {
-                    return 5;
+                    return 4;
                 }
             case ItemName.Chestplate5:
                 {
-                    return 8;
+                    return 6;
                 }
             case ItemName.Pants5:
                 {
-                    return 7;
+                    return 5;
                 }
             case ItemName.Boots5:
                 {
@@ -323,11 +329,12 @@ public class Item
     public int GetSellPrice()
     {
         Item item = new Item { itemName = itemName, amount = 1 };
-        return (int)(item.GetBuyPrice() * 0.5f);
+        return (int)(this.GetBuyPrice() * 0.5f);
     }
 
     public int GetBuyPrice()
     {
+        
         switch (itemName)
         {
             case ItemName.Sword:
@@ -356,11 +363,11 @@ public class Item
                 }
             case ItemName.Helmet2:
                 {
-                    return 75;
+                    return 80;
                 }
             case ItemName.Boots2:
                 {
-                    return 60;
+                    return 75;
                 }
             case ItemName.Sword3:
                 {
@@ -368,7 +375,7 @@ public class Item
                 }
             case ItemName.Helmet3:
                 {
-                    return 75;
+                    return 85;
                 }
             case ItemName.Chestplate3:
                 {
@@ -376,7 +383,7 @@ public class Item
                 }
             case ItemName.Pants3:
                 {
-                    return 105;
+                    return 95;
                 }
             case ItemName.Boots3:
                 {
@@ -384,7 +391,7 @@ public class Item
                 }
             case ItemName.Sword4:
                 {
-                    return 150;
+                    return 110;
                 }
             case ItemName.Helmet4:
                 {
@@ -392,11 +399,11 @@ public class Item
                 }
             case ItemName.Chestplate4:
                 {
-                    return 120;
+                    return 140;
                 }
             case ItemName.Pants4:
                 {
-                    return 105;
+                    return 125;
                 }
             case ItemName.Boots4:
                 {
@@ -404,7 +411,7 @@ public class Item
                 }
             case ItemName.Sword5:
                 {
-                    return 150;
+                    return 220;
                 }
             case ItemName.Helmet5:
                 {
@@ -412,11 +419,11 @@ public class Item
                 }
             case ItemName.Chestplate5:
                 {
-                    return 120;
+                    return 90;
                 }
             case ItemName.Pants5:
                 {
-                    return 105;
+                    return 75;
                 }
             case ItemName.Boots5:
                 {
@@ -530,7 +537,7 @@ public class Item
 
     public string getClass() 
     {
-        // THIS IS SUPPOSED TO 
+        
         switch (itemName) 
         {
             case ItemName.Sword:

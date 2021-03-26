@@ -17,11 +17,11 @@ public class GladiatorTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExi
     // Start is called before the first frame update
     void Start()
     {
-        carpophorus = new Gladiator("Carpophorus", 1, 100, 100, 5, 5);
-        crixus = new Gladiator("Crixus", 2, 110, 100, 6, 6);
-        commodus = new Gladiator("Commodus", 4, 150, 100, 7, 7);
-        flamma = new Gladiator("Flamma", 6, 200, 100, 10, 8);
-        spartacus = new Gladiator("Spartacus", 10, 300, 100, 20, 10);
+        carpophorus = new Gladiator("Carpophorus", 1, 100, 100, 17, 8);
+        crixus = new Gladiator("Commodus", 4, 150, 100, 24, 18);
+        commodus = new Gladiator("Crixus", 5, 110, 100, 28, 25);
+        flamma = new Gladiator("Flamma", 6, 200, 100, 21, 34);
+        spartacus = new Gladiator("Spartacus", 10, 300, 100, 76, 24);
     }
 
     // When a pointer hovers over the item

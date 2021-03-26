@@ -21,8 +21,8 @@ public class Samnite : Gladiator
     {
         SetHealth((GetLevel() * 25) + 75);
         SetStamina((GetLevel() * 25) + 75);
-        SetPower((GetLevel() * 25) + 75);
-        SetDefense((GetLevel() * 25) + 75);
+        SetPower((GetLevel() * 4) + 8);
+        SetDefense((GetLevel() * 3) + 6);
         SetCost((GetLevel() * 25) + 75);
         return;
     }
