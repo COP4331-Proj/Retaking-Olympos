@@ -82,7 +82,7 @@ public class PlayerGladiator : MonoBehaviour
             gameObject.GetComponent<SceneLoader>().GoToScene("Defeat Screen");
         }
 
-        PlayerPrefs.SetInt("damageTaken", (startingHealth - currentHealth));
+        PlayerPrefs.SetInt("damageTaken", (player.GetHealth() - currentHealth));
     }
 
     // Method to test stamina bar change
@@ -127,7 +127,6 @@ public class PlayerGladiator : MonoBehaviour
         {
             PlayerPrefs.SetInt("damageTaken", 0);
             PlayerPrefs.SetInt("staminaUsed", 0);
-            startingHealth = currentHealth;
             PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
             PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
         }
@@ -167,14 +166,15 @@ public class PlayerGladiator : MonoBehaviour
         currentPower = data.power;
 
         // The save the stats to PlayerPrefs so that it doesn't disappear on switching off the pause menu
-        PlayerPrefs.SetInt("damageTaken", startingHealth - currentHealth);
+        PlayerPrefs.SetInt("damageTaken", player.GetHealth() - currentHealth);
         PlayerPrefs.SetInt("staminaUsed", player.GetStamina() - currentStamina);
         PlayerPrefs.SetInt("level", currentLevel);
         PlayerPrefs.SetInt("power", currentPower);
         PlayerPrefs.SetInt("defense", currentDefense);
 
         // Load the position
-        transform.position = new Vector2(data.xPos, data.yPos);
+        PlayerPrefs.SetFloat("playerXPosition", data.xPos);
+        PlayerPrefs.SetFloat("playerYPosition", data.yPos);
     }
 
     public void staminaRegen()

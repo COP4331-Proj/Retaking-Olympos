@@ -8,7 +8,6 @@ public class EnemyGladiator : MonoBehaviour
     public EnemyBar healthBar;
     public Gladiator enemy;
     private float difficulty = 1f;
-    private int startingHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -100,7 +99,7 @@ public class EnemyGladiator : MonoBehaviour
             }
         }
 
-        PlayerPrefs.SetInt("enemyDamageTaken", startingHealth - currentHealth);
+        PlayerPrefs.SetInt("enemyDamageTaken", enemy.GetHealth() - currentHealth);
         PlayerPrefs.SetInt("FightStatus", 1);
     }
 
@@ -183,8 +182,6 @@ public class EnemyGladiator : MonoBehaviour
             healthBar.setMaxHealth(enemy.GetHealth());
         }
 
-        startingHealth = currentHealth;
-
         // Set up PlayerPref stuff so that the enemy gladiator doesn't reset when switching to the pause menu
         PlayerPrefs.SetString("enemyName", enemy.GetName());
         PlayerPrefs.SetInt("enemyHealth", enemy.GetHealth());
@@ -220,9 +217,10 @@ public class EnemyGladiator : MonoBehaviour
         currentHealth = data.health;
 
         // The save the stats to PlayerPrefs so that it doesn't disappear on switching off the pause menu
-        PlayerPrefs.SetInt("enemyDamageTaken", startingHealth - currentHealth);
+        PlayerPrefs.SetInt("enemyDamageTaken", PlayerPrefs.GetInt("enemyHealth") - currentHealth);
 
         // Load the position
-        transform.position = new Vector2(data.xPos, data.yPos);
+        PlayerPrefs.SetFloat("enemyXPosition", data.xPos);
+        PlayerPrefs.SetFloat("enemyYPosition", data.yPos);
     }
 }
