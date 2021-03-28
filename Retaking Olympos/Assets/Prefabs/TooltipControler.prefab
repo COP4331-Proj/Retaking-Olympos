@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolTip: {fileID: 0}
+  holdPlayerInformation: {fileID: 11400000, guid: b40ba94ac0f59f44082dd4eb50a74823,
+    type: 2}

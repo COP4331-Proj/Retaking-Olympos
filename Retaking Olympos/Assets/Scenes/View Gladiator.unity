@@ -9259,6 +9259,12 @@ PrefabInstance:
       propertyPath: toolTip
       value: 
       objectReference: {fileID: 69354590}
+    - target: {fileID: 8158171490112517102, guid: 4384485f895dd854a83e2f51ee200f90,
+        type: 3}
+      propertyPath: holdPlayerInformation
+      value: 
+      objectReference: {fileID: 11400000, guid: b40ba94ac0f59f44082dd4eb50a74823,
+        type: 2}
     - target: {fileID: 8158171490112517103, guid: 4384485f895dd854a83e2f51ee200f90,
         type: 3}
       propertyPath: m_RootOrder

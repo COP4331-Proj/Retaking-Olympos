@@ -8,7 +8,7 @@ public class ToolTipControler : MonoBehaviour
     private Canvas canvas;
     public GameObject toolTip;
     private Vector3 toolTipPos;
-
+    public HoldPlayerInformation holdPlayerInformation;
     private void Start()
     {
         canvas = FindObjectOfType<Canvas>();
@@ -27,6 +27,13 @@ public class ToolTipControler : MonoBehaviour
             toolTip.transform.position = toolTipPos;
         }
         KeepTooltipOnScreen(toolTip);
+        if (holdPlayerInformation != null) 
+        {
+            if (holdPlayerInformation.playerInventory.GetItemList().Count <= 0) 
+            {
+                HideToolTip();
+            }
+        }
     }
 
     public void ShowToolTip(Vector3 position, Item item)
