@@ -12,6 +12,7 @@ public class PlayerGladiator : MonoBehaviour
     public HealthBar healthBar;
     public StaminaBar staminaBar;
     public float staminaRegenTimer = 0f;
+    private int startingHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -53,12 +54,12 @@ public class PlayerGladiator : MonoBehaviour
 
         healthBar.setHealth(currentHealth);
         staminaBar.setStamina(currentStamina);
-        PlayerPrefs.SetInt("staminaUsed", (100 - currentStamina));
 
         if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
         {
             PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
             PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
+            PlayerPrefs.SetInt("staminaUsed", (player.GetStamina() - currentStamina));
         }
     }
 
@@ -81,7 +82,7 @@ public class PlayerGladiator : MonoBehaviour
             gameObject.GetComponent<SceneLoader>().GoToScene("Defeat Screen");
         }
 
-        PlayerPrefs.SetInt("damageTaken", (100 - currentHealth));
+        PlayerPrefs.SetInt("damageTaken", (startingHealth - currentHealth));
     }
 
     // Method to test stamina bar change
@@ -126,6 +127,7 @@ public class PlayerGladiator : MonoBehaviour
         {
             PlayerPrefs.SetInt("damageTaken", 0);
             PlayerPrefs.SetInt("staminaUsed", 0);
+            startingHealth = currentHealth;
             PlayerPrefs.SetFloat("playerXPosition", this.transform.position.x);
             PlayerPrefs.SetFloat("playerYPosition", this.transform.position.y);
         }
@@ -165,8 +167,8 @@ public class PlayerGladiator : MonoBehaviour
         currentPower = data.power;
 
         // The save the stats to PlayerPrefs so that it doesn't disappear on switching off the pause menu
-        PlayerPrefs.SetInt("damageTaken", 100 - currentHealth);
-        PlayerPrefs.SetInt("staminaUsed", 100 - currentStamina);
+        PlayerPrefs.SetInt("damageTaken", startingHealth - currentHealth);
+        PlayerPrefs.SetInt("staminaUsed", player.GetStamina() - currentStamina);
         PlayerPrefs.SetInt("level", currentLevel);
         PlayerPrefs.SetInt("power", currentPower);
         PlayerPrefs.SetInt("defense", currentDefense);
@@ -177,7 +179,8 @@ public class PlayerGladiator : MonoBehaviour
 
     public void staminaRegen()
     {
-        currentStamina++;
+        if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
+            currentStamina++;
     }
 
 }
