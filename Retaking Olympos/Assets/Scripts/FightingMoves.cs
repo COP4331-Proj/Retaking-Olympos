@@ -22,6 +22,9 @@ public class FightingMoves : MonoBehaviour
     public float playerBlockPenalty = 1000f;
     float nextPlayerDodgeTime = 0f;
     float attackTime = 0f;
+    public int blockingCheck = 0;
+    public int blockStaminaDrain = 20;
+    public int dodgeStaminaDrain = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +64,10 @@ public class FightingMoves : MonoBehaviour
                 //Debug.Log("HERE");
                 enemySwing();
                 nextEnemyAttackTime = Time.time + 1f / enemyAttackRate;
+                if (blockingCheck == 1)
+                {
+                    PlayerGladiator.currentStamina -= blockStaminaDrain;
+                }
                 
                 enemyAnimator.SetBool("EnemyAttacking", true);
             }
@@ -82,26 +89,33 @@ public class FightingMoves : MonoBehaviour
         {
             
             playerDodgeEnd();
-            if (Input.GetKeyDown(KeyCode.F))
+            if (PlayerGladiator.currentStamina >= dodgeStaminaDrain)
             {
-                playerDodgeStart();
-                nextPlayerAttackTime = Time.time + 1f / playerDodgeRate;
-                nextPlayerDodgeTime = Time.time + 1f / playerDodgeRate;
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    playerDodgeStart();
+                    nextPlayerAttackTime = Time.time + 1f / playerDodgeRate;
+                    nextPlayerDodgeTime = Time.time + 1f / playerDodgeRate;
+                    PlayerGladiator.currentStamina -= dodgeStaminaDrain;
+                }
             }
         }
 
         // While blocking, player cannot attack or dodge
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && PlayerGladiator.currentStamina >= blockStaminaDrain)
         {
             playerBlockStart();
             nextPlayerAttackTime = Time.time + playerBlockPenalty;
             nextPlayerDodgeTime = Time.time + playerBlockPenalty;
+            blockingCheck = 1;
+            PlayerGladiator.currentStamina--; 
         }
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.LeftControl) || PlayerGladiator.currentStamina < blockStaminaDrain)
         {
             playerBlockEnd();
             nextPlayerAttackTime = Time.time;
             nextPlayerDodgeTime = Time.time;
+            blockingCheck = 0;
         }
     }
 

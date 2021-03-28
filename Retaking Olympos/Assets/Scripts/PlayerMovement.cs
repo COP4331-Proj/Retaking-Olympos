@@ -18,8 +18,14 @@ public class PlayerMovement : MonoBehaviour
         sprintingSpeed = walkingSpeed * sprintSpeedMultiplier;
 
         // Checks if the user is sprinting
-        if (Input.GetKey(KeyCode.LeftShift) && (PlayerGladiator.currentStamina > 0))
-            sprint();
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            // User can only sprint if they have enough stamina too
+            if (PlayerGladiator.currentStamina > 0)
+                sprint();
+            else
+                walk();
+        }
         else
             walk();
 
