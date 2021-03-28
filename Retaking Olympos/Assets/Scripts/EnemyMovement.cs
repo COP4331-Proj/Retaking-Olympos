@@ -18,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, playerChar.position) > attackRange)
+        if (Vector2.Distance(transform.position, playerChar.position) > attackRange * 1.25f)
         {
             enemyChase();
         }
