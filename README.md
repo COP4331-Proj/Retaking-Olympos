@@ -204,3 +204,36 @@ Tyler: Added a new scene to pick enemy gladiators, added tooltips to each gladia
 Nathan: Implemented the rest of gladiator items, added items locked to spicific classes, implemented double left click to equip
 
 Xavier: Added the ability to block and dodge attacks in battle scene for user story 50
+
+## Sprint 8
+
+[Trello Board](https://trello.com/b/JNauVaV9/retaking-olympos)
+
+[System Architecture](https://github.com/COP4331-Proj/Retaking-Olympos/blob/main/artifacts/architecture.md)
+
+[Source Code](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Scripts)
+
+[Automated Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/Retaking%20Olympos/Assets/Tests)
+
+[Manual Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/artifacts/Manual%20Tests)
+
+[Demo Video](https://youtu.be/8fNfiPI1mkk)
+
+### Burndown Chart
+<img src="artifacts/Pictures/Charts/Burndown Chart Sprint 8.PNG">
+
+### Velocity Chart
+<img src="artifacts/Pictures/Charts/Velocity Chart Sprint 8.PNG">
+
+
+### Task Allocation
+
+Joshua:
+
+Timothy: 
+
+Tyler: 
+
+Nathan: Allowed the player to use the stats of a gladiator they own in battle, created demo video
+
+Xavier: 

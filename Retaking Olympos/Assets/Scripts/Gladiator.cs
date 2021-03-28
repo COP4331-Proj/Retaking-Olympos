@@ -92,7 +92,48 @@ public class Gladiator
     {
         this.cost = cost;
     }
-
+    public void LevelUpGladiator()
+    {
+        SetLevel(GetLevel() + 1);
+        switch (GetClass())
+        {
+            case "Thracian":
+                SetHealth(GetHealth() + 25);
+                SetStamina(GetStamina() + 40);
+                SetPower(GetPower() + 5);
+                SetDefense(GetDefense() + 2);
+                SetCost(GetCost() + 25);
+                break;
+            case "Secutor":
+                SetHealth(GetHealth() + 30);
+                SetStamina(GetStamina() + 15);
+                SetPower(GetPower() + 4);
+                SetDefense(GetDefense() + 3);
+                SetCost(GetCost() + 25);
+                break;
+            case "Samnite":
+                SetHealth(GetHealth() + 25);
+                SetStamina(GetStamina() + 25);
+                SetPower(GetPower() + 4);
+                SetDefense(GetDefense() + 3);
+                SetCost(GetCost() + 25);
+                break;
+            case "Murmillo":
+                SetHealth(GetHealth() + 25);
+                SetStamina(GetStamina() + 15);
+                SetPower(GetPower() + 2);
+                SetDefense(GetDefense() + 4);
+                SetCost(GetCost() + 25);
+                break;
+            case "Dimachaerus":
+                SetHealth(GetHealth() + 15);
+                SetStamina(GetStamina() + 25);
+                SetPower(GetPower() + 6);
+                SetDefense(GetDefense() + 2);
+                SetCost(GetCost() + 25);
+                break;
+        }
+    }
     public String GetDescription()
     {
         return "Name: " + this.gladiatorName + "\nHealth: " + this.health + "\nLevel: " + this.level + "\nPower: " + this.power + "\nDefense: " + this.defense;

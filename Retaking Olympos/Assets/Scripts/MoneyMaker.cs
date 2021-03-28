@@ -10,5 +10,7 @@ public class MoneyMaker : MonoBehaviour
     void Start()
     {
         player.gold += 250;
+
+        player.gladiatorList[player.index].LevelUpGladiator();
     }
 }
