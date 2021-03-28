@@ -19,7 +19,11 @@ public class PlayerPrefsManager : MonoBehaviour
         PlayerPrefs.SetInt("CrixusBeat", 0);
         PlayerPrefs.SetInt("FlammaBeat", 0);
         PlayerPrefs.SetInt("SpartacusBeat", 0);
-
+        PlayerPrefs.SetInt("CassiusBeat", 0);
+        PlayerPrefs.SetInt("MarcusBeat", 0);
+        PlayerPrefs.SetInt("SilvanusBeat", 0);
+        PlayerPrefs.SetInt("VerusBeat", 0);
+        PlayerPrefs.SetInt("TetraitesBeat", 0);
         // Reset the damage taken
         PlayerPrefs.SetInt("enemyDamageTaken", 0);
     }
@@ -41,6 +45,11 @@ public class PlayerPrefsManager : MonoBehaviour
         PlayerPrefs.SetInt("CrixusBeat", data.CrixusBeat);
         PlayerPrefs.SetInt("FlammaBeat", data.FlammaBeat);
         PlayerPrefs.SetInt("SpartacusBeat", data.SpartacusBeat);
+        PlayerPrefs.SetInt("CassiusBeat", data.CassiusBeat);
+        PlayerPrefs.SetInt("MarcusBeat", data.MarcusBeat);
+        PlayerPrefs.SetInt("SilvanusBeat", data.SilvanusBeat);
+        PlayerPrefs.SetInt("VerusBeat", data.VerusBeat);
+        PlayerPrefs.SetInt("TetraitesBeat", data.TetraitesBeat);
 
         Debug.Log(PlayerPrefs.GetInt("CarpophorusBeat"));
     }

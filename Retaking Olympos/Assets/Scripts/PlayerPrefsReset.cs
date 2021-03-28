@@ -19,6 +19,11 @@ public class PlayerPrefsReset : MonoBehaviour
         PlayerPrefs.SetInt("CrixusBeat", 0);
         PlayerPrefs.SetInt("FlammaBeat", 0);
         PlayerPrefs.SetInt("SpartacusBeat", 0);
+        PlayerPrefs.SetInt("CassiusBeat", 0);
+        PlayerPrefs.SetInt("MarcusBeat", 0);
+        PlayerPrefs.SetInt("SilvanusBeat", 0);
+        PlayerPrefs.SetInt("VerusBeat", 0);
+        PlayerPrefs.SetInt("TetraitesBeat", 0);
 
         // Reset the damage taken
         PlayerPrefs.SetInt("enemyDamageTaken", 0);

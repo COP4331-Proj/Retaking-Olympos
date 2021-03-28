@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class EnemiesDefeatedData
 {
-    public int CarpophorusBeat, CommodusBeat, CrixusBeat, FlammaBeat, SpartacusBeat;
+    public int CarpophorusBeat, CommodusBeat, CrixusBeat, FlammaBeat, SpartacusBeat, CassiusBeat, MarcusBeat, SilvanusBeat, VerusBeat, TetraitesBeat;
 
     public EnemiesDefeatedData()
     {
@@ -14,5 +14,11 @@ public class EnemiesDefeatedData
         CrixusBeat = PlayerPrefs.GetInt("CrixusBeat");
         FlammaBeat = PlayerPrefs.GetInt("FlammaBeat");
         SpartacusBeat = PlayerPrefs.GetInt("SpartacusBeat");
+
+        CassiusBeat = PlayerPrefs.GetInt("CassiusBeat");
+        MarcusBeat = PlayerPrefs.GetInt("MarcusBeat");
+        SilvanusBeat = PlayerPrefs.GetInt("SilvanusBeat");
+        VerusBeat = PlayerPrefs.GetInt("VerusBeat");
+        TetraitesBeat = PlayerPrefs.GetInt("TetraitesBeat");
     }
 }

@@ -54,8 +54,10 @@ public class EnemyGladiator : MonoBehaviour
         if (currentHealth <= 0)
         {
             // NUMBER ONE VICTORY ROYALE
+            Debug.Log(PlayerPrefs.GetString("CurrentEnemy"));
             switch (PlayerPrefs.GetString("CurrentEnemy"))
             {
+                
                 case "Carpophorus":
                     PlayerPrefs.SetInt("CarpophorusBeat", 1);
                     break;
@@ -70,6 +72,21 @@ public class EnemyGladiator : MonoBehaviour
                     break;
                 case "Spartacus":
                     PlayerPrefs.SetInt("SpartacusBeat", 1);
+                    break;
+                case "Cassius":
+                    PlayerPrefs.SetInt("CassiusBeat", 1);
+                    break;
+                case "Marcus":
+                    PlayerPrefs.SetInt("MarcusBeat", 1);
+                    break;
+                case "Silvanus":
+                    PlayerPrefs.SetInt("SilvanusBeat", 1);
+                    break;
+                case "Verus":
+                    PlayerPrefs.SetInt("VerusBeat", 1);
+                    break;
+                case "Tetraites":
+                    PlayerPrefs.SetInt("TetraitesBeat", 1);
                     break;
             }
             GameObject gameObject = new GameObject();
@@ -110,29 +127,59 @@ public class EnemyGladiator : MonoBehaviour
             {
                 case "Carpophorus":
                     // Thracian
-                    enemy = new Gladiator("Carpophorus", 1, 100, 100, 17, 8);
+                    Tharcian Carpophorus = new Tharcian("Carpophorus", 1);
+                    enemy = new Gladiator(Carpophorus.GetName(), Carpophorus.GetLevel(), Carpophorus.GetHealth(), Carpophorus.GetStamina(), Carpophorus.GetPower(), Carpophorus.GetDefense());
                     break;
                 case "Commodus":
                     // Samnite
-                    enemy = new Gladiator("Commodus", 4, 150, 100, 24, 18);
+                    Samnite Commodus = new Samnite("Commodus", 4);
+                    enemy = new Gladiator(Commodus.GetName(), Commodus.GetLevel(), Commodus.GetHealth(), Commodus.GetStamina(), Commodus.GetPower(), Commodus.GetDefense());
                     break;
                 case "Crixus":
                     // Secutor
-                    enemy = new Gladiator("Crixus", 5, 110, 100, 28, 25);
+                    Secutor Crixus = new Secutor("Crixus", 5);
+                    enemy = new Gladiator(Crixus.GetName(), Crixus.GetLevel(), Crixus.GetHealth(), Crixus.GetStamina(), Crixus.GetPower(), Crixus.GetDefense());
                     break;
                 case "Flamma":
                     // Murmillo
-                    enemy = new Gladiator("Flamma", 6, 200, 100, 21, 34);
+                    Murmillo Flamma = new Murmillo("Flamma", 6);
+                    enemy = new Gladiator(Flamma.GetName(), Flamma.GetLevel(), Flamma.GetHealth(), Flamma.GetStamina(), Flamma.GetPower(), Flamma.GetDefense());
                     break;
                 case "Spartacus":
                     // Dimachaerus
-                    enemy = new Gladiator("Spartacus", 10, 300, 100, 76, 24);
+                    Dimachaerus Spartacus = new Dimachaerus("Spartacus", 10);
+                    enemy = new Gladiator(Spartacus.GetName(), Spartacus.GetLevel(), Spartacus.GetHealth(), Spartacus.GetStamina(), Spartacus.GetPower(), Spartacus.GetDefense());
+                    break;
+                case "Cassius":
+                    // Thracian
+                    Tharcian Cassius = new Tharcian("Cassius", 2);
+                    enemy = new Gladiator(Cassius.GetName(), Cassius.GetLevel(), Cassius.GetHealth(), Cassius.GetStamina(), Cassius.GetPower(), Cassius.GetDefense());
+                    break;
+                case "Marcus":
+                    // Samnite
+                    Samnite Marcus = new Samnite("Marcus", 4);
+                    enemy = new Gladiator(Marcus.GetName(), Marcus.GetLevel(), Marcus.GetHealth(), Marcus.GetStamina(), Marcus.GetPower(), Marcus.GetDefense());
+                    break;
+                case "Silvanus":
+                    // Secutor
+                    Secutor Silvanus = new Secutor("Silvanus", 5);
+                    enemy = new Gladiator(Silvanus.GetName(), Silvanus.GetLevel(), Silvanus.GetHealth(), Silvanus.GetStamina(), Silvanus.GetPower(), Silvanus.GetDefense());
+                    break;
+                case "Verus":
+                    // Murmillo
+                    Murmillo Verus = new Murmillo("Verus", 6);
+                    enemy = new Gladiator(Verus.GetName(), Verus.GetLevel(), Verus.GetHealth(), Verus.GetStamina(), Verus.GetPower(), Verus.GetDefense());
+                    break;
+                case "Tetraites":
+                    // Dimachaerus
+                    Dimachaerus Tetraites = new Dimachaerus("Tetraites", 10);
+                    enemy = new Gladiator(Tetraites.GetName(), Tetraites.GetLevel(), Tetraites.GetHealth(), Tetraites.GetStamina(), Tetraites.GetPower(), Tetraites.GetDefense());
                     break;
             }
         }
 
         currentHealth = enemy.GetHealth();
-        if (healthBar != null) 
+        if (healthBar != null)
         {
             healthBar.setMaxHealth(enemy.GetHealth());
         }
