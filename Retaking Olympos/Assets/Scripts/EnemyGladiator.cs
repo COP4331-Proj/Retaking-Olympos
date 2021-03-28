@@ -17,10 +17,10 @@ public class EnemyGladiator : MonoBehaviour
         if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
             setupEnemyGladiator();
 
-        if (PlayerPrefs.HasKey("EnemyReset"))
+        if (!PlayerPrefs.HasKey("EnemyIsInArena") && PlayerPrefs.HasKey("GameSceneIsLoaded"))
         {
             SaveEnemyGladiatorData();
-            PlayerPrefs.DeleteKey("EnemyReset");
+            PlayerPrefs.SetInt("EnemyIsInArena", 1);
         }
 
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
@@ -102,8 +102,8 @@ public class EnemyGladiator : MonoBehaviour
             {
                 PlayerPrefs.DeleteKey("enemySetUp");
                 PlayerPrefs.DeleteKey("playerSetUp");
-                PlayerPrefs.SetInt("EnemyReset", 1);
-                PlayerPrefs.SetInt("PlayerReset", 1);
+                PlayerPrefs.DeleteKey("PlayerIsInArena");
+                PlayerPrefs.DeleteKey("EnemyIsInArena");
             }
         }
 
@@ -227,5 +227,20 @@ public class EnemyGladiator : MonoBehaviour
         // Load the position
         PlayerPrefs.SetFloat("enemyXPosition", data.xPos);
         PlayerPrefs.SetFloat("enemyYPosition", data.yPos);
+    }
+
+    public void ConditionalEnemySave()
+    {
+        if (PlayerPrefs.HasKey("EnemyIsInArena"))
+        {
+            SaveEnemyGladiatorData();
+        }
+        Debug.Log(PlayerPrefs.HasKey("EnemyIsInArena"));
+    }
+
+    public void ConditionalEnemyLoad()
+    {
+        if (PlayerPrefs.HasKey("EnemyIsInArena"))
+            LoadEnemyGladiatorData();
     }
 }

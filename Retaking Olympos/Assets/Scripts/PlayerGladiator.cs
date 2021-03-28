@@ -25,10 +25,10 @@ public class PlayerGladiator : MonoBehaviour
         if (PlayerPrefs.HasKey("GameSceneIsLoaded")) 
             setupPlayerGladiator();
 
-        if (PlayerPrefs.HasKey("PlayerReset"))
+        if (!PlayerPrefs.HasKey("PlayerIsInArena") && PlayerPrefs.HasKey("GameSceneIsLoaded"))
         {
             SavePlayerGladiatorData();
-            PlayerPrefs.DeleteKey("PlayerReset");
+            PlayerPrefs.SetInt("PlayerIsInArena", 1);
         }
 
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
@@ -84,8 +84,8 @@ public class PlayerGladiator : MonoBehaviour
 
                 // This flag will tell the game if we need to save gladiator stats at the start of the next battle so that the
                 // player can't load the data from this battle
-                PlayerPrefs.SetInt("PlayerReset", 1);
-                PlayerPrefs.SetInt("EnemyReset", 1);
+                PlayerPrefs.DeleteKey("PlayerIsInArena");
+                PlayerPrefs.DeleteKey("EnemyIsInArena");
             }
 
             GameObject gameObject = new GameObject();
@@ -166,6 +166,12 @@ public class PlayerGladiator : MonoBehaviour
         SaveManager.SavePlayerData(this);
     }
 
+    public void staminaRegen()
+    {
+        if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
+            currentStamina++;
+    }
+
     public void LoadPlayerGladiatorData()
     {
         // Load the stats
@@ -188,10 +194,16 @@ public class PlayerGladiator : MonoBehaviour
         PlayerPrefs.SetFloat("playerYPosition", data.yPos);
     }
 
-    public void staminaRegen()
+    public void ConditionalPlayerSave()
     {
-        if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
-            currentStamina++;
+        if (PlayerPrefs.HasKey("PlayerIsInArena"))
+            SavePlayerGladiatorData();
+    }
+
+    public void ConditionalPlayerLoad()
+    {
+        if (PlayerPrefs.HasKey("PlayerIsInArena"))
+            LoadPlayerGladiatorData();
     }
 
 }

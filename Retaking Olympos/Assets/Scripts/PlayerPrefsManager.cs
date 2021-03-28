@@ -15,8 +15,8 @@ public class PlayerPrefsManager : MonoBehaviour
 
         // Disable saving/loading battle between game sessions, if this is enabled, players
         // Save their current gladiator stats into other gladiators, and everything would glitch
-        PlayerPrefs.SetInt("EnemyReset", 1);
-        PlayerPrefs.SetInt("PlayerReset", 1);
+        PlayerPrefs.DeleteKey("PlayerIsInArena");
+        PlayerPrefs.DeleteKey("EnemyIsInArena");
 
         // Reset the progress of the enemies defeated
         PlayerPrefs.SetInt("CarpophorusBeat", 0);

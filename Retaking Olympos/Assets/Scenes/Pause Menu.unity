@@ -529,7 +529,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2057306450}
-        m_MethodName: SavePlayerGladiatorData
+        m_MethodName: ConditionalPlayerSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -540,7 +540,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 549134871}
-        m_MethodName: SaveEnemyGladiatorData
+        m_MethodName: ConditionalEnemySave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -907,7 +907,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2057306450}
-        m_MethodName: LoadPlayerGladiatorData
+        m_MethodName: ConditionalPlayerLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -918,7 +918,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 549134871}
-        m_MethodName: LoadEnemyGladiatorData
+        m_MethodName: ConditionalEnemyLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2443,6 +2443,7 @@ MonoBehaviour:
   holdPlayerInformation: {fileID: 0}
   healthBar: {fileID: 683443284}
   staminaBar: {fileID: 1894941409}
+  staminaRegenTimer: 0
 --- !u!4 &2057306451
 Transform:
   m_ObjectHideFlags: 0
