@@ -29,11 +29,14 @@ public class PlayerGladiator : MonoBehaviour
             if (PlayerPrefs.HasKey("playerSetUp")) 
             {
                 QuickLoadPlayerGladiator();
-                takeDamage(PlayerPrefs.GetInt("damageTaken"));
-                useSkill(PlayerPrefs.GetInt("staminaUsed"));
+
+                if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
+                {
+                    useSkill(PlayerPrefs.GetInt("staminaUsed"));
+                    takeDamage(PlayerPrefs.GetInt("damageTaken"));
+                }
             }
         }
-
     }
 
     // Update is called once per frame

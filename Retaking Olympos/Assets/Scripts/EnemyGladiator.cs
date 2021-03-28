@@ -20,7 +20,7 @@ public class EnemyGladiator : MonoBehaviour
 
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {
-            if (PlayerPrefs.HasKey("enemySetUp"))
+            if (PlayerPrefs.HasKey("enemySetUp") && PlayerPrefs.HasKey("GameSceneIsLoaded"))
             {
                 takeDamage(PlayerPrefs.GetInt("enemyDamageTaken"));
             }
@@ -113,12 +113,12 @@ public class EnemyGladiator : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("CurrentEnemy"))
         {
-            if (PlayerPrefs.HasKey("enemySetUp"))
-            {
+            //if (PlayerPrefs.HasKey("enemySetUp"))
+            //{
                 enemy = new Gladiator(PlayerPrefs.GetString("enemyName"), PlayerPrefs.GetInt("enemyLevel"), PlayerPrefs.GetInt("enemyHealth"),
                     PlayerPrefs.GetInt("enemyStamina"), PlayerPrefs.GetInt("enemyPower"),
                     PlayerPrefs.GetInt("enemyDefense"));
-            }
+            //}
         }
         else
         {
