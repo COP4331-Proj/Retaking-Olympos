@@ -17,6 +17,12 @@ public class EnemyGladiator : MonoBehaviour
         if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
             setupEnemyGladiator();
 
+        if (PlayerPrefs.HasKey("EnemyReset"))
+        {
+            SaveEnemyGladiatorData();
+            PlayerPrefs.DeleteKey("EnemyReset");
+        }
+
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {
             if (PlayerPrefs.HasKey("enemySetUp") && PlayerPrefs.HasKey("GameSceneIsLoaded"))
@@ -96,6 +102,8 @@ public class EnemyGladiator : MonoBehaviour
             {
                 PlayerPrefs.DeleteKey("enemySetUp");
                 PlayerPrefs.DeleteKey("playerSetUp");
+                PlayerPrefs.SetInt("EnemyReset", 1);
+                PlayerPrefs.SetInt("PlayerReset", 1);
             }
         }
 
@@ -112,12 +120,9 @@ public class EnemyGladiator : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("CurrentEnemy"))
         {
-            //if (PlayerPrefs.HasKey("enemySetUp"))
-            //{
-                enemy = new Gladiator(PlayerPrefs.GetString("enemyName"), PlayerPrefs.GetInt("enemyLevel"), PlayerPrefs.GetInt("enemyHealth"),
-                    PlayerPrefs.GetInt("enemyStamina"), PlayerPrefs.GetInt("enemyPower"),
-                    PlayerPrefs.GetInt("enemyDefense"));
-            //}
+            enemy = new Gladiator(PlayerPrefs.GetString("enemyName"), PlayerPrefs.GetInt("enemyLevel"), PlayerPrefs.GetInt("enemyHealth"),
+                PlayerPrefs.GetInt("enemyStamina"), PlayerPrefs.GetInt("enemyPower"),
+                PlayerPrefs.GetInt("enemyDefense"));
         }
         else
         {

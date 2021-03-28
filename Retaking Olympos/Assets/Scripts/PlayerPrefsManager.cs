@@ -13,6 +13,11 @@ public class PlayerPrefsManager : MonoBehaviour
         PlayerPrefs.DeleteKey("enemySetUp");
         PlayerPrefs.DeleteKey("playerSetUp");
 
+        // Disable saving/loading battle between game sessions, if this is enabled, players
+        // Save their current gladiator stats into other gladiators, and everything would glitch
+        PlayerPrefs.SetInt("EnemyReset", 1);
+        PlayerPrefs.SetInt("PlayerReset", 1);
+
         // Reset the progress of the enemies defeated
         PlayerPrefs.SetInt("CarpophorusBeat", 0);
         PlayerPrefs.SetInt("CommodusBeat", 0);
@@ -24,6 +29,7 @@ public class PlayerPrefsManager : MonoBehaviour
         PlayerPrefs.SetInt("SilvanusBeat", 0);
         PlayerPrefs.SetInt("VerusBeat", 0);
         PlayerPrefs.SetInt("TetraitesBeat", 0);
+
         // Reset the damage taken
         PlayerPrefs.SetInt("enemyDamageTaken", 0);
     }

@@ -25,6 +25,12 @@ public class PlayerGladiator : MonoBehaviour
         if (PlayerPrefs.HasKey("GameSceneIsLoaded")) 
             setupPlayerGladiator();
 
+        if (PlayerPrefs.HasKey("PlayerReset"))
+        {
+            SavePlayerGladiatorData();
+            PlayerPrefs.DeleteKey("PlayerReset");
+        }
+
         if (PlayerPrefs.HasKey("FightStatus") && PlayerPrefs.GetInt("FightStatus") != 1)
         {
             if (PlayerPrefs.HasKey("playerSetUp")) 
@@ -75,6 +81,11 @@ public class PlayerGladiator : MonoBehaviour
             {
                 PlayerPrefs.DeleteKey("playerSetUp");
                 PlayerPrefs.DeleteKey("enemySetUp");
+
+                // This flag will tell the game if we need to save gladiator stats at the start of the next battle so that the
+                // player can't load the data from this battle
+                PlayerPrefs.SetInt("PlayerReset", 1);
+                PlayerPrefs.SetInt("EnemyReset", 1);
             }
 
             GameObject gameObject = new GameObject();
