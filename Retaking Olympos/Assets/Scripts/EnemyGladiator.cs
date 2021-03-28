@@ -54,7 +54,6 @@ public class EnemyGladiator : MonoBehaviour
         if (currentHealth <= 0)
         {
             // NUMBER ONE VICTORY ROYALE
-            Debug.Log(PlayerPrefs.GetString("CurrentEnemy"));
             switch (PlayerPrefs.GetString("CurrentEnemy"))
             {
                 

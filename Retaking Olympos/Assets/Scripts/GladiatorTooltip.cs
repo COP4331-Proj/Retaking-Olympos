@@ -60,7 +60,6 @@ public class GladiatorTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExi
         switch (currButton.name)
         {
             case "Carpophorus Button":
-                Debug.Log("NOT HERE");
                 currGladiator = carpophorus;
                 break;
             case "Crixus Button":
@@ -76,7 +75,6 @@ public class GladiatorTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExi
                 currGladiator = spartacus;
                 break;
             case "Cassius Button":
-                Debug.Log("HERE");
                 currGladiator = cassius;
                 break;
             case "Marcus Button":
@@ -95,7 +93,6 @@ public class GladiatorTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
         if (currGladiator == null)
         {
-            Debug.Log("Null");
             return;
         }
 
