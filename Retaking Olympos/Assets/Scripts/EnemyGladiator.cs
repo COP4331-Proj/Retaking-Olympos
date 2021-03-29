@@ -13,7 +13,7 @@ public class EnemyGladiator : MonoBehaviour
     void Start()
     {
         difficulty = PlayerPrefs.HasKey("DifficultyPreference") ? PlayerPrefs.GetFloat("DifficultyPreference") : 1f;
-
+        
         if (PlayerPrefs.HasKey("GameSceneIsLoaded"))
             setupEnemyGladiator();
 
@@ -123,6 +123,8 @@ public class EnemyGladiator : MonoBehaviour
             enemy = new Gladiator(PlayerPrefs.GetString("enemyName"), PlayerPrefs.GetInt("enemyLevel"), PlayerPrefs.GetInt("enemyHealth"),
                 PlayerPrefs.GetInt("enemyStamina"), PlayerPrefs.GetInt("enemyPower"),
                 PlayerPrefs.GetInt("enemyDefense"));
+            Debug.Log(difficulty);
+            enemy.SetHealth((int)(enemy.GetHealth() * difficulty));
         }
         else
         {
@@ -179,6 +181,7 @@ public class EnemyGladiator : MonoBehaviour
                     enemy = new Gladiator(Tetraites.GetName(), Tetraites.GetLevel(), Tetraites.GetHealth(), Tetraites.GetStamina(), Tetraites.GetPower(), Tetraites.GetDefense());
                     break;
             }
+            enemy.SetHealth((int)(enemy.GetHealth() * difficulty));
         }
 
         currentHealth = enemy.GetHealth();

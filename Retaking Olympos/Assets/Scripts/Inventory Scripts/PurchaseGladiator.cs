@@ -26,8 +26,9 @@ public class PurchaseGladiator : MonoBehaviour
         {
             flag = false;
             viewGladiator.createNewShopGladiator("Cicero", 7, "Samnite");
-            viewGladiator.createNewShopGladiator("Sulla", 1, "Murmillo");
+            viewGladiator.createNewShopGladiator("Sulla", 2, "Murmillo");
             viewGladiator.createNewShopGladiator("Pompey", 3, "Dimachaerus");
+            viewGladiator.createNewShopGladiator("Tiberius", 1, "Secutor");
         }
         
     }

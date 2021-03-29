@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Navigation : MonoBehaviour
 {
     private static String currentClass;
-
+    private static bool firstLaunch = false;
     public void GoBack()
     {
         GameObject gameObject = new GameObject();
@@ -32,9 +32,14 @@ public class Navigation : MonoBehaviour
     {
         GameObject gameObject = new GameObject();
         gameObject.AddComponent<SceneLoader>();
-
-        if (!PlayerPrefs.HasKey("FirstLaunch"))
+        // Static boolean used for demo, player prefs in built game wont clear -Nathan
+/*        if (!PlayerPrefs.HasKey("FirstLaunch")) 
         {
+        
+        }*/
+        if (!firstLaunch)
+        {
+            firstLaunch = true;
             gameObject.GetComponent<SceneLoader>().GoToScene("Welcome");
             PlayerPrefs.SetInt("FirstLaunch", 1);
         }

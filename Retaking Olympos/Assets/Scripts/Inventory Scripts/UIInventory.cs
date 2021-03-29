@@ -33,7 +33,11 @@ public class UIInventory : MonoBehaviour
         {
             if (playerOrShop)
             {
-                inventory.PopulateWithItems();
+                //inventory.PopulateWithItems();
+                if (playerInformation.gold <= 0) 
+                {
+                    playerInformation.gold += 300;
+                }
             }
             else 
             {

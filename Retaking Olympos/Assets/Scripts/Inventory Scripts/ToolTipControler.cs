@@ -29,7 +29,7 @@ public class ToolTipControler : MonoBehaviour
         KeepTooltipOnScreen(toolTip);
         if (holdPlayerInformation != null) 
         {
-            if (holdPlayerInformation.playerInventory.GetItemList().Count <= 0) 
+            if (holdPlayerInformation.playerInventory.GetItemList().Count <= 0 && FindObjectsOfType<UIEquiptment>().Length > 0) 
             {
                 HideToolTip();
             }

@@ -16,7 +16,7 @@ public class ViewGladiator: MonoBehaviour
             /*            createNewGladiator("Caesar", 3, 100, 100, 6, 14);
                         createNewGladiator("Bob", 4, 120, 120, 10, 12);*/
             createNewGladiator("Caesar", 1, "Thracian");
-            createNewGladiator("Bob", 4, "Secutor");
+            //createNewGladiator("Bob", 4, "Secutor");
         }
     }
 
