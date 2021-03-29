@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Return to Menu Screen
+  m_Text: Return to Title Screen
 --- !u!222 &402668509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -312,8 +312,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Congratulations on winning the bout! Now collect your victory money and
-    get back in the arena gladiator!
+  m_Text: Congratulations! You've Defeated all of the gladiators, you are the hero
+    of Olympos!
 --- !u!222 &971295038
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Main Scene
+          m_StringArgument: Title Screen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1367647782
