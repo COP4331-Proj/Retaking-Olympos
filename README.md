@@ -217,7 +217,7 @@ Xavier: Added the ability to block and dodge attacks in battle scene for user st
 
 [Manual Tests](https://github.com/COP4331-Proj/Retaking-Olympos/tree/main/artifacts/Manual%20Tests)
 
-[Demo Video](https://youtu.be/8fNfiPI1mkk)
+[Final Demo Video](https://youtu.be/b2ssRIamQok)
 
 ### Burndown Chart
 <img src="artifacts/Pictures/Charts/Burndown Chart Sprint 8.PNG">
