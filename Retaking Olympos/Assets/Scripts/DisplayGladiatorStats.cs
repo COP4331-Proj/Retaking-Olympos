@@ -39,7 +39,6 @@ public class DisplayGladiatorStats : MonoBehaviour
         levelText.text = gladiatorList[gladiatorIndex].GetLevel().ToString();
         healthText.text = gladiatorList[gladiatorIndex].GetHealth().ToString();
         staminaText.text = gladiatorList[gladiatorIndex].GetStamina().ToString();
-        Debug.Log(gladiatorList[gladiatorIndex].GetPower());
         powerText.text = gladiatorList[gladiatorIndex].GetPower().ToString();
         defenseText.text = gladiatorList[gladiatorIndex].GetDefense().ToString();
         classText.text = gladiatorList[gladiatorIndex].GetClass().ToString();

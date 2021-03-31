@@ -8,7 +8,7 @@ public class Victory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // This is a mess I know, but I need to implement a victory scene before the demo ¯\_(ツ)_/¯
         if (PlayerPrefs.GetInt("VerusBeat") == 1)
         {
             if (PlayerPrefs.GetInt("TetraitesBeat") == 1)

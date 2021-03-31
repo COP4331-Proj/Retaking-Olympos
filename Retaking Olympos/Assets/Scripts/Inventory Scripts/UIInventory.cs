@@ -109,7 +109,7 @@ public class UIInventory : MonoBehaviour
                 }
                 else 
                 {
-                    Debug.Log("HERE");
+
                 }
             };
 

@@ -204,22 +204,22 @@ public class GladiatorEquiptment : MonoBehaviour
     // Unequips an item by setting it to null
     public void Unequip(Item item, int equipmentIndex) 
     {
-        switch (item.itemName) 
+        switch (item.GetSlotName()) 
         {
             default:
-            case Item.ItemName.Sword:
+            case GladiatorEquiptment.SlotName.Sword:
                 SetWeapon(null, equipmentIndex);
                 break;
-            case Item.ItemName.Helmet:
+            case GladiatorEquiptment.SlotName.Helmet:
                 SetHelmet(null, equipmentIndex);
                 break;
-            case Item.ItemName.Chestplate:
+            case GladiatorEquiptment.SlotName.Chestplate:
                 SetChestplate(null, equipmentIndex);
                 break;
-            case Item.ItemName.Pants:
+            case GladiatorEquiptment.SlotName.Pants:
                 SetLegs(null, equipmentIndex);
                 break;
-            case Item.ItemName.Boots:
+            case GladiatorEquiptment.SlotName.Boots:
                 SetBoots(null, equipmentIndex);
                 break;
         }

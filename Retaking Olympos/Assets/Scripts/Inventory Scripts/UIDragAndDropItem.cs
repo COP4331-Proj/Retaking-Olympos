@@ -92,7 +92,7 @@ public class UIDragAndDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragH
             {
                 Item item = new Item();
                 item = eventData.pointerCurrentRaycast.gameObject.transform.parent.gameObject.GetComponent<ItemClickable>().item;
-                Debug.Log("HERE");
+                
                 if (!item.isShop)
                 {
                     uIEquiptment.playerInformation.playerInventory.AddItem(new Item { itemName = item.itemName, amount = 1 });
