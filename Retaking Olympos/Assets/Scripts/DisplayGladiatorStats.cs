@@ -36,6 +36,10 @@ public class DisplayGladiatorStats : MonoBehaviour
     // Refreshes text fields with new gladiators stats
     public void RefreshStats() 
     {
+        if (gladiatorList.Count == 0) 
+        {
+            Debug.Log("HERE");
+        }
         gladiatorList = GetComponent<ViewGladiator>().GetGladiatorList();
         nameText.text = gladiatorList[gladiatorIndex].GetName().ToString();
         levelText.text = gladiatorList[gladiatorIndex].GetLevel().ToString();
@@ -45,7 +49,7 @@ public class DisplayGladiatorStats : MonoBehaviour
         defenseText.text = gladiatorList[gladiatorIndex].GetDefense().ToString();
         classText.text = gladiatorList[gladiatorIndex].GetClass().ToString();
 
-        buttonText.text = "Train for " + gladiatorList[gladiatorIndex].GetCost().ToString() + " g";
+        buttonText.text = "Train for " + (gladiatorList[gladiatorIndex].GetCost() * 2).ToString() + " g";
     }
 
     public void IncrementGladiatorIndex() 

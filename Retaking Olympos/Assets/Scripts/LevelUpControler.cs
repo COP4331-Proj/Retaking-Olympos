@@ -23,9 +23,9 @@ public class LevelUpControler : MonoBehaviour
     public void UpdateLevel() 
     {
         Gladiator gladiator = viewGladiator.GetGladiatorList()[viewGladiator.holdPlayerInformation.index];
-        if (viewGladiator.holdPlayerInformation.gold - gladiator.GetCost() > 0)
+        if (viewGladiator.holdPlayerInformation.gold - gladiator.GetCost() * 2 > 0)
         {
-            viewGladiator.holdPlayerInformation.gold -= gladiator.GetCost();
+            viewGladiator.holdPlayerInformation.gold -= gladiator.GetCost() * 2;
             gladiator.LevelUpGladiator();
         }
     }

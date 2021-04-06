@@ -39,9 +39,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Defeat Screen.unity
     guid: e9113f8cd0875ba47a7141ea4ee8885a
   - enabled: 1
-    path: Assets/Scenes/Welcome.unity
+    path: Assets/Scenes/ViewTutorial.unity
     guid: 0b3ddf3320355db448ac6dbff063d222
   - enabled: 1
     path: Assets/Scenes/End Game.unity
     guid: e6cd2c873936c724e8df3dbece0d5bd1
+  - enabled: 1
+    path: Assets/Scenes/Welcome.unity
+    guid: 508b1e0f99c62204b8d521ba2798935d
+  - enabled: 1
+    path: Assets/Scenes/ShopTutorial.unity
+    guid: 99bc9084e5ac03d4a859b6ddde692e48
   m_configObjects: {}

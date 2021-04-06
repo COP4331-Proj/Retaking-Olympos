@@ -9,6 +9,7 @@ using TMPro;
 public class UIInventory : MonoBehaviour
 {
     public PlayerInventory inventory;
+    ToolTipControler toolTipControler;
     // Position of the template for an item in the inventory,
     // and the empty game object to hold the clones of it
     Transform itemContainer;
@@ -94,6 +95,8 @@ public class UIInventory : MonoBehaviour
                     }
                     playerInformation.gold += item.GetSellPrice();
                     inventory.RemoveItem(item);
+                    toolTipControler = FindObjectOfType<ToolTipControler>();
+                    toolTipControler.HideToolTip();
                 }
             };
 
@@ -147,7 +150,7 @@ public class UIInventory : MonoBehaviour
     private void TestBuy(Item item)
     {
         
-        if (item.GetBuyPrice() < playerInformation.gold) 
+        if (item.GetBuyPrice() <= playerInformation.gold) 
         {
             audioSource.PlayOneShot(sounds[1]);
             playerInformation.gold -= item.GetBuyPrice();
