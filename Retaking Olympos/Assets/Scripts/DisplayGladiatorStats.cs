@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DisplayGladiatorStats : MonoBehaviour
@@ -16,6 +17,7 @@ public class DisplayGladiatorStats : MonoBehaviour
     [SerializeField] TextMeshProUGUI powerText;
     [SerializeField] TextMeshProUGUI defenseText;
     [SerializeField] TextMeshProUGUI classText;
+    [SerializeField] Text buttonText;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,7 @@ public class DisplayGladiatorStats : MonoBehaviour
     // Refreshes text fields with new gladiators stats
     public void RefreshStats() 
     {
-
+        gladiatorList = GetComponent<ViewGladiator>().GetGladiatorList();
         nameText.text = gladiatorList[gladiatorIndex].GetName().ToString();
         levelText.text = gladiatorList[gladiatorIndex].GetLevel().ToString();
         healthText.text = gladiatorList[gladiatorIndex].GetHealth().ToString();
@@ -42,6 +44,8 @@ public class DisplayGladiatorStats : MonoBehaviour
         powerText.text = gladiatorList[gladiatorIndex].GetPower().ToString();
         defenseText.text = gladiatorList[gladiatorIndex].GetDefense().ToString();
         classText.text = gladiatorList[gladiatorIndex].GetClass().ToString();
+
+        buttonText.text = "Train for " + gladiatorList[gladiatorIndex].GetCost().ToString() + " g";
     }
 
     public void IncrementGladiatorIndex() 

@@ -21,7 +21,7 @@ public class PlayerGladiator : MonoBehaviour
         {
             player = holdPlayerInformation.gladiatorList[holdPlayerInformation.index];
         }
-
+        
         if (PlayerPrefs.HasKey("GameSceneIsLoaded")) 
             setupPlayerGladiator();
 
@@ -73,7 +73,6 @@ public class PlayerGladiator : MonoBehaviour
     public void takeDamage(int damage)
     {
         currentHealth -= damage;
-
         if (currentHealth <= 0)
         {
             // If the player dies, we need to reset both player and enemy gladiators for the next fight

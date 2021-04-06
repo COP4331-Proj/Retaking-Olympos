@@ -137,22 +137,22 @@ public class EnemyGladiator : MonoBehaviour
                     break;
                 case "Commodus":
                     // Samnite
-                    Samnite Commodus = new Samnite("Commodus", 4);
+                    Samnite Commodus = new Samnite("Commodus", 5);
                     enemy = new Gladiator(Commodus.GetName(), Commodus.GetLevel(), Commodus.GetHealth(), Commodus.GetStamina(), Commodus.GetPower(), Commodus.GetDefense());
                     break;
                 case "Crixus":
                     // Secutor
-                    Secutor Crixus = new Secutor("Crixus", 5);
+                    Secutor Crixus = new Secutor("Crixus", 3);
                     enemy = new Gladiator(Crixus.GetName(), Crixus.GetLevel(), Crixus.GetHealth(), Crixus.GetStamina(), Crixus.GetPower(), Crixus.GetDefense());
                     break;
                 case "Flamma":
                     // Murmillo
-                    Murmillo Flamma = new Murmillo("Flamma", 6);
+                    Murmillo Flamma = new Murmillo("Flamma", 7);
                     enemy = new Gladiator(Flamma.GetName(), Flamma.GetLevel(), Flamma.GetHealth(), Flamma.GetStamina(), Flamma.GetPower(), Flamma.GetDefense());
                     break;
                 case "Spartacus":
                     // Dimachaerus
-                    Dimachaerus Spartacus = new Dimachaerus("Spartacus", 10);
+                    Dimachaerus Spartacus = new Dimachaerus("Spartacus", 9);
                     enemy = new Gladiator(Spartacus.GetName(), Spartacus.GetLevel(), Spartacus.GetHealth(), Spartacus.GetStamina(), Spartacus.GetPower(), Spartacus.GetDefense());
                     break;
                 case "Cassius":
@@ -167,12 +167,12 @@ public class EnemyGladiator : MonoBehaviour
                     break;
                 case "Silvanus":
                     // Secutor
-                    Secutor Silvanus = new Secutor("Silvanus", 5);
+                    Secutor Silvanus = new Secutor("Silvanus", 6);
                     enemy = new Gladiator(Silvanus.GetName(), Silvanus.GetLevel(), Silvanus.GetHealth(), Silvanus.GetStamina(), Silvanus.GetPower(), Silvanus.GetDefense());
                     break;
                 case "Verus":
                     // Murmillo
-                    Murmillo Verus = new Murmillo("Verus", 6);
+                    Murmillo Verus = new Murmillo("Verus", 8);
                     enemy = new Gladiator(Verus.GetName(), Verus.GetLevel(), Verus.GetHealth(), Verus.GetStamina(), Verus.GetPower(), Verus.GetDefense());
                     break;
                 case "Tetraites":

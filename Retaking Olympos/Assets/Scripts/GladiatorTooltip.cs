@@ -24,22 +24,22 @@ public class GladiatorTooltip : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         Tharcian CarpophorusTemp = new Tharcian("Carpophorus", 1);
         carpophorus = new Gladiator(CarpophorusTemp.GetName(), CarpophorusTemp.GetLevel(), CarpophorusTemp.GetHealth(), CarpophorusTemp.GetStamina(), CarpophorusTemp.GetPower(), CarpophorusTemp.GetDefense());
-        Samnite CommodusTemp = new Samnite("Commodus", 4);
+        Samnite CommodusTemp = new Samnite("Commodus", 5);
         commodus = new Gladiator(CommodusTemp.GetName(), CommodusTemp.GetLevel(), CommodusTemp.GetHealth(), CommodusTemp.GetStamina(), CommodusTemp.GetPower(), CommodusTemp.GetDefense());
-        Secutor CrixusTemp = new Secutor("Crixus", 5);
+        Secutor CrixusTemp = new Secutor("Crixus", 3);
         crixus = new Gladiator(CrixusTemp.GetName(), CrixusTemp.GetLevel(), CrixusTemp.GetHealth(), CrixusTemp.GetStamina(), CrixusTemp.GetPower(), CrixusTemp.GetDefense());
-        Murmillo FlammaTemp = new Murmillo("Flamma", 6);
+        Murmillo FlammaTemp = new Murmillo("Flamma", 7);
         flamma = new Gladiator(FlammaTemp.GetName(), FlammaTemp.GetLevel(), FlammaTemp.GetHealth(), FlammaTemp.GetStamina(), FlammaTemp.GetPower(), FlammaTemp.GetDefense());
-        Dimachaerus SpartacusTemp = new Dimachaerus("Spartacus", 10);
+        Dimachaerus SpartacusTemp = new Dimachaerus("Spartacus", 9);
         spartacus = new Gladiator(SpartacusTemp.GetName(), SpartacusTemp.GetLevel(), SpartacusTemp.GetHealth(), SpartacusTemp.GetStamina(), SpartacusTemp.GetPower(), SpartacusTemp.GetDefense());
 
         Tharcian CassiusTemp = new Tharcian("Cassius", 2);
         cassius = new Gladiator(CassiusTemp.GetName(), CassiusTemp.GetLevel(), CassiusTemp.GetHealth(), CassiusTemp.GetStamina(), CassiusTemp.GetPower(), CassiusTemp.GetDefense());
         Samnite MarcusTemp = new Samnite("Marcus", 4);
         marcus = new Gladiator(MarcusTemp.GetName(), MarcusTemp.GetLevel(), MarcusTemp.GetHealth(), MarcusTemp.GetStamina(), MarcusTemp.GetPower(), MarcusTemp.GetDefense());
-        Secutor SilvanusTemp = new Secutor("Silvanus", 5);
+        Secutor SilvanusTemp = new Secutor("Silvanus", 6);
         silvanus = new Gladiator(SilvanusTemp.GetName(), SilvanusTemp.GetLevel(), SilvanusTemp.GetHealth(), SilvanusTemp.GetStamina(), SilvanusTemp.GetPower(), SilvanusTemp.GetDefense());
-        Murmillo VerusTemp = new Murmillo("Verus", 6);
+        Murmillo VerusTemp = new Murmillo("Verus", 8);
         verus = new Gladiator(VerusTemp.GetName(), VerusTemp.GetLevel(), VerusTemp.GetHealth(), VerusTemp.GetStamina(), VerusTemp.GetPower(), VerusTemp.GetDefense());
         Dimachaerus TetraitesTemp = new Dimachaerus("Tetraites", 10);
         tetraites = new Gladiator(TetraitesTemp.GetName(), TetraitesTemp.GetLevel(), TetraitesTemp.GetHealth(), TetraitesTemp.GetStamina(), TetraitesTemp.GetPower(), TetraitesTemp.GetDefense());

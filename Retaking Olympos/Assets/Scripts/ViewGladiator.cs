@@ -8,14 +8,16 @@ using TMPro;
 public class ViewGladiator: MonoBehaviour
 {
     public HoldPlayerInformation holdPlayerInformation;
+    static bool flag = false;
     // Creates two dummy gladiators to show the system working
     private void Start()
     {
-        if (holdPlayerInformation.gladiatorList.Count == 0) 
+        if (holdPlayerInformation.gladiatorList.Count == 0 && !flag) 
         {
             /*            createNewGladiator("Caesar", 3, 100, 100, 6, 14);
                         createNewGladiator("Bob", 4, 120, 120, 10, 12);*/
             createNewGladiator("Caesar", 1, "Thracian");
+            flag = true;
             //createNewGladiator("Bob", 4, "Secutor");
         }
     }
